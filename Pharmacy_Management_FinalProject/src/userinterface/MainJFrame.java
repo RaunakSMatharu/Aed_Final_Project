@@ -220,8 +220,8 @@ public class MainJFrame extends javax.swing.JFrame {
                 txtUserName.setEnabled(false);
                 txtPassword.setEnabled(false);
                 logoutJButton.setEnabled(true);
-                CustomerAreaJPanel cajp = new CustomerAreaJPanel(container, user, system);
-                container.add("CustomerPanel",cajp);
+               // CustomerAreaJPanel cajp = new CustomerAreaJPanel(container, user, system);
+              //  container.add("CustomerPanel",cajp);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
                 cardlayout.next(container);
            }
@@ -249,9 +249,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 System.out.println("Container........." + container);
                 System.out.println("user........." + user);
                 System.out.println("system........." + system);
-                DeliveryManWorkAreaJPanel dmwajp = new DeliveryManWorkAreaJPanel(container, user, system);
+//                DeliveryManWorkAreaJPanel dmwajp = new DeliveryManWorkAreaJPanel(container, user, system);
                 
-                container.add("DeliveryPanel",dmwajp);
+           //     container.add("DeliveryPanel",dmwajp);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
                 cardlayout.next(container);
            }
