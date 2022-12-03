@@ -4,24 +4,13 @@
  */
 package userinterface;
 
-import Business.ConfigureASystem;
-import Business.Customer.Customer;
-import Business.EcoSystem;
-import Business.DB4OUtil.DB4OUtil;
-import Business.Employee.Employee;
 
-import Business.Organization;
-import Business.Role.CustomerRole;
-import Business.UserAccount.UserAccount;
+
+
+
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import userinterface.CustomerRole.CustomerAreaJPanel;
-import userinterface.DeliveryManRole.DeliveryManWorkAreaJPanel;
-import userinterface.PharmacyAdminRole.AdminWorkAreaJPanel;
-import userinterface.SupplierAdminRole.SupplierAdminWorkAreaJPanel;
-import userinterface.SupplierDeliveryManRole.SupplierDeliveryManWorkArea;
-import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 
 /**
  *
@@ -32,13 +21,11 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    private EcoSystem system;
-    private UserAccount user;
-    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    
 
     public MainJFrame() {
         initComponents();
-        system = dB4OUtil.retrieveSystem();
+        
         this.setSize(1680, 1050);
     }
 
@@ -162,100 +149,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
         // Get user name
-       user = system.getUserAccountDirectory().authenticateUser(txtUserName.getText(), String.valueOf(txtPassword.getPassword()));
-       if(user==null)
-       {
-           JOptionPane.showMessageDialog(null, "Please enter correct username and Password!", "Warning", JOptionPane.WARNING_MESSAGE);
-           txtUserName.setText("");
-           txtPassword.setText("");
-           return;
-       }
-       else
-       {
-           
-           if(user.getRole().toString() == "Business.Role.SystemAdminRole")
-           {
-                Employee e = user.getEmployee();
-                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Admin!");
-                loginJButton.setEnabled(false);
-                txtUserName.setEnabled(false);
-                txtPassword.setEnabled(false);
-                logoutJButton.setEnabled(true);
-                SystemAdminWorkAreaJPanel sawajp = new SystemAdminWorkAreaJPanel(container, system);
-                container.add("SysAdminPanel",sawajp);
-                CardLayout cardlayout = (CardLayout) container.getLayout();
-                cardlayout.next(container);
-           }
-           else if(user.getRole().toString() == "Business.Role.AdminRole")
-           {
-                Employee e = user.getEmployee();
-                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Pharmacy Manager!");
-                loginJButton.setEnabled(false);
-                txtUserName.setEnabled(false);
-                txtPassword.setEnabled(false);
-                logoutJButton.setEnabled(true);
-                AdminWorkAreaJPanel awajp = new AdminWorkAreaJPanel(container, user, system);
-                container.add("AdminPanel",awajp);
-                CardLayout cardlayout = (CardLayout) container.getLayout();
-                cardlayout.next(container);
-           }
-           else if(user.getRole().toString() == "Business.Role.SupplierAdminRole")
-           {
-                Employee e = user.getEmployee();
-                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Supplier Manager!");
-                loginJButton.setEnabled(false);
-                txtUserName.setEnabled(false);
-                txtPassword.setEnabled(false);
-                logoutJButton.setEnabled(true);
-                SupplierAdminWorkAreaJPanel sawa = new SupplierAdminWorkAreaJPanel(container, user, system);
-                container.add("SupplierAdminPanel",sawa);
-                CardLayout cardlayout = (CardLayout) container.getLayout();
-                cardlayout.next(container);
-           }
-           else if(user.getRole().toString() == "Business.Role.CustomerRole")
-           {
-                Employee e = user.getEmployee();
-                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Customer!");
-                loginJButton.setEnabled(false);
-                txtUserName.setEnabled(false);
-                txtPassword.setEnabled(false);
-                logoutJButton.setEnabled(true);
-                CustomerAreaJPanel cajp = new CustomerAreaJPanel(container, user, system);
-                container.add("CustomerPanel",cajp);
-                CardLayout cardlayout = (CardLayout) container.getLayout();
-                cardlayout.next(container);
-           }
-           else if(user.getRole().toString() == "Business.Role.SupplierDeliveryManRole")
-           {
-                Employee e = user.getEmployee();
-                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Customer!");
-                loginJButton.setEnabled(false);
-                txtUserName.setEnabled(false);
-                txtPassword.setEnabled(false);
-                logoutJButton.setEnabled(true);
-                SupplierDeliveryManWorkArea cajp = new SupplierDeliveryManWorkArea(container, user, system);
-                container.add("CustomerPanel",cajp);
-                CardLayout cardlayout = (CardLayout) container.getLayout();
-                cardlayout.next(container);
-           }
-           else
-           {
-                Employee e = user.getEmployee();
-                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Delivery Man!");
-                loginJButton.setEnabled(false);
-                txtUserName.setEnabled(false);
-                txtPassword.setEnabled(false);
-                logoutJButton.setEnabled(true);
-                System.out.println("Container........." + container);
-                System.out.println("user........." + user);
-                System.out.println("system........." + system);
-                DeliveryManWorkAreaJPanel dmwajp = new DeliveryManWorkAreaJPanel(container, user, system);
-                
-                container.add("DeliveryPanel",dmwajp);
-                CardLayout cardlayout = (CardLayout) container.getLayout();
-                cardlayout.next(container);
-           }
-       }
+       
+       
        
     }//GEN-LAST:event_loginJButtonActionPerformed
 
@@ -273,7 +168,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
-        dB4OUtil.storeSystem(system);
+        
     }//GEN-LAST:event_logoutJButtonActionPerformed
 
     /**

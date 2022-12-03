@@ -4,14 +4,7 @@
  */
 package userinterface.CustomerRole;
 
-import Business.EcoSystem;
-import Business.Orders.Orders;
-import Business.Organization;
-import Business.UserAccount.UserAccount;
-import java.awt.CardLayout;
-import java.awt.Component;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
 
@@ -22,18 +15,17 @@ import javax.swing.JOptionPane;
 public class RequestLabTestJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private Orders o;    
+   
     /**
      * Creates new form RequestLabTestJPanel
      */
-    public RequestLabTestJPanel(JPanel userProcessContainer, Orders o) {
+    public RequestLabTestJPanel() {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         
-        this.o = o;
-        enterpriseLabel.setText("OrderID: " + o);
-        messageJTextField.setText(o.getMessage());
+        
+        
     }
 
     /**
@@ -100,28 +92,14 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
 
-        if(messageJTextField.getText() != "")
-        {
-            o.setMessage(messageJTextField.getText());
-            JOptionPane.showMessageDialog(null, "Message updated successfully");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,"Message cannot be empty!", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+        
 
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
         userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-        CustomerSummaryJPanell dwjp = (CustomerSummaryJPanell) component;
-      //  dwjp.populateRequestTable();
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
+        
 
     }//GEN-LAST:event_backJButtonActionPerformed
 
