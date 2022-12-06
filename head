@@ -1,0 +1,110 @@
+[1mdiff --cc Pharmacy_Management_FinalProject/src/userinterface/MainJFrame.java[m
+[1mindex 0462cb9,8e13011..0000000[m
+[1m--- a/Pharmacy_Management_FinalProject/src/userinterface/MainJFrame.java[m
+[1m+++ b/Pharmacy_Management_FinalProject/src/userinterface/MainJFrame.java[m
+[36m@@@ -162,100 -149,8 +149,105 @@@[m [mpublic class MainJFrame extends javax.s[m
+  [m
+      private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed[m
+          // Get user name[m
+[32m++<<<<<<< HEAD[m
+[32m +       user = system.getUserAccountDirectory().authenticateUser(txtUserName.getText(), String.valueOf(txtPassword.getPassword()));[m
+[32m +       if(user==null)[m
+[32m +       {[m
+[32m +           JOptionPane.showMessageDialog(null, "Please enter correct username and Password!", "Warning", JOptionPane.WARNING_MESSAGE);[m
+[32m +           txtUserName.setText("");[m
+[32m +           txtPassword.setText("");[m
+[32m +           return;[m
+[32m +       }[m
+[32m +       else[m
+[32m +       {[m
+[32m +           [m
+[32m +           if(user.getRole().toString() == "Business.Role.SystemAdminRole")[m
+[32m +           {[m
+[32m +                Employee e = user.getEmployee();[m
+[32m +                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Admin!");[m
+[32m +                loginJButton.setEnabled(false);[m
+[32m +                txtUserName.setEnabled(false);[m
+[32m +                txtPassword.setEnabled(false);[m
+[32m +                logoutJButton.setEnabled(true);[m
+[32m +                SystemAdminWorkAreaJPanel sawajp = new SystemAdminWorkAreaJPanel(container, system);[m
+[32m +                container.add("SysAdminPanel",sawajp);[m
+[32m +                CardLayout cardlayout = (CardLayout) container.getLayout();[m
+[32m +                cardlayout.next(container);[m
+[32m +           }[m
+[32m +           else if(user.getRole().toString() == "Business.Role.AdminRole")[m
+[32m +           {[m
+[32m +                Employee e = user.getEmployee();[m
+[32m +                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Pharmacy Manager!");[m
+[32m +                loginJButton.setEnabled(false);[m
+[32m +                txtUserName.setEnabled(false);[m
+[32m +                txtPassword.setEnabled(false);[m
+[32m +                logoutJButton.setEnabled(true);[m
+[32m +                AdminWorkAreaJPanel awajp = new AdminWorkAreaJPanel(container, user, system);[m
+[32m +                container.add("AdminPanel",awajp);[m
+[32m +                CardLayout cardlayout = (CardLayout) container.getLayout();[m
+[32m +                cardlayout.next(container);[m
+[32m +           }[m
+[32m +           else if(user.getRole().toString() == "Business.Role.SupplierAdminRole")[m
+[32m +           {[m
+[32m +                Employee e = user.getEmployee();[m
+[32m +                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Supplier Manager!");[m
+[32m +                loginJButton.setEnabled(false);[m
+[32m +                txtUserName.setEnabled(false);[m
+[32m +                txtPassword.setEnabled(false);[m
+[32m +                logoutJButton.setEnabled(true);[m
+[32m +                SupplierAdminWorkAreaJPanel sawa = new SupplierAdminWorkAreaJPanel(container, user, system);[m
+[32m +                container.add("SupplierAdminPanel",sawa);[m
+[32m +                CardLayout cardlayout = (CardLayout) container.getLayout();[m
+[32m +                cardlayout.next(container);[m
+[32m +           }[m
+[32m +           else if(user.getRole().toString() == "Business.Role.CustomerRole")[m
+[32m +           {[m
+[32m +                Employee e = user.getEmployee();[m
+[32m +                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Customer!");[m
+[32m +                loginJButton.setEnabled(false);[m
+[32m +                txtUserName.setEnabled(false);[m
+[32m +                txtPassword.setEnabled(false);[m
+[32m +                logoutJButton.setEnabled(true);[m
+[32m +               // CustomerAreaJPanel cajp = new CustomerAreaJPanel(container, user, system);[m
+[32m +              //  container.add("CustomerPanel",cajp);[m
+[32m +                CardLayout cardlayout = (CardLayout) container.getLayout();[m
+[32m +                cardlayout.next(container);[m
+[32m +           }[m
+[32m +           else if(user.getRole().toString() == "Business.Role.SupplierDeliveryManRole")[m
+[32m +           {[m
+[32m +                Employee e = user.getEmployee();[m
+[32m +                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Customer!");[m
+[32m +                loginJButton.setEnabled(false);[m
+[32m +                txtUserName.setEnabled(false);[m
+[32m +                txtPassword.setEnabled(false);[m
+[32m +                logoutJButton.setEnabled(true);[m
+[32m +                SupplierDeliveryManWorkArea cajp = new SupplierDeliveryManWorkArea(container, user, system);[m
+[32m +                container.add("CustomerPanel",cajp);[m
+[32m +                CardLayout cardlayout = (CardLayout) container.getLayout();[m
+[32m +                cardlayout.next(container);[m
+[32m +           }[m
+[32m +           else[m
+[32m +           {[m
+[32m +                Employee e = user.getEmployee();[m
+[32m +                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Delivery Man!");[m
+[32m +                loginJButton.setEnabled(false);[m
+[32m +                txtUserName.setEnabled(false);[m
+[32m +                txtPassword.setEnabled(false);[m
+[32m +                logoutJButton.setEnabled(true);[m
+[32m +                System.out.println("Container........." + container);[m
+[32m +                System.out.println("user........." + user);[m
+[32m +                System.out.println("system........." + system);[m
+[32m +//                DeliveryManWorkAreaJPanel dmwajp = new DeliveryManWorkAreaJPanel(container, user, system);[m
+[32m +                [m
+[32m +           //     container.add("DeliveryPanel",dmwajp);[m
+[32m +                CardLayout cardlayout = (CardLayout) container.getLayout();[m
+[32m +                cardlayout.next(container);[m
+[32m +           }[m
+[32m +       }[m
+[32m++=======[m
+[32m+        [m
+[32m+        [m
+[32m++>>>>>>> c51addd5d0e1630cb2ed68e5e2c04010c0336bbb[m
+         [m
+      }//GEN-LAST:event_loginJButtonActionPerformed[m
+  [m

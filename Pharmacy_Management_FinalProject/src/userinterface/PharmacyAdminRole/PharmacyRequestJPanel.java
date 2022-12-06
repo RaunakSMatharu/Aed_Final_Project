@@ -1,31 +1,20 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.CustomerRole;
-
-
-import javax.swing.JPanel;
-import javax.swing.JOptionPane;
+package userinterface.PharmacyAdminRole;
 
 /**
  *
- * @author Raunak Singh Matharu
+ * @author ruchikapadiwala
  */
-public class RequestLabTestJPanel extends javax.swing.JPanel {
+public class PharmacyRequestJPanel extends javax.swing.JPanel {
 
-    private JPanel userProcessContainer;
-   
     /**
-     * Creates new form RequestLabTestJPanel
+     * Creates new form PharmacyRequestJPanel
      */
-    public RequestLabTestJPanel() {
+    public PharmacyRequestJPanel() {
         initComponents();
-        
-        this.userProcessContainer = userProcessContainer;
-        
-        
-        
     }
 
     /**
@@ -42,13 +31,10 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         messageJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        requestTestJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        requestTestJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         requestTestJButton.setText("Submit Message");
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,19 +42,19 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
             }
         });
         add(requestTestJButton);
-        requestTestJButton.setBounds(370, 100, 130, 30);
+        requestTestJButton.setBounds(460, 360, 170, 60);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("Message: ");
         add(jLabel1);
-        jLabel1.setBounds(70, 26, 80, 50);
+        jLabel1.setBounds(330, 70, 80, 60);
 
         messageJTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         messageJTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(messageJTextField);
-        messageJTextField.setBounds(180, 26, 320, 40);
+        messageJTextField.setBounds(460, 90, 290, 210);
 
-        backJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         backJButton.setText("<<Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,39 +62,27 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
             }
         });
         add(backJButton);
-        backJButton.setBounds(180, 100, 120, 30);
+        backJButton.setBounds(20, 460, 170, 60);
 
         enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         enterpriseLabel.setText("<>");
         add(enterpriseLabel);
-        enterpriseLabel.setBounds(10, 10, 170, 30);
-        add(jLabel2);
-        jLabel2.setBounds(30, 50, 0, 0);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (6).png"))); // NOI18N
-        add(jLabel3);
-        jLabel3.setBounds(10, 6, 1400, 780);
+        enterpriseLabel.setBounds(50, 90, 170, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
-
-        
 
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
-        userProcessContainer.remove(this);
-        
-
     }//GEN-LAST:event_backJButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField messageJTextField;
     private javax.swing.JButton requestTestJButton;
     // End of variables declaration//GEN-END:variables
