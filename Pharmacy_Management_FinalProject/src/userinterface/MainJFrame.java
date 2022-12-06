@@ -149,7 +149,6 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
         // Get user name
-<<<<<<< HEAD
        user = system.getUserAccountDirectory().authenticateUser(txtUserName.getText(), String.valueOf(txtPassword.getPassword()));
        if(user==null)
        {
@@ -195,8 +194,8 @@ public class MainJFrame extends javax.swing.JFrame {
                 txtUserName.setEnabled(false);
                 txtPassword.setEnabled(false);
                 logoutJButton.setEnabled(true);
-                SupplierAdminWorkAreaJPanel sawa = new SupplierAdminWorkAreaJPanel(container, user, system);
-                container.add("SupplierAdminPanel",sawa);
+//                SupplierAdminWorkAreaJPanel sawa = new SupplierAdminWorkAreaJPanel(container, user, system);
+//                container.add("SupplierAdminPanel",sawa);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
                 cardlayout.next(container);
            }
@@ -221,8 +220,8 @@ public class MainJFrame extends javax.swing.JFrame {
                 txtUserName.setEnabled(false);
                 txtPassword.setEnabled(false);
                 logoutJButton.setEnabled(true);
-                SupplierDeliveryManWorkArea cajp = new SupplierDeliveryManWorkArea(container, user, system);
-                container.add("CustomerPanel",cajp);
+//                SupplierDeliveryManWorkArea cajp = new SupplierDeliveryManWorkArea(container, user, system);
+           //     container.add("CustomerPanel",cajp);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
                 cardlayout.next(container);
            }
@@ -244,10 +243,6 @@ public class MainJFrame extends javax.swing.JFrame {
                 cardlayout.next(container);
            }
        }
-=======
-       
-       
->>>>>>> c51addd5d0e1630cb2ed68e5e2c04010c0336bbb
        
     }//GEN-LAST:event_loginJButtonActionPerformed
 
