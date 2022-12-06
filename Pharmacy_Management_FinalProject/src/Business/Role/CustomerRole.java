@@ -5,23 +5,21 @@
  */
 package Business.Role;
 
+import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.PharmacyAdminRole.AdminWorkAreaJPanel;
+import userinterface.CustomerRole.CustomerAreaJPanel;
 
 /**
  *
  * @author Ruchi
  */
-public class AdminRole extends Role{
+public class CustomerRole extends Role{
     private RoleType roleType;
-    public AdminRole() {
-        super();
-        RoleType roleType = RoleType.PharmacyAdmin;
+    public CustomerRole() {
+        RoleType roleType = RoleType.Customer;
     }
-
-    public RoleType getRoleType() {
-        return roleType;
-    }
+    
     
     
 }
+
