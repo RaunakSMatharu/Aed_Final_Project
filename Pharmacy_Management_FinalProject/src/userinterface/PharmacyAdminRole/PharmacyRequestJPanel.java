@@ -4,17 +4,30 @@
  */
 package userinterface.PharmacyAdminRole;
 
+import Business.Orders.Orders;
+import Business.SupplierOrders.SupplierOrders;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author ruchikapadiwala
  */
 public class PharmacyRequestJPanel extends javax.swing.JPanel {
-
+    private JPanel userProcessContainer;
+    private SupplierOrders so;
     /**
      * Creates new form PharmacyRequestJPanel
      */
-    public PharmacyRequestJPanel() {
+    public PharmacyRequestJPanel(JPanel userProcessContainer, SupplierOrders so) {
         initComponents();
+         this.userProcessContainer = userProcessContainer;
+        
+        this.so = so;
+        enterpriseLabel.setText("OrderID: " + so);
+        messageJTextField.setText(so.getMessage());
     }
 
     /**
@@ -71,11 +84,27 @@ public class PharmacyRequestJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
-
+        if(messageJTextField.getText() != "")
+        {
+            so.setMessage(messageJTextField.getText());
+            JOptionPane.showMessageDialog(null, "Message updated successfully");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Message cannot be empty!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        PharmacySummaryJPanel dwjp = (PharmacySummaryJPanel) component;
+        dwjp.populateRequestTable();
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
 
