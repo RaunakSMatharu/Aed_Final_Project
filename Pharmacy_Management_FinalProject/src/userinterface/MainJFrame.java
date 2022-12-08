@@ -4,24 +4,13 @@
  */
 package userinterface;
 
-import Business.ConfigureASystem;
-import Business.Customer.Customer;
-import Business.EcoSystem;
-import Business.DB4OUtil.DB4OUtil;
-import Business.Employee.Employee;
 
-import Business.Organization;
-import Business.Role.CustomerRole;
-import Business.UserAccount.UserAccount;
+
+
+
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import userinterface.CustomerRole.CustomerAreaJPanel;
-import userinterface.DeliveryManRole.DeliveryManWorkAreaJPanel;
-import userinterface.PharmacyAdminRole.AdminWorkAreaJPanel;
-import userinterface.SupplierAdminRole.SupplierAdminWorkAreaJPanel;
-import userinterface.SupplierDeliveryManRole.SupplierDeliveryManWorkArea;
-import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 
 /**
  *
@@ -32,13 +21,11 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    private EcoSystem system;
-    private UserAccount user;
-    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    
 
     public MainJFrame() {
         initComponents();
-       // system = dB4OUtil.retrieveSystem();
+        
         this.setSize(1680, 1050);
     }
 
@@ -273,7 +260,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
-        dB4OUtil.storeSystem(system);
+        
     }//GEN-LAST:event_logoutJButtonActionPerformed
 
     /**

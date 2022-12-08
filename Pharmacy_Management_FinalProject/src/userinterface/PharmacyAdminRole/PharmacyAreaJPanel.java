@@ -4,6 +4,13 @@
  */
 package userinterface.PharmacyAdminRole;
 
+import Business.EcoSystem;
+import Business.Pharmacy.Pharmacy;
+import Business.Supplier.Supplier;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 /**
  *
  * @author ruchikapadiwala
@@ -13,8 +20,38 @@ public class PharmacyAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PharmacyAreaJPanel
      */
-    public PharmacyAreaJPanel() {
+    private JPanel userProcessContainer;
+    private UserAccount userAccount;
+    Pharmacy pharmacy;
+    EcoSystem system;
+    Supplier supplier;
+    public PharmacyAreaJPanel(JPanel userProcessContainer,UserAccount user, EcoSystem system, Pharmacy pharmacy) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;  
+        this.userAccount = user;
+        this.system = system;
+        this.pharmacy=pharmacy;
+        /*for(Pharmacy p : system.getPharmacyDirectory().getPharmacyList() )
+        {
+            
+                if(p.getName() == null ? useraccount.getEmployee().getName() == null : p.getName().equals(useraccount.getEmployee().getName()))
+                {
+                    this.pharmacy = p;
+                }
+           
+        }*/
+        
+       // txtName.setText(this.pharmacy.getName());
+      // system.printout()
+//        txtAddress.setText(this.pharmacy.getAddress());
+       // txtPhone.setText(this.pharmacy.getPhone());
+        
+        //valueLabel.setText(this.pharmacy.getName());
+        jComboSupplier.addItem("");
+        for(Supplier s : system.getSupplierDirectory().getSupplierList())
+        {
+            jComboSupplier.addItem(s.getName());
+        }
     }
 
     /**
@@ -126,17 +163,39 @@ public class PharmacyAreaJPanel extends javax.swing.JPanel {
 
     private void jComboSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboSupplierActionPerformed
         // TODO add your handling code here:
-        
+        if(jComboSupplier.getSelectedItem() != "")
+        {
+            String supp = jComboSupplier.getSelectedItem().toString();
+            supplier = system.getSupplierDirectory().findSupplier(supp);
+            PharmacyOrderAction poa = new PharmacyOrderAction(userProcessContainer, pharmacy, supplier);
+            userProcessContainer.add("CustomerOrder", poa);
+            CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
     }//GEN-LAST:event_jComboSupplierActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       
+       PharmacySummaryJPanel lcj = new PharmacySummaryJPanel(userProcessContainer, userAccount, system, pharmacy);
+       userProcessContainer.add("PharmacyOrder", lcj);
+       CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
+       layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        
+        if((txtAddress.getText() == "")  )
+        {
+            JOptionPane.showMessageDialog(null,"Please fill all values!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else
+        {
+            pharmacy.setAddress(txtAddress.getText());
+           // pharmacy.setPhone(txtPhone.getText());
+
+        }
+        valueLabel.setText(pharmacy.getName());
     }//GEN-LAST:event_btnSubmitActionPerformed
 
 
