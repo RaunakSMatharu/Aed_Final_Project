@@ -2,7 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.CustomerRole;
+package userinterface.PharmacyAdminRole;
+
+
+import Business.Pharmacy.Pharmacy;
+import Business.Supplier.Supplier;
+import Business.SupplierMedicineItem.SupplierMedicineItem;
+import Business.SupplierOrders.SupplierOrders;
+import java.awt.CardLayout;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,8 +24,26 @@ public class PharmacyOrderAction extends javax.swing.JPanel {
     /**
      * Creates new form PharmacyOrderAction
      */
-    public PharmacyOrderAction() {
+    JPanel userProcessContainer;
+    Supplier supplier;
+    Pharmacy pharma;
+    SupplierOrders supplierOrders;
+    int totalAmount = 0;
+    
+    ArrayList<SupplierMedicineItem> cart = new ArrayList<SupplierMedicineItem>();
+    
+    public PharmacyOrderAction(JPanel userProcessContainer, Pharmacy pharmacy, Supplier supplier) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.pharma = pharmacy;
+        this.supplier = supplier;
+        lblSupplier.setText("Supplier: " +this.supplier.getName());
+        populateMedicine(); 
+        populateOrder();
+        if(tblOrder.getRowCount() <= 0)
+        {
+            btnOrder.setEnabled(false);
+        }
     }
 
     /**
@@ -153,22 +182,67 @@ public class PharmacyOrderAction extends javax.swing.JPanel {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
+        int selectedRow1 = tblOrder.getSelectedRow();
+        if (selectedRow1 >= 0)
+        {
+            SupplierMedicineItem smi1 = (SupplierMedicineItem) tblOrder.getValueAt(selectedRow1, 1);
+            //order.deleteFoodItem(fi);
+            cart.remove(smi1);
+            JOptionPane.showMessageDialog(null, "Medicine Item " + smi1.getName()+ " deleted from cart successfully!");
+            totalAmount = totalAmount - smi1.getPrice();
+            populateOrder();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
         // TODO add your handling code here:
+        supplierOrders = supplier.getSupplierOrderDirectory().createNewSupplierOrder(pharma);
+        for(SupplierMedicineItem mo : cart)
+        {
+            supplierOrders.addItem(mo);
+        }
+        supplierOrders.calculateTotalAmount();
+        JOptionPane.showMessageDialog(null, "Thank you for your order! Order of " + supplierOrders.getSupplierMedicineItemList().size() + " medicine item(s) for amount $" + supplierOrders.getTotalAmount() + " is placed successfully!");
     }//GEN-LAST:event_btnOrderActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void tblMedicineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMedicineMouseClicked
         // TODO add your handling code here:
+        int selectedRow = tblMedicine.getSelectedRow();
+        if (selectedRow >= 0)
+        {
+            btnAddItem.setEnabled(true);
+        }
     }//GEN-LAST:event_tblMedicineMouseClicked
 
     private void btnAddItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddItemActionPerformed
         // TODO add your handling code here:
+        int selectedRow = tblMedicine.getSelectedRow();
+        if (selectedRow >= 0)
+        {
+            SupplierMedicineItem smi2 = (SupplierMedicineItem) tblMedicine.getValueAt(selectedRow, 1);
+
+            cart.add(smi2);
+            JOptionPane.showMessageDialog(null, "Medicine Item " + smi2.getName()+ " added to cart successfully!");
+            totalAmount = totalAmount + smi2.getPrice();
+            populateOrder();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_btnAddItemActionPerformed
 
 
@@ -185,4 +259,51 @@ public class PharmacyOrderAction extends javax.swing.JPanel {
     private javax.swing.JTable tblOrder;
     private javax.swing.JTextField txtAmount;
     // End of variables declaration//GEN-END:variables
+
+    private void populateMedicine() {
+        DefaultTableModel dtm = (DefaultTableModel)tblMedicine.getModel();
+        dtm.setRowCount(0);
+        if(supplier.getSupplierMedicineCatalog().getSupplierMedicineItemList()!= null)
+        {
+            for(SupplierMedicineItem smi3 : supplier.getSupplierMedicineCatalog().getSupplierMedicineItemList())
+            {
+                Object[] row = new Object[dtm.getColumnCount()];
+                row[0] = smi3.getId();
+                row[1] = smi3;
+                row[2] = smi3.getPrice();
+                dtm.addRow(row);
+            }
+        }
+        if(dtm.getRowCount() == 0)
+            {
+                btnAddItem.setEnabled(false);
+                btnDelete.setEnabled(false);
+            }
+    }
+
+    private void populateOrder() {
+        DefaultTableModel dtm = (DefaultTableModel)tblOrder.getModel();
+        dtm.setRowCount(0);
+        if(cart != null)
+        {
+            btnDelete.setEnabled(true);
+            btnOrder.setEnabled(true);
+            int count = 1;
+            for(SupplierMedicineItem mi3 : cart)
+            {
+                Object[] row = new Object[dtm.getColumnCount()];
+                row[0] = count;
+                row[1] = mi3;
+                row[2] =  mi3.getPrice();
+                dtm.addRow(row);
+                count++;
+            }
+            txtAmount.setText(Integer.toString(totalAmount));
+        }
+        if(tblOrder.getRowCount() <= 0)
+        {
+            btnOrder.setEnabled(false);
+            btnDelete.setEnabled(false);
+        }
+    }
 }

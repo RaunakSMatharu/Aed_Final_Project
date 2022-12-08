@@ -2,7 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.CustomerRole;
+package userinterface.PharmacyAdminRole;
+
+import Business.MedicineItems.MedicineItem;
+import Business.Pharmacy.Pharmacy;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -11,10 +19,17 @@ package userinterface.CustomerRole;
 public class AdminUpdateMedicineItem extends javax.swing.JPanel {
 
     /**
-     * Creates new form AdminUpdateMedicineItem
+     * Creates new form AdminUpdateFoodItem
      */
-    public AdminUpdateMedicineItem() {
+    JPanel userProcessContainer;
+    Pharmacy pharmacy;
+    MedicineItem medicineItem;
+    public AdminUpdateMedicineItem(JPanel userProcessContainer, MedicineItem mi) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.medicineItem = mi;
+        txtName.setText(mi.getName());
+        jSpinPrice.setValue(mi.getPrice());
     }
 
     /**
@@ -89,10 +104,26 @@ public class AdminUpdateMedicineItem extends javax.swing.JPanel {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
+        if((Integer)jSpinPrice.getValue() > 0)
+        {
+            medicineItem.setPrice((Integer)jSpinPrice.getValue());
+            JOptionPane.showMessageDialog(null, "Medicine " + medicineItem.getName()+ " updated successfully!");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Price must be greater than 0!", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        AdminManageMedicine dwjp = (AdminManageMedicine) component;
+        dwjp.populateTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
 
