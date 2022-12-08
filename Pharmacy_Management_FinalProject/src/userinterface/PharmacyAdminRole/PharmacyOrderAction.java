@@ -105,7 +105,7 @@ public class PharmacyOrderAction extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(20, 700, 230, 50);
+        btnBack.setBounds(70, 570, 120, 50);
 
         tblOrder.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         tblOrder.setModel(new javax.swing.table.DefaultTableModel(

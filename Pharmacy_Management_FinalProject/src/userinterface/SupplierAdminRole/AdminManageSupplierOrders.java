@@ -88,11 +88,16 @@ public class AdminManageSupplierOrders extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(10, 260, 110, 60);
+        btnBack.setBounds(600, 290, 160, 30);
 
         comboSupplierDeliveryMen.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        comboSupplierDeliveryMen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboSupplierDeliveryMenActionPerformed(evt);
+            }
+        });
         add(comboSupplierDeliveryMen);
-        comboSupplierDeliveryMen.setBounds(560, 280, 159, 43);
+        comboSupplierDeliveryMen.setBounds(600, 340, 159, 30);
 
         tblOrders.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         tblOrders.setModel(new javax.swing.table.DefaultTableModel(
@@ -119,11 +124,11 @@ public class AdminManageSupplierOrders extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblOrders);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(10, 84, 1480, 130);
+        jScrollPane1.setBounds(10, 84, 780, 130);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (17) supplie_Order.png"))); // NOI18N
         add(jLabel3);
-        jLabel3.setBounds(0, 70, 1500, 720);
+        jLabel3.setBounds(-440, -40, 1080, 540);
 
         btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnDelete.setText("Delete");
@@ -134,7 +139,7 @@ public class AdminManageSupplierOrders extends javax.swing.JPanel {
             }
         });
         add(btnDelete);
-        btnDelete.setBounds(1099, 273, 220, 60);
+        btnDelete.setBounds(600, 390, 160, 30);
 
         btnAssignDeliveryMan.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnAssignDeliveryMan.setText("Assign Delivery Man");
@@ -145,7 +150,7 @@ public class AdminManageSupplierOrders extends javax.swing.JPanel {
             }
         });
         add(btnAssignDeliveryMan);
-        btnAssignDeliveryMan.setBounds(1098, 423, 220, 60);
+        btnAssignDeliveryMan.setBounds(600, 440, 180, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -211,6 +216,10 @@ public class AdminManageSupplierOrders extends javax.swing.JPanel {
             return;
         }
     }//GEN-LAST:event_btnAssignDeliveryManActionPerformed
+
+    private void comboSupplierDeliveryMenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSupplierDeliveryMenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboSupplierDeliveryMenActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

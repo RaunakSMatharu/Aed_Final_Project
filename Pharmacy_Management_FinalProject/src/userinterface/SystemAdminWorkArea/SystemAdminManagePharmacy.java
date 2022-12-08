@@ -302,7 +302,29 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
     private javax.swing.JTextField txtNameSAMR;
     // End of variables declaration//GEN-END:variables
 
-    private void populateTable() {
-        
+   private void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel)tblPharmacy.getModel();
+        dtm.setRowCount(0);
+        int count1 = 1;
+        if(ecosystem.getPharmacyDirectory().getPharmacyList() != null)
+        {
+            for(Pharmacy p : ecosystem.getPharmacyDirectory().getPharmacyList())
+            {
+                Object[] row = new Object[dtm.getColumnCount()];
+                row[0] = p.getId();
+                row[1] = p;
+                row[2] = p.getAddress();
+                dtm.addRow(row);
+                count1++;
+            }
+        }
+        else
+        {
+            tblPharmacy.setEnabled(false);
+        }
     }
 }
+
+        
+    
+
