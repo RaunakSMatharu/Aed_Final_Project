@@ -4,17 +4,49 @@
  */
 package userinterface.PharmacyAdminRole;
 
+
+import Business.EcoSystem;
+import Business.Employee.Employee;
+import Business.Pharmacy.Pharmacy;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ruchikapadiwala
  */
 public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form AdminWorkAreaJPanel
-     */
-    public AdminWorkAreaJPanel() {
+    
+    JPanel userProcessContainer;
+    
+    UserAccount user;
+    EcoSystem system;
+    Pharmacy pharmacy;
+    
+    /** Creates new form AdminWorkAreaJPanel */
+    public AdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount user, EcoSystem system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.user = user;
+        this.system = system;
+        for(Pharmacy r : system.getPharmacyDirectory().getPharmacyList())
+        {
+            for(Employee e : r.getEmployeeDirectory().getEmployeeList())
+            {
+                if(user.getEmployee() == e)
+                {
+                    this.pharmacy = r;
+                    valueLabel.setText(r.getName());
+                }
+            } 
+        }
+        txtName.setText(this.pharmacy.getName());
+        txtAddress.setText(this.pharmacy.getAddress());
+      System.out.println("Admin area work panel pharmacy : " + pharmacy);
+        //valueLabel.setText();
     }
 
     /**
@@ -124,21 +156,49 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageMedicineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageMedicineActionPerformed
-        
+        AdminManageMedicine amm = new AdminManageMedicine(userProcessContainer, pharmacy);
+        userProcessContainer.add("UserCustomer", amm);
+        CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageMedicineActionPerformed
 
     private void btnManageOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrdersActionPerformed
-        
+        AdminManageOrders amo = new AdminManageOrders(userProcessContainer, pharmacy);
+        userProcessContainer.add("UserCustomer", amo);
+        CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageOrdersActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        
+        if(("".equals(txtName.getText())) || ("".equals(txtAddress.getText())))
+        {
+            JOptionPane.showMessageDialog(null,"Please fill all values!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else if(txtName.getText() == null ? pharmacy.getName() != null : !txtName.getText().equals(pharmacy.getName()))
+        {
+            if(system.getPharmacyDirectory().checkIfPharmacyIsUnique(txtName.getText()))
+            {
+                pharmacy.setName(txtName.getText());
+                pharmacy.setAddress(txtAddress.getText());
+                JOptionPane.showMessageDialog(null, "Pharmacy details updated!");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Pharmacy name not unique!", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }
+        valueLabel.setText(pharmacy.getName());
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnOrderMedFromSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderMedFromSupplierActionPerformed
         // TODO add your handling code here:
-        
+        PharmacyAreaJPanel pap = new PharmacyAreaJPanel(userProcessContainer, user,system, pharmacy);
+        userProcessContainer.add("UserCustomer", pap);
+        CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnOrderMedFromSupplierActionPerformed
 
 

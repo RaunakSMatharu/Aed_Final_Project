@@ -205,10 +205,36 @@ public class AdminManageMedicine extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
+        if(validateThis())
+        {
+            if(pharmacy.getMedicineCatalog().checkIfMedicineItemIsUnique(txtName.getText()))
+            {
+                MedicineItem mi = pharmacy.getMedicineCatalog().createNewFoodItem(txtName.getText(), (Integer)jSpinPrice.getValue());
+                JOptionPane.showMessageDialog(null, "Medicine Item " + mi.getName()+ " created successfully!");
+                populateTable();
+                btnCreate.setEnabled(true);
+                txtName.setText("");
+                txtName.setEnabled(false);
+                jSpinPrice.setValue(0);
+                jSpinPrice.setEnabled(false);
+                btnSubmit.setEnabled(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Medicine already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        else
+        {
+            return;
+        }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed

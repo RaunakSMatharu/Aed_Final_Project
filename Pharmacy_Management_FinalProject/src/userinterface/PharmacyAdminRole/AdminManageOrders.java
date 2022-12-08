@@ -2,7 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.CustomerRole;
+package userinterface.PharmacyAdminRole;
+
+import Business.DeliveryMan.DeliveryMan;
+import Business.Orders.Orders;
+import Business.Pharmacy.Pharmacy;
+import java.awt.CardLayout;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,8 +22,24 @@ public class AdminManageOrders extends javax.swing.JPanel {
     /**
      * Creates new form AdminManageOrders
      */
-    public AdminManageOrders() {
+    JPanel userProcessContainer;
+    Pharmacy pharmacy;
+    public AdminManageOrders(JPanel userProcessContainer, Pharmacy pharmacy) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.pharmacy = pharmacy;
+        btnAssignDeliveryMan.setEnabled(false);
+        comboDeliveryMen.setEnabled(false);
+       
+        valueLabel.setText(pharmacy.getName());
+        populateTable();
+        comboDeliveryMen.addItem("");
+        System.out.println(pharmacy.getDeliveryManDirectory().getDeliveryManList().size());
+        for(DeliveryMan dm : pharmacy.getDeliveryManDirectory().getDeliveryManList())
+        {
+            System.out.println(dm.getName());
+            comboDeliveryMen.addItem(dm.getName());
+        }
     }
 
     /**
@@ -123,18 +148,64 @@ public class AdminManageOrders extends javax.swing.JPanel {
 
     private void btnAssignDeliveryManActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignDeliveryManActionPerformed
         // TODO add your handling code here:
+        int selectedRow = tblOrders.getSelectedRow();
+        if (selectedRow >= 0)
+        {
+            Orders orders = (Orders) tblOrders.getValueAt(selectedRow, 0);
+            if(comboDeliveryMen.getSelectedItem() != "")
+            {
+                String dmName = comboDeliveryMen.getSelectedItem().toString();
+                DeliveryMan dm = pharmacy.findDeliveryMan(dmName);
+                orders.setDeliveryMan(dm);
+                JOptionPane.showMessageDialog(null, "Delivery man assigned successfully!");
+                populateTable();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Please select a delivery man!", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_btnAssignDeliveryManActionPerformed
 
     private void tblOrdersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOrdersMouseClicked
         // TODO add your handling code here:
+        int selectedRow = tblOrders.getSelectedRow();
+        if (selectedRow >= 0)
+        {
+            comboDeliveryMen.setEnabled(true);
+            btnDelete.setEnabled(true);
+            btnAssignDeliveryMan.setEnabled(true);
+        }
     }//GEN-LAST:event_tblOrdersMouseClicked
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
+        int selectedRow = tblOrders.getSelectedRow();
+        if (selectedRow >= 0)
+        {
+            Orders orders = (Orders) tblOrders.getValueAt(selectedRow, 0);
+            pharmacy.deleteOrder(orders);
+            JOptionPane.showMessageDialog(null, "Order deleted successfully!");
+            populateTable();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
 
@@ -149,4 +220,37 @@ public class AdminManageOrders extends javax.swing.JPanel {
     private javax.swing.JTable tblOrders;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
+    
+    private void populateTable() {
+       DefaultTableModel dtm = (DefaultTableModel)tblOrders.getModel();
+        dtm.setRowCount(0);
+        if(pharmacy.getOrderDirectory().getOrderList() != null)
+        {
+            for(Orders orders : pharmacy.getOrderDirectory().getOrderList())
+            {
+                if(!orders.isStatus())
+                {
+                    Object[] row = new Object[dtm.getColumnCount()];
+                    row[0] = orders;
+                    row[1] = orders.getCustomer().getName();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                    row[2] = orders.getOrderDate().format(formatter);
+                    if(orders.getDeliveryMan() == null)
+                    {
+                        row[3] = "";
+                    }
+                    else
+                    {
+                        row[3] = orders.getDeliveryMan().getName();
+                    }
+                    dtm.addRow(row);
+                }
+            }
+        }
+        if(dtm.getRowCount() == 0)
+            {
+                comboDeliveryMen.setEnabled(false);
+                btnAssignDeliveryMan.setEnabled(false);
+            }
+    }
 }
