@@ -5,7 +5,15 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.DeliveryMan.DeliveryMan;
+import Business.EcoSystem;
+import Business.Employee.Employee;
+import Business.Pharmacy.Pharmacy;
+import Business.Role.AdminRole;
 
+import Business.Role.DeliveryManRole;
+import Business.SupplierEmp.SupplierEmp;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -20,10 +28,15 @@ public class SystemManageEmployees extends javax.swing.JPanel {
     /**
      * Creates new form SystemManageEmployees
      */
-    
-    public SystemManageEmployees() {
+    private JPanel userProcessContainer;
+    private Pharmacy pharmacy;
+    private EcoSystem ecosystem;
+    public SystemManageEmployees(JPanel userProcessContainer, Pharmacy pharmacy, EcoSystem ecosystem) {
         initComponents();
         
+        this.userProcessContainer = userProcessContainer;
+        this.pharmacy = pharmacy;
+        this.ecosystem = ecosystem;
         txtUsernameSME.setEnabled(false);
         txtPasswordSME.setEnabled(false);
         txtRePasswordSME.setEnabled(false);
@@ -79,16 +92,16 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel5.setText("Phone Number:");
         add(jLabel5);
-        jLabel5.setBounds(170, 334, 144, 14);
+        jLabel5.setBounds(170, 334, 144, 15);
 
         txtRePasswordSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtRePasswordSME);
-        txtRePasswordSME.setBounds(318, 261, 200, 22);
+        txtRePasswordSME.setBounds(318, 261, 200, 18);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel6.setText("Address:");
         add(jLabel6);
-        jLabel6.setBounds(170, 378, 144, 14);
+        jLabel6.setBounds(170, 378, 144, 15);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel1.setText("Username: ");
@@ -97,7 +110,7 @@ public class SystemManageEmployees extends javax.swing.JPanel {
 
         txtAddressSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtAddressSME);
-        txtAddressSME.setBounds(318, 375, 200, 22);
+        txtAddressSME.setBounds(318, 375, 200, 18);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setText("Password: ");
@@ -107,7 +120,7 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel7.setText("Role:");
         add(jLabel7);
-        jLabel7.setBounds(170, 412, 144, 14);
+        jLabel7.setBounds(170, 412, 144, 15);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel3.setText("Confirm Password:");
@@ -124,7 +137,6 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         add(radioBtnManagerSME);
         radioBtnManagerSME.setBounds(318, 419, 200, 19);
 
-        btnBackSME.setBackground(new java.awt.Color(255, 255, 255));
         btnBackSME.setText("< Back");
         btnBackSME.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBackSME.addActionListener(new java.awt.event.ActionListener() {
@@ -133,9 +145,8 @@ public class SystemManageEmployees extends javax.swing.JPanel {
             }
         });
         add(btnBackSME);
-        btnBackSME.setBounds(10, 249, 55, 27);
+        btnBackSME.setBounds(10, 249, 42, 22);
 
-        btnSubmitSME.setBackground(new java.awt.Color(255, 255, 255));
         btnSubmitSME.setText("Submit");
         btnSubmitSME.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSubmitSME.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +165,7 @@ public class SystemManageEmployees extends javax.swing.JPanel {
             }
         });
         add(radioBtnDeliverySME);
-        radioBtnDeliverySME.setBounds(318, 456, 200, 29);
+        radioBtnDeliverySME.setBounds(318, 456, 200, 21);
 
         tblProfileSME.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -182,7 +193,6 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(170, 84, 740, 97);
 
-        btnManageSME.setBackground(new java.awt.Color(255, 255, 255));
         btnManageSME.setText("View Employee ");
         btnManageSME.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnManageSME.addActionListener(new java.awt.event.ActionListener() {
@@ -199,7 +209,6 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         add(lblTitle);
         lblTitle.setBounds(101, 18, 445, 29);
 
-        btnDeleteSME.setBackground(new java.awt.Color(255, 255, 255));
         btnDeleteSME.setText("Delete Employee");
         btnDeleteSME.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnDeleteSME.addActionListener(new java.awt.event.ActionListener() {
@@ -213,9 +222,8 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel4.setText("Name:");
         add(jLabel4);
-        jLabel4.setBounds(170, 297, 144, 14);
+        jLabel4.setBounds(170, 297, 144, 15);
 
-        btnNewEmployeeSME.setBackground(new java.awt.Color(255, 255, 255));
         btnNewEmployeeSME.setText("Create Employee ");
         btnNewEmployeeSME.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnNewEmployeeSME.addActionListener(new java.awt.event.ActionListener() {
@@ -224,11 +232,11 @@ public class SystemManageEmployees extends javax.swing.JPanel {
             }
         });
         add(btnNewEmployeeSME);
-        btnNewEmployeeSME.setBounds(10, 192, 131, 46);
+        btnNewEmployeeSME.setBounds(10, 192, 98, 46);
 
         txtNameSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtNameSME);
-        txtNameSME.setBounds(318, 294, 200, 22);
+        txtNameSME.setBounds(318, 294, 200, 18);
 
         txtUsernameSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtUsernameSME);
@@ -236,11 +244,11 @@ public class SystemManageEmployees extends javax.swing.JPanel {
 
         txtPhoneSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPhoneSME);
-        txtPhoneSME.setBounds(318, 331, 200, 22);
+        txtPhoneSME.setBounds(318, 331, 200, 18);
 
         txtPasswordSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPasswordSME);
-        txtPasswordSME.setBounds(318, 229, 200, 22);
+        txtPasswordSME.setBounds(318, 229, 200, 18);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Manage_Emplyee_Final_IMAGE.png"))); // NOI18N
@@ -255,20 +263,79 @@ public class SystemManageEmployees extends javax.swing.JPanel {
 
     private void btnBackSMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSMEActionPerformed
         // TODO add your handling code here:
-        
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackSMEActionPerformed
 
     private void btnSubmitSMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitSMEActionPerformed
         // TODO add your handling code here:
-        if(validateThis())
+         if(validateThis())
         {
                        // SupplierEmp se = ecosystem.getSupplierEmpDirectory().createSupplierEmp(txtNameSME.getText(), txtAddressSME.getText(), txtPhoneSME.getText());
 
-            
+            Employee e = pharmacy.getEmployeeDirectory().createEmployee(txtNameSME.getText(), txtAddressSME.getText(), txtPhoneSME.getText());
+            if(e == null)
+            {
+                JOptionPane.showMessageDialog(null,"Employee " + txtNameSME.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            else
+            {
+                if(radioBtnManagerSME.isSelected())
+                {
+                    UserAccount ua = ecosystem.getUserAccountDirectory().createUserAccount(txtUsernameSME.getText(), txtPasswordSME.getText(), e, new AdminRole());
+                    if(ua != null)
+                    {
+                        JOptionPane.showMessageDialog(null, "Manager account created successfully for " + e.getName());
+                    }
+                    else
+                    {
+                        pharmacy.getEmployeeDirectory().deleteEmployee(e);
+                        JOptionPane.showMessageDialog(null,"Username " + txtUsernameSME.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+                        return;
+                    }
+                }
+                else
+                {
+                    UserAccount ua = ecosystem.getUserAccountDirectory().createUserAccount(txtUsernameSME.getText(), txtPasswordSME.getText(), e, new DeliveryManRole());
+                    if(ua != null)
+                    {
+                        DeliveryMan dm = pharmacy.getDeliveryManDirectory().createDeliveryMan(txtNameSME.getText(), txtAddressSME.getText(), txtPhoneSME.getText());
+                        JOptionPane.showMessageDialog(null, "Delivery Man account created successfully for " + e.getName());
+                    }
+                    else
+                    {
+                        pharmacy.getEmployeeDirectory().deleteEmployee(e);
+                        JOptionPane.showMessageDialog(null,"Username " + txtUsernameSME.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+                        return;
+                    }
+
+                }
+                btnNewEmployeeSME.setEnabled(true);
+                txtUsernameSME.setText("");
+                txtUsernameSME.setEnabled(false);
+                txtPasswordSME.setText("");
+                txtPasswordSME.setEnabled(false);
+                txtRePasswordSME.setText("");
+                txtRePasswordSME.setEnabled(false);
+                txtNameSME.setText("");
+                txtNameSME.setEnabled(false);
+                txtPhoneSME.setText("");
+                txtPhoneSME.setEnabled(false);
+                txtAddressSME.setText("");
+                txtAddressSME.setEnabled(false);
+                btnSubmitSME.setEnabled(false);
+                radioBtnDeliverySME.setSelected(false);
+                radioBtnDeliverySME.setEnabled(false);
+                radioBtnManagerSME.setSelected(false);
+                radioBtnManagerSME.setEnabled(false);
+            }
+            populateTable();
         }
         else
         {
-            
+            return;
         }
     }//GEN-LAST:event_btnSubmitSMEActionPerformed
 
@@ -292,11 +359,16 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         int selectedRow = tblProfileSME.getSelectedRow();
         if (selectedRow >= 0)
         {
-           
+            Employee selectedEmployee = (Employee) tblProfileSME.getValueAt(selectedRow, 1);
+            SystemUpdateEmployee fs = new SystemUpdateEmployee(userProcessContainer, selectedEmployee, ecosystem);
+            userProcessContainer.add("SysAdminUpdateEmployees", fs);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
         }
         else
         {
-            
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
         }
     }//GEN-LAST:event_btnManageSMEActionPerformed
 
@@ -305,11 +377,15 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         int selectedRow = tblProfileSME.getSelectedRow();
         if (selectedRow >= 0)
         {
-            
+            Employee selectedEmployee = (Employee) tblProfileSME.getValueAt(selectedRow, 1);
+            pharmacy.getEmployeeDirectory().deleteEmployee(selectedEmployee);
+            JOptionPane.showMessageDialog(null, "Employee " + selectedEmployee.getName()+ " deleted successfully!");
+            populateTable();
         }
         else
         {
-            
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
         }
     }//GEN-LAST:event_btnDeleteSMEActionPerformed
 
@@ -356,8 +432,26 @@ public class SystemManageEmployees extends javax.swing.JPanel {
     private javax.swing.JTextField txtUsernameSME;
     // End of variables declaration//GEN-END:variables
 
-    private void populateTable() {
-        
+     private void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel)tblProfileSME.getModel();
+        dtm.setRowCount(0);
+        if(pharmacy.getEmployeeDirectory().getEmployeeList() != null)
+        {
+            for(Employee e : pharmacy.getEmployeeDirectory().getEmployeeList())
+            {
+                Object[] row = new Object[dtm.getColumnCount()];
+                row[0]= e.getId();
+                row[1]= e;
+                UserAccount ua = ecosystem.getUserAccountDirectory().findEmployee(e);
+                row[2] = ua.getRole().toString().substring(14).replace("Role", "");
+                dtm.addRow(row);
+            }
+        }
+        if(dtm.getRowCount() == 0)
+            {
+                btnDeleteSME.setEnabled(false);
+                btnManageSME.setEnabled(false);
+            }
     }
 
     private boolean validateThis() {

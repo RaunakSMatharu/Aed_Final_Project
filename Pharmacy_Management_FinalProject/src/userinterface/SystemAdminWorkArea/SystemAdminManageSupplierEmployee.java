@@ -5,11 +5,20 @@
  */
 package userinterface.SystemAdminWorkArea;
 
-
+import Business.EcoSystem;
+import Business.Employee.Employee;
+//import Business.Role.AdminRole;
+import Business.Role.DeliveryManRole;
+import Business.Role.SupplierDeliveryManRole;
+import Business.Role.SupplierAdminRole;
+import Business.Supplier.Supplier;
+import Business.SupplierDeliveryMan.SupplierDeliveryMan;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -20,12 +29,16 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
     /**
      * Creates new form SystemAdminManageSupplierEmployee
      */
+        private JPanel userProcessContainer;
+        private Supplier supplier;
+        private String user;
+        private EcoSystem ecosystem;
     
-
-    
-    public SystemAdminManageSupplierEmployee() {
+    public SystemAdminManageSupplierEmployee(JPanel userProcessContainer, Supplier supplier, EcoSystem ecosystem) {
         initComponents();
-        
+        this.userProcessContainer = userProcessContainer;
+        this.supplier = supplier;
+        this.ecosystem = ecosystem;
         txtUsernameSME.setEnabled(false);
         txtPasswordSME.setEnabled(false);
         txtRePasswordSME.setEnabled(false);
@@ -37,6 +50,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
         BtnView.setEnabled(false);
         radioBtnDeliverySME.setEnabled(false);
         radioBtnManagerSME.setEnabled(false);
+        populateSupplierEmpTable();
         
     }
 
@@ -231,20 +245,86 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
 
     private void BtnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBackActionPerformed
         // TODO add your handling code here:
-        
+         userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_BtnBackActionPerformed
 
     private void BtnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSubmitActionPerformed
         // TODO add your handling code here:
-       
+       if(validateThis())
+        {
+
+            Employee e = supplier.getEmployeeDirectory().createEmployee(txtNameSME.getText(), txtAddressSME.getText(), txtPhoneSME.getText());
+            if(e == null)
+            {
+                JOptionPane.showMessageDialog(null,"Employee " + txtNameSME.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            else
+            {
+                if(radioBtnManagerSME.isSelected())
+                {
+                    UserAccount ua = ecosystem.getUserAccountDirectory().createUserAccount(txtUsernameSME.getText(), txtPasswordSME.getText(), e, new SupplierAdminRole());
+                    if(ua != null)
+                    {
+                        JOptionPane.showMessageDialog(null, "Manager account created successfully for " + e.getName());
+                    }
+                    else
+                    {
+                        supplier.getEmployeeDirectory().deleteEmployee(e);
+                        JOptionPane.showMessageDialog(null,"Username " + txtUsernameSME.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+                        return;
+                    }
+                }
+                else
+                {
+                    UserAccount ua = ecosystem.getUserAccountDirectory().createUserAccount(txtUsernameSME.getText(), txtPasswordSME.getText(), e, new SupplierDeliveryManRole());
+                    if(ua != null)
+                    {
+                        SupplierDeliveryMan sdm = supplier.getSupplierDeliveryManDirectory().createSupplierDeliveryMan(txtNameSME.getText(), txtAddressSME.getText(), txtPhoneSME.getText());
+                        JOptionPane.showMessageDialog(null, "Delivery Man account created successfully for " + e.getName());
+                    }
+                    else
+                    {
+                        supplier.getEmployeeDirectory().deleteEmployee(e);
+                        JOptionPane.showMessageDialog(null,"Username " + txtUsernameSME.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+                        return;
+                    }
+
+                }
+                BtnCreate.setEnabled(true);
+                txtUsernameSME.setText("");
+                txtUsernameSME.setEnabled(false);
+                txtPasswordSME.setText("");
+                txtPasswordSME.setEnabled(false);
+                txtRePasswordSME.setText("");
+                txtRePasswordSME.setEnabled(false);
+                txtNameSME.setText("");
+                txtNameSME.setEnabled(false);
+                txtPhoneSME.setText("");
+                txtPhoneSME.setEnabled(false);
+                txtAddressSME.setText("");
+                txtAddressSME.setEnabled(false);
+                BtnSubmit.setEnabled(false);
+                radioBtnDeliverySME.setSelected(false);
+                radioBtnDeliverySME.setEnabled(false);
+                radioBtnManagerSME.setSelected(false);
+                radioBtnManagerSME.setEnabled(false);
+            }
+            populateSupplierEmpTable();
+        }
+        else
+        {
+            return;
+        }
                 
-           
         
     }//GEN-LAST:event_BtnSubmitActionPerformed
 
     private void tblManageSupplierEmpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblManageSupplierEmpMouseClicked
         // TODO add your handling code here:
-        
+       
         int selectedRow = tblManageSupplierEmp.getSelectedRow();
         if (selectedRow >= 0)
         {
@@ -255,23 +335,31 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
 
     private void BtnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnViewActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tblManageSupplierEmp.getSelectedRow();
+       int selectedRow = tblManageSupplierEmp.getSelectedRow();
         if (selectedRow >= 0)
         {
-           
+            Employee selectedEmployee = (Employee) tblManageSupplierEmp.getValueAt(selectedRow, 1);
+            SystemUpdateSupplierEmployee fs = new SystemUpdateSupplierEmployee(userProcessContainer, selectedEmployee, ecosystem);
+            userProcessContainer.add("SysUpdateSupplierEmployee", fs);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
         }
         else
         {
-           
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
         }
     }//GEN-LAST:event_BtnViewActionPerformed
 
     private void BtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDeleteActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tblManageSupplierEmp.getSelectedRow();
+         int selectedRow = tblManageSupplierEmp.getSelectedRow();
         if (selectedRow >= 0)
         {
-            
+            Employee selectedEmployee = (Employee) tblManageSupplierEmp.getValueAt(selectedRow, 1);
+            supplier.getEmployeeDirectory().deleteEmployee(selectedEmployee);
+            JOptionPane.showMessageDialog(null, "Employee " + selectedEmployee.getName()+ " deleted successfully!");
+            populateSupplierEmpTable();
         }
         else
         {
@@ -282,7 +370,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
 
     private void BtnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCreateActionPerformed
         // TODO add your handling code here:
-        BtnCreate.setEnabled(false);
+         BtnCreate.setEnabled(false);
         txtUsernameSME.setEnabled(true);
         txtPasswordSME.setEnabled(true);
         txtRePasswordSME.setEnabled(true);
@@ -323,6 +411,27 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
 
+private void populateSupplierEmpTable() {
+        DefaultTableModel dtm = (DefaultTableModel)tblManageSupplierEmp.getModel();
+        dtm.setRowCount(0);
+        if(supplier.getEmployeeDirectory().getEmployeeList() != null)
+        {
+            for(Employee e : supplier.getEmployeeDirectory().getEmployeeList())
+            {
+                Object[] row = new Object[dtm.getColumnCount()];
+                row[0]= e.getId();
+                row[1]= e;
+                UserAccount ua = ecosystem.getUserAccountDirectory().findEmployee(e);
+                row[2] = ua.getRole().toString().substring(14).replace("Role", "");
+                dtm.addRow(row);
+            }
+        }
+        if(dtm.getRowCount() == 0)
+            {
+                BtnDelete.setEnabled(false);
+                BtnView.setEnabled(false);
+            }
+    }
 
     private boolean validateThis() {
         String regex = "\\d{10}";

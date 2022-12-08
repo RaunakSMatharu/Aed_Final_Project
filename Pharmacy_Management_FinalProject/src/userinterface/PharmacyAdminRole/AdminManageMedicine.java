@@ -4,6 +4,7 @@
  */
 package userinterface.PharmacyAdminRole;
 
+
 import Business.MedicineItems.MedicineItem;
 import Business.Orders.Orders;
 import Business.Pharmacy.Pharmacy;
@@ -11,7 +12,6 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author ruchikapadiwala
@@ -193,11 +193,12 @@ public class AdminManageMedicine extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+
     }//GEN-LAST:event_btnManageActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        btnCreate.setEnabled(false);
+       btnCreate.setEnabled(false);
         txtName.setEnabled(true);
         jSpinPrice.setEnabled(true);
         btnSubmit.setEnabled(true);

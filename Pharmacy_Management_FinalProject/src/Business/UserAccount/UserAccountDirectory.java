@@ -4,6 +4,9 @@
  */
 package Business.UserAccount;
 
+import Business.Employee.Employee;
+import Business.Role.Role;
+import Business.SupplierEmp.SupplierEmp;
 import java.util.ArrayList;
 
 /**
@@ -23,22 +26,42 @@ public class UserAccountDirectory {
         return userAccountList;
     }
     
-    public void authenticateUser(){
+    public UserAccount authenticateUser(String username, String password){
+        for (UserAccount ua : userAccountList)
+            if (ua.getUsername().equals(username) && ua.getPassword().equals(password)){
+                return ua;
+            }
+        return null;
         
     }
     
-    public UserAccount createUserAccount(){
-        UserAccount userAccount = new UserAccount();
-        
-        
+    public UserAccount createUserAccount(String username, String password, Employee employee,Role role){
+       UserAccount userAccount = new UserAccount();
+        userAccount.setUsername(username);
+        userAccount.setPassword(password);
+        userAccount.setEmployee(employee);
+        // userAccount.setSupplierEmp(supplierEmp);
+        userAccount.setRole(role);
+        userAccountList.add(userAccount);
         return userAccount;
     }
     
    
+    public boolean checkIfUsernameIsUnique(String username){
+        for (UserAccount ua : userAccountList){
+            if (ua.getUsername().equals(username))
+                return false;
+        }
+        return true;
+    }
 
-    public void findEmployee()
+    public UserAccount findEmployee(Employee employee)
     {
-        
+        for (UserAccount ua : userAccountList)
+            if (ua.getEmployee() == employee){
+                return ua;
+            }
+        return null;
     }
     
     /*public UserAccount findSupplierEmp(SupplierEmp supplierEmp)

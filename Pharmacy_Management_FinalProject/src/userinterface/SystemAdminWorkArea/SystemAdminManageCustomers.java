@@ -6,12 +6,20 @@
 package userinterface.SystemAdminWorkArea;
 
 
+import Business.Customer.Customer;
+import Business.DeliveryMan.DeliveryMan;
+import Business.EcoSystem;
+import Business.Employee.Employee;
+import Business.Role.AdminRole;
+import Business.Role.CustomerRole;
+import Business.Role.DeliveryManRole;
+import Business.SupplierEmp.SupplierEmp;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author Home
@@ -21,9 +29,14 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
     /**
      * Creates new form SystemAdminManageCustomers
      */
+    private JPanel userProcessContainerSAMC;
+    private EcoSystem ecosystem;
    
-    public SystemAdminManageCustomers() {
+    public SystemAdminManageCustomers(JPanel userProcessContainer, EcoSystem ecosystem) {
        
+        initComponents();
+        this.userProcessContainerSAMC = userProcessContainer;
+        this.ecosystem = ecosystem;
         
         txtUsernameSAMC.setEnabled(false);
         txtPasswordSAMC.setEnabled(false);
@@ -247,18 +260,61 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackSAMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSAMCActionPerformed
-        // TODO add your handling code here:
-       
+      // TODO add your handling code here:
+        userProcessContainerSAMC.remove(this);
+        Component[] componentArray = userProcessContainerSAMC.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SystemAdminWorkAreaJPanel dwjp = (SystemAdminWorkAreaJPanel) component;
+        //dwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainerSAMC.getLayout();
+        layout.previous(userProcessContainerSAMC);
     }//GEN-LAST:event_btnBackSAMCActionPerformed
 
     private void btnSubmitSAMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitSAMCActionPerformed
         // TODO add your handling code here:
+        if(validateThisSAMC())
+        {
+            Employee e = ecosystem.getEmployeeDirectory().createEmployee(txtNameSAMC.getText(), txtAddressSAMC.getText(), txtPhoneSAMC.getText());
+           // SupplierEmp se = ecosystem.getSupplierEmpDirectory().createSupplierEmp(txtNameSAMC.getText(), txtAddressSAMC.getText(), txtPhoneSAMC.getText());
+
+            UserAccount ua = ecosystem.getUserAccountDirectory().createUserAccount(txtUsernameSAMC.getText(), txtPasswordSAMC.getText(), e, new CustomerRole());
+            if(ua != null)
+            {
+                Customer c = ecosystem.getCustomerDirectory().createCustomer(txtNameSAMC.getText(), txtAddressSAMC.getText(), txtPhoneSAMC.getText());
+                JOptionPane.showMessageDialog(null, "Customer account created successfully for " + c.getName());
+                populateTable();
+                btnNewCustomerSAMC.setEnabled(true);
+                txtUsernameSAMC.setText("");
+                txtUsernameSAMC.setEnabled(false);
+                txtPasswordSAMC.setText("");
+                txtPasswordSAMC.setEnabled(false);
+                txtRePasswordSAMC.setText("");
+                txtRePasswordSAMC.setEnabled(false);
+                txtNameSAMC.setText("");
+                txtNameSAMC.setEnabled(false);
+                txtPhoneSAMC.setText("");
+                txtPhoneSAMC.setEnabled(false);
+                txtAddressSAMC.setText("");
+                txtAddressSAMC.setEnabled(false);
+                btnSubmitSAMC.setEnabled(false);
+            }
+            else
+            {
+                ecosystem.getEmployeeDirectory().deleteEmployee(e);
+                JOptionPane.showMessageDialog(null,"Username " + txtUsernameSAMC.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }
+        else
+        {
+            return;
+        }
        
     }//GEN-LAST:event_btnSubmitSAMCActionPerformed
 
     private void tblProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProfileMouseClicked
         // TODO add your handling code here:
-        int selectedRow = tblProfile.getSelectedRow();
+       int selectedRow = tblProfile.getSelectedRow();
         if (selectedRow >= 0)
         {
             btnDeleteSAMC.setEnabled(true);
@@ -271,30 +327,39 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         int selectedRow = tblProfile.getSelectedRow();
         if (selectedRow >= 0)
         {
-           
+            Customer selectedCustomer = (Customer) tblProfile.getValueAt(selectedRow, 1);
+            SystemAdminUpdateCustomer fs = new SystemAdminUpdateCustomer(userProcessContainerSAMC, selectedCustomer, ecosystem);
+            userProcessContainerSAMC.add("SysAdminUpdateEmployees", fs);
+            CardLayout layout = (CardLayout) userProcessContainerSAMC.getLayout();
+            layout.next(userProcessContainerSAMC);
         }
         else
         {
-            
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
         }
     }//GEN-LAST:event_btnManageSAMCActionPerformed
 
     private void btnDeleteSAMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteSAMCActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tblProfile.getSelectedRow();
+       int selectedRow = tblProfile.getSelectedRow();
         if (selectedRow >= 0)
         {
-            
+            Customer selectedCustomer = (Customer) tblProfile.getValueAt(selectedRow, 1);
+            ecosystem.getCustomerDirectory().deleteCustomer(selectedCustomer);
+            JOptionPane.showMessageDialog(null, "Customer " + selectedCustomer.getName()+ " deleted successfully!");
+            populateTable();
         }
         else
         {
-            
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
         }
     }//GEN-LAST:event_btnDeleteSAMCActionPerformed
 
     private void btnNewCustomerSAMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewCustomerSAMCActionPerformed
         // TODO add your handling code here:
-        btnNewCustomerSAMC.setEnabled(false);
+         btnNewCustomerSAMC.setEnabled(false);
         txtUsernameSAMC.setEnabled(true);
         txtPasswordSAMC.setEnabled(true);
         txtRePasswordSAMC.setEnabled(true);
@@ -341,7 +406,23 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
-        
+         DefaultTableModel dtmSAMC = (DefaultTableModel)tblProfile.getModel();
+        dtmSAMC.setRowCount(0);
+        if(ecosystem.getCustomerDirectory().getCustomerList() != null)
+        {
+            for(Customer c: ecosystem.getCustomerDirectory().getCustomerList())
+            {
+                Object[] row = new Object[dtmSAMC.getColumnCount()];
+                row[0]= c.getId();
+                row[1]= c;
+                dtmSAMC.addRow(row);
+            }
+        }
+        if(dtmSAMC.getRowCount() == 0)
+            {
+                btnDeleteSAMC.setEnabled(false);
+                btnManageSAMC.setEnabled(false);
+            }
     }
 
     private boolean validateThisSAMC() {

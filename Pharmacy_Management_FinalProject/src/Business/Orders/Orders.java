@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Business.Orders;
+
 import Business.Customer.Customer;
 import Business.DeliveryMan.DeliveryMan;
 import Business.MedicineItems.MedicineItem;
@@ -23,7 +24,7 @@ public class Orders {
     private String message;
     private boolean status;
     
-     public Orders() {
+    public Orders() {
         orderId = count;
         count++;
         this.orderDate = LocalDateTime.now();
@@ -105,5 +106,5 @@ public class Orders {
     public String toString() {
         return Integer.toString(orderId);
     }   
-    
+  
 }

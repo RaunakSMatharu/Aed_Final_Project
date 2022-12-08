@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author ruchikapadiwala
@@ -30,7 +29,7 @@ public class PharmacyOrderAction extends javax.swing.JPanel {
     SupplierOrders supplierOrders;
     int totalAmount = 0;
     
-    ArrayList<SupplierMedicineItem> cart = new ArrayList<SupplierMedicineItem>();
+   ArrayList<SupplierMedicineItem> cart = new ArrayList<SupplierMedicineItem>();
     
     public PharmacyOrderAction(JPanel userProcessContainer, Pharmacy pharmacy, Supplier supplier) {
         initComponents();
@@ -201,7 +200,7 @@ public class PharmacyOrderAction extends javax.swing.JPanel {
 
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
         // TODO add your handling code here:
-        supplierOrders = supplier.getSupplierOrderDirectory().createNewSupplierOrder(pharma);
+       supplierOrders = supplier.getSupplierOrderDirectory().createNewSupplierOrder(pharma);
         for(SupplierMedicineItem mo : cart)
         {
             supplierOrders.addItem(mo);

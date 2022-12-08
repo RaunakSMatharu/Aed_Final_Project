@@ -5,13 +5,19 @@
  */
 package userinterface.SystemAdminWorkArea;
 
-
+import Business.Customer.Customer;
+import Business.DeliveryMan.DeliveryMan;
+import Business.EcoSystem;
+import Business.Employee.Employee;
+import Business.Pharmacy.Pharmacy;
+import Business.Role.AdminRole;
+import Business.Role.CustomerRole;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author Home
@@ -22,10 +28,15 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
      * Creates new form SystemAdminManagePharmacy
      */
     
+        private JPanel userProcessContainerSAMR;
+    private EcoSystem ecosystem;
+    private String user;
     
-    public SystemAdminManagePharmacy() {
+    public SystemAdminManagePharmacy(JPanel userProcessContainer, EcoSystem ecosystem) {
         initComponents();
-       
+        this.userProcessContainerSAMR = userProcessContainer;
+        this.ecosystem = ecosystem;
+        this.user = user;
         txtNameSAMR.setEnabled(false);
         txtAddressSAMR.setEnabled(false);
 
@@ -186,12 +197,23 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
     private void btnDeleteSAMRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteSAMRActionPerformed
         // TODO add your handling code here:
         int selectedRowSAMR = tblPharmacy.getSelectedRow();
-        
+        if (selectedRowSAMR >= 0)
+        {
+            Pharmacy selectedPharmacy = (Pharmacy) tblPharmacy.getValueAt(selectedRowSAMR, 1);
+            ecosystem.getPharmacyDirectory().deletePharmacy(selectedPharmacy);
+            JOptionPane.showMessageDialog(null, "Pharmacy " + selectedPharmacy.getName()+ " deleted successfully!");
+            populateTable();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_btnDeleteSAMRActionPerformed
 
     private void btnNewPharmacyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewPharmacyActionPerformed
         // TODO add your handling code here:
-        btnNewPharmacy.setEnabled(false);
+         btnNewPharmacy.setEnabled(false);
         txtNameSAMR.setEnabled(true);
         txtAddressSAMR.setEnabled(true);
         btnSubmitSAMR.setEnabled(true);
@@ -199,11 +221,27 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
 
     private void txtAddressSAMRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressSAMRActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtAddressSAMRActionPerformed
 
     private void btnSubmitSAMRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitSAMRActionPerformed
         // TODO add your handling code here:
-        
+         Pharmacy p = ecosystem.getPharmacyDirectory().createPharmacy(txtNameSAMR.getText(), txtAddressSAMR.getText());
+        if(p == null)
+        {
+            JOptionPane.showMessageDialog(null,"Pharmacy " + txtNameSAMR.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Pharmacy created successfully as " + p.getName());
+            btnNewPharmacy.setEnabled(true);
+            txtNameSAMR.setEnabled(false);
+            txtAddressSAMR.setEnabled(false);
+            btnSubmitSAMR.setEnabled(false);
+            txtNameSAMR.setText("");
+            txtAddressSAMR.setText("");
+        }
         populateTable();
     }//GEN-LAST:event_btnSubmitSAMRActionPerformed
 
@@ -212,7 +250,11 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
         int selectedRow = tblPharmacy.getSelectedRow();
         if (selectedRow >= 0)
         {
-           
+            Pharmacy selectedPharmacy = (Pharmacy) tblPharmacy.getValueAt(selectedRow, 1);
+            SystemManageEmployees fs = new SystemManageEmployees(userProcessContainerSAMR, selectedPharmacy, ecosystem);
+            userProcessContainerSAMR.add("SysAdminManageEmployees", fs);
+            CardLayout layout = (CardLayout) userProcessContainerSAMR.getLayout();
+            layout.next(userProcessContainerSAMR);
         }
         else
         {
@@ -223,7 +265,13 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
 
     private void btnBackSAMRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSAMRActionPerformed
         // TODO add your handling code here:
-        
+         userProcessContainerSAMR.remove(this);
+        Component[] componentArray = userProcessContainerSAMR.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SystemAdminWorkAreaJPanel dwjp = (SystemAdminWorkAreaJPanel) component;
+        //dwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainerSAMR.getLayout();
+        layout.previous(userProcessContainerSAMR);
     }//GEN-LAST:event_btnBackSAMRActionPerformed
 
     private void tblPharmacyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPharmacyMouseClicked

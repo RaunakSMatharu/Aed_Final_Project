@@ -4,28 +4,32 @@
  */
 package Business.SupplierOrders;
 
+import Business.Customer.Customer;
+import Business.Orders.Orders;
+import Business.Pharmacy.Pharmacy;
 import java.util.ArrayList;
-
 /**
  *
  * @author HOME
  */
 public class SupplierOrdersDirectory {
-      private ArrayList<Business.SupplierOrders.SupplierOrders> supplierOrderList;
+      
+     private ArrayList<SupplierOrders> supplierOrderList;
     
     public SupplierOrdersDirectory() {
         supplierOrderList = new ArrayList();
     }
 
-    public ArrayList<Business.SupplierOrders.SupplierOrders> getSupplierOrderList() {
+    public ArrayList<SupplierOrders> getSupplierOrderList() {
         return supplierOrderList;
     }
     
-    public Business.SupplierOrders.SupplierOrders createNewSupplierOrder()
+    public SupplierOrders createNewSupplierOrder(Pharmacy pharma)
     {
-        Business.SupplierOrders.SupplierOrders supplierOrders = new Business.SupplierOrders.SupplierOrders();
-        
+        SupplierOrders supplierOrders = new SupplierOrders();
+        supplierOrders.setPharmacy(pharma);
+        supplierOrderList.add(supplierOrders);
+        pharma.getPastSupplierOrderList().add(supplierOrders);
         return supplierOrders;
     }    
-    
 }

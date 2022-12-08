@@ -3,18 +3,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package userinterface.SupplierAdminRole;
-
+import Business.Supplier.Supplier;
+import Business.SupplierMedicineItem.SupplierMedicineItem;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 /**
  *
  * @author Raunak Singh Matharu
  */
 public class AdminUpdateSupplierMedicineItem extends javax.swing.JPanel {
-
+JPanel userProcessContainer;
+    Supplier supplier;
+    SupplierMedicineItem supplierMedicineItem;
     /**
      * Creates new form AdminUpdateSupplierMedicineItem
      */
-    public AdminUpdateSupplierMedicineItem() {
+    public AdminUpdateSupplierMedicineItem(JPanel userProcessContainer, SupplierMedicineItem smi) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.supplierMedicineItem = smi;
+        txtName.setText(smi.getName());
+        jSpinPrice.setValue(smi.getPrice());
     }
 
     /**
@@ -89,11 +100,26 @@ public class AdminUpdateSupplierMedicineItem extends javax.swing.JPanel {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
+         if((Integer)jSpinPrice.getValue() > 0)
+        {
+            supplierMedicineItem.setPrice((Integer)jSpinPrice.getValue());
+            JOptionPane.showMessageDialog(null, "Medicine " + supplierMedicineItem.getName()+ " updated successfully!");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Price must be greater than 0!", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        AdminManageSupplierMedicine dwjp = (AdminManageSupplierMedicine) component;
+        dwjp.populateTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
 

@@ -3,18 +3,40 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package userinterface.SupplierAdminRole;
-
+import Business.Supplier.Supplier;
+import Business.SupplierDeliveryMan.SupplierDeliveryMan;
+import Business.SupplierOrders.SupplierOrders;
+import java.awt.CardLayout;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Raunak Singh Matharu
  */
 public class AdminManageSupplierOrders extends javax.swing.JPanel {
-
+        JPanel userProcessContainer;
+        Supplier supplier;
     /**
      * Creates new form AdminManageSupplierOrders
      */
-    public AdminManageSupplierOrders() {
+    public AdminManageSupplierOrders(JPanel userProcessContainer, Supplier supplier) {
         initComponents();
+         this.userProcessContainer = userProcessContainer;
+        this.supplier = supplier;
+        btnAssignDeliveryMan.setEnabled(false);
+        comboSupplierDeliveryMen.setEnabled(false);
+       
+        valueLabel.setText(supplier.getName());
+        populateTable();
+        comboSupplierDeliveryMen.addItem("");
+        System.out.println(supplier.getSupplierDeliveryManDirectory().getSupplierDeliveryManList().size());
+        for(SupplierDeliveryMan sdm : supplier.getSupplierDeliveryManDirectory().getSupplierDeliveryManList())
+        {
+            System.out.println(sdm.getName());
+            comboSupplierDeliveryMen.addItem(sdm.getName());
+        }
     }
 
     /**
@@ -128,21 +150,66 @@ public class AdminManageSupplierOrders extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-   
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void tblOrdersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOrdersMouseClicked
         // TODO add your handling code here:
+          int selectedRow = tblOrders.getSelectedRow();
+        if (selectedRow >= 0)
+        {
+            comboSupplierDeliveryMen.setEnabled(true);
+            btnDelete.setEnabled(true);
+            btnAssignDeliveryMan.setEnabled(true);
+        }
+
        
     }//GEN-LAST:event_tblOrdersMouseClicked
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-       
+       int selectedRow = tblOrders.getSelectedRow();
+        if (selectedRow >= 0)
+        {
+            SupplierOrders supplierOrders = (SupplierOrders) tblOrders.getValueAt(selectedRow, 0);
+            supplier.deleteOrder(supplierOrders);
+            JOptionPane.showMessageDialog(null, "Order deleted successfully!");
+            populateTable();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnAssignDeliveryManActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignDeliveryManActionPerformed
         // TODO add your handling code here:
+        int selectedRow = tblOrders.getSelectedRow();
+        if (selectedRow >= 0)
+        {
+            SupplierOrders supplierOrders = (SupplierOrders) tblOrders.getValueAt(selectedRow, 0);
+            if(comboSupplierDeliveryMen.getSelectedItem() != "")
+            {
+                String dmName = comboSupplierDeliveryMen.getSelectedItem().toString();
+                SupplierDeliveryMan sdm = supplier.findSupplierDeliveryMan(dmName);
+                supplierOrders.setSupplierDeliveryMan(sdm);
+                JOptionPane.showMessageDialog(null, "Delivery man assigned successfully!");
+                populateTable();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Please select a delivery man!", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_btnAssignDeliveryManActionPerformed
 
 
@@ -158,4 +225,37 @@ public class AdminManageSupplierOrders extends javax.swing.JPanel {
     private javax.swing.JTable tblOrders;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
+private void populateTable() {
+       DefaultTableModel dtm = (DefaultTableModel)tblOrders.getModel();
+        dtm.setRowCount(0);
+        if(supplier.getSupplierOrderDirectory().getSupplierOrderList() != null)
+        {
+            for(SupplierOrders supplierOrders : supplier.getSupplierOrderDirectory().getSupplierOrderList())
+            {
+                if(!supplierOrders.isStatus() && supplierOrders.getPharmacy()!= null)
+                {
+                    Object[] row = new Object[dtm.getColumnCount()];
+                    row[0] = supplierOrders;
+                    row[1] = supplierOrders.getPharmacy().getName();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                    row[2] = supplierOrders.getOrderDate().format(formatter);
+                    if(supplierOrders.getSupplierDeliveryMan() == null)
+                    {
+                        row[3] = "";
+                    }
+                    else
+                    {
+                        row[3] = supplierOrders.getSupplierDeliveryMan().getName();
+                    }
+                    dtm.addRow(row);
+                }
+            }
+        }
+        if(dtm.getRowCount() == 0)
+            {
+                comboSupplierDeliveryMen.setEnabled(false);
+                btnAssignDeliveryMan.setEnabled(false);
+            }
+    }
 }
+

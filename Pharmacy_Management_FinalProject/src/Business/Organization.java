@@ -15,15 +15,14 @@ import java.util.ArrayList;
  * @author Raunak Singh Matharu
  */
 public abstract class Organization {
-    private String name;
+   private String name;
     private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     // private SupplierEmpDirectory supplierEmpDirectory;
     private UserAccountDirectory userAccountDirectory;
     private int organizationID;
     private static int counter=0;
-    
-    public enum Type{
+     public enum Type{
         PharmacyAdmin("PharmacyAdmin"),
         Customer("Customer"),
         DeliveryMan("Delivery"),
@@ -91,5 +90,4 @@ public abstract class Organization {
     public String toString() {
         return name;
     }
-    
 }

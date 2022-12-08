@@ -4,7 +4,6 @@
  */
 package userinterface.PharmacyAdminRole;
 
-
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Pharmacy.Pharmacy;

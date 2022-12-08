@@ -4,13 +4,24 @@
  */
 package userinterface;
 
+import Business.ConfigureASystem;
+import Business.Customer.Customer;
+import Business.EcoSystem;
+import Business.DB4OUtil.DB4OUtil;
+import Business.Employee.Employee;
 
-
-
-
+import Business.Organization;
+import Business.Role.CustomerRole;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import userinterface.CustomerRole.CustomerAreaJPanel;
+import userinterface.DeliveryManRole.DeliveryManWorkAreaJPanel;
+import userinterface.PharmacyAdminRole.AdminWorkAreaJPanel;
+import userinterface.SupplierAdminRole.SupplierAdminWorkAreaJPanel;
+import userinterface.SupplierDeliveryManRole.SupplierDeliveryManWorkArea;
+import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 
 /**
  *
@@ -21,11 +32,13 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    
+    private EcoSystem system;
+    private UserAccount user;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
 
     public MainJFrame() {
         initComponents();
-        
+        system = dB4OUtil.retrieveSystem();
         this.setSize(1680, 1050);
     }
 
@@ -148,7 +161,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
-         // Get user name
+    // Get user name
        user = system.getUserAccountDirectory().authenticateUser(txtUserName.getText(), String.valueOf(txtPassword.getPassword()));
        if(user==null)
        {
@@ -194,8 +207,8 @@ public class MainJFrame extends javax.swing.JFrame {
                 txtUserName.setEnabled(false);
                 txtPassword.setEnabled(false);
                 logoutJButton.setEnabled(true);
-              //  SupplierAdminWorkAreaJPanel sawa = new SupplierAdminWorkAreaJPanel(container, user, system);
-              //  container.add("SupplierAdminPanel",sawa);
+                SupplierAdminWorkAreaJPanel sawa = new SupplierAdminWorkAreaJPanel(container, user, system);
+                container.add("SupplierAdminPanel",sawa);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
                 cardlayout.next(container);
            }
@@ -207,8 +220,8 @@ public class MainJFrame extends javax.swing.JFrame {
                 txtUserName.setEnabled(false);
                 txtPassword.setEnabled(false);
                 logoutJButton.setEnabled(true);
-                //CustomerAreaJPanel cajp = new CustomerAreaJPanel(container, user, system);
-                //container.add("CustomerPanel",cajp);
+                CustomerAreaJPanel cajp = new CustomerAreaJPanel(container, user, system);
+                container.add("CustomerPanel",cajp);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
                 cardlayout.next(container);
            }
@@ -220,8 +233,8 @@ public class MainJFrame extends javax.swing.JFrame {
                 txtUserName.setEnabled(false);
                 txtPassword.setEnabled(false);
                 logoutJButton.setEnabled(true);
-               // SupplierDeliveryManWorkArea cajp = new SupplierDeliveryManWorkArea(container, user, system);
-              //  container.add("CustomerPanel",cajp);
+                SupplierDeliveryManWorkArea cajp = new SupplierDeliveryManWorkArea(container, user, system);
+                container.add("CustomerPanel",cajp);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
                 cardlayout.next(container);
            }
@@ -236,14 +249,14 @@ public class MainJFrame extends javax.swing.JFrame {
                 System.out.println("Container........." + container);
                 System.out.println("user........." + user);
                 System.out.println("system........." + system);
-                //DeliveryManWorkAreaJPanel dmwajp = new DeliveryManWorkAreaJPanel(container, user, system);
+                DeliveryManWorkAreaJPanel dmwajp = new DeliveryManWorkAreaJPanel(container, user, system);
                 
-              //  container.add("DeliveryPanel",dmwajp);
+                container.add("DeliveryPanel",dmwajp);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
                 cardlayout.next(container);
            }
        }
-       
+
     }//GEN-LAST:event_loginJButtonActionPerformed
 
     private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed
@@ -260,6 +273,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
+        dB4OUtil.storeSystem(system);
         
     }//GEN-LAST:event_logoutJButtonActionPerformed
 
@@ -267,7 +281,7 @@ public class MainJFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-         
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

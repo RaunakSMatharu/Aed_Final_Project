@@ -3,32 +3,89 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package userinterface.DeliveryManRole;
-
 import Business.DeliveryMan.DeliveryMan;
 import Business.EcoSystem;
+import Business.Employee.Employee;
+import Business.Orders.Orders;
 import Business.Pharmacy.Pharmacy;
+
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
+
 
 /**
  *
  * @author Raunak Singh Matharu
  */
 public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
-
-    private JPanel userProcessContainer;
+  private JPanel userProcessContainer;
     private EcoSystem business;
     private UserAccount userAccount;
     private Pharmacy pharmacy;
     private DeliveryMan deliveryMan;
     
+    
     /**
      * Creates new form DeliveryManWorkAreaJPanel
      */
-    public DeliveryManWorkAreaJPanel() {
+    public DeliveryManWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.business = business;
+        
+        for(Pharmacy p : business.getPharmacyDirectory().getPharmacyList())
+        {
+            if(p.findDeliveryMan(account.getEmployee().getName()) != null)
+            {
+                this.deliveryMan = p.findDeliveryMan(account.getEmployee().getName());
+                this.pharmacy = p;
+                break;
+            }
+        }
+        lblDeliveryMan.setText("Orders to be delivered by " + this.deliveryMan);
+        
+//        if(workRequestJTable.getRowCount() > 0)
+//        {
+            populateTable();
+//        }
     }
-
+    public void populateTable(){
+        if(pharmacy.getOrderDirectory() != null)
+        {
+            DefaultTableModel dtm = (DefaultTableModel)workRequestJTable.getModel();
+            dtm.setRowCount(0);
+            for(Orders o : pharmacy.getOrderDirectory().getOrderList())
+            {
+                if(o.getDeliveryMan().equals(deliveryMan))
+                {
+                    Object[] row = new Object[dtm.getColumnCount()];
+                    row[0] = o;
+                    row[1] = o.getTotalAmount();
+                    row[2] = o.getMessage();
+                    row[3] = o.getDeliveryMan();
+                    if(o.isStatus())
+                    {
+                        row[4] = "Yes";
+                    }
+                    else
+                    {
+                        row[4] = "No";
+                    }
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                    row[5] = o.getOrderDate().format(formatter);
+                    dtm.addRow(row);
+                }
+            }
+        }        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -126,12 +183,12 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
         if(workRequestJTable.getRowCount() > 0)
         {
-       //     populateTable();
-         //   JOptionPane.showMessageDialog(null, "Table refreshed!");
+            populateTable();
+            JOptionPane.showMessageDialog(null, "Table refreshed!");
         }
         else
         {
-         //   JOptionPane.showMessageDialog(null,"Nothing to refresh!", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Nothing to refresh!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
@@ -142,22 +199,22 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         {
             if((workRequestJTable.getValueAt(selectedRow, 1)) == null)
             {
-           //     JOptionPane.showMessageDialog(null,"Order is not live anymore!", "Warning", JOptionPane.WARNING_MESSAGE);
-        //        return;
+                JOptionPane.showMessageDialog(null,"Order is not live anymore!", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
             }
             else
             {
-          //      Orders o = (Orders) workRequestJTable.getValueAt(selectedRow, 0);
-          //      ProcessWorkRequestJPanel fs = new ProcessWorkRequestJPanel(userProcessContainer, o);
-          //      userProcessContainer.add("SysAdminManageEmployees", fs);
-          //      CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-          //      layout.next(userProcessContainer);
+                Orders o = (Orders) workRequestJTable.getValueAt(selectedRow, 0);
+                ProcessWorkRequestJPanel fs = new ProcessWorkRequestJPanel(userProcessContainer, o);
+                userProcessContainer.add("SysAdminManageEmployees", fs);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.next(userProcessContainer);
             }
         }
         else
         {
-         //   JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
-        //    return;
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
         }
     }//GEN-LAST:event_processJButtonActionPerformed
 

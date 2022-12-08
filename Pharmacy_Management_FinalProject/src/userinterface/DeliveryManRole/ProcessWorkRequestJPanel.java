@@ -3,6 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package userinterface.DeliveryManRole;
+import Business.Orders.Orders;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JPanel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -10,11 +15,17 @@ package userinterface.DeliveryManRole;
  */
 public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
+    JPanel userProcessContainer;
+    Orders orders;
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
-    public ProcessWorkRequestJPanel() {
+    public ProcessWorkRequestJPanel(JPanel userProcessContainer, Orders o) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.orders = o;
+        comboStatus.addItem("Delivered");
+        comboStatus.addItem("Not Delivered");        
     }
 
     /**
@@ -73,7 +84,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
-        /*switch(comboStatus.getSelectedIndex())
+        switch(comboStatus.getSelectedIndex())
         {
             case 0 : orders.setStatus(true);
             break;
@@ -84,11 +95,11 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         System.out.println(orders.isStatus());
         System.out.println(orders.getTotalAmount());
         JOptionPane.showMessageDialog(null, "Order status updated successfully!");
-*/
+
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-/*
+
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
@@ -96,7 +107,6 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         dwjp.populateTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-*/
     }//GEN-LAST:event_backJButtonActionPerformed
 
 

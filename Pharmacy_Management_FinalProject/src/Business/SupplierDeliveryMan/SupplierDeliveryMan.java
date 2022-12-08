@@ -9,8 +9,7 @@ package Business.SupplierDeliveryMan;
  * @author HOME
  */
 public class SupplierDeliveryMan {
-    
-  private String name;
+ private String name;
     private String phone;
     private String address;
     private int id;
@@ -55,6 +54,9 @@ public class SupplierDeliveryMan {
         this.address = address;
     }    
 
+  
+
+  
   
     
 }

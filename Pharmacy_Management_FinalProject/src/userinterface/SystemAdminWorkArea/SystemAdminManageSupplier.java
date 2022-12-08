@@ -5,7 +5,9 @@
  */
 package userinterface.SystemAdminWorkArea;
 
-
+import Business.EcoSystem;
+import Business.Supplier.Supplier;
+import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -20,11 +22,14 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
     /**
      * Creates new form SystemAdminManageSupplier
      */
-    
+     private JPanel userProcessContainerSMR;
+    private EcoSystem ecosystem;
     private String user;
-    public SystemAdminManageSupplier() {
+    public SystemAdminManageSupplier(JPanel userProcessContainer, EcoSystem ecosystem) {
         initComponents();
-        
+        this.userProcessContainerSMR = userProcessContainer;
+        this.ecosystem = ecosystem;
+        this.user = user;
         txtSupplierName.setEnabled(false);
         txtAddress.setEnabled(false);
 
@@ -166,13 +171,25 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
+
         int selectedRowSAMR = tblSupplier.getSelectedRow();
-        
+        if (selectedRowSAMR >= 0)
+        {
+            Supplier selectedSupplier = (Supplier) tblSupplier.getValueAt(selectedRowSAMR, 1);
+            ecosystem.getSupplierDirectory().deleteSupplier(selectedSupplier);
+            JOptionPane.showMessageDialog(null, "Supplier " + selectedSupplier.getName()+ " deleted successfully!");
+            populateTable();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        btnCreate.setEnabled(false);
+       btnCreate.setEnabled(false);
         txtSupplierName.setEnabled(true);
         txtAddress.setEnabled(true);
         btnSubmit.setEnabled(true);
@@ -180,18 +197,52 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-       
+        Supplier s = ecosystem.getSupplierDirectory().createSupplier(txtSupplierName.getText(), txtAddress.getText());
+        if(s == null)
+        {
+            JOptionPane.showMessageDialog(null,"Supplier " + txtSupplierName.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Supplier created successfully as " + s.getName());
+            btnCreate.setEnabled(true);
+            txtSupplierName.setEnabled(false);
+            txtAddress.setEnabled(false);
+            btnSubmit.setEnabled(false);
+            txtSupplierName.setText("");
+            txtAddress.setText("");
+        }
         populateTable();
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-        
+         int selectedRow = tblSupplier.getSelectedRow();
+        if (selectedRow >= 0)
+        {
+            Supplier selectedSupplier = (Supplier) tblSupplier.getValueAt(selectedRow, 1);
+            SystemAdminManageSupplierEmployee se = new SystemAdminManageSupplierEmployee(userProcessContainerSMR, selectedSupplier, ecosystem);
+            userProcessContainerSMR.add("SysAdminManageEmployees", se);
+            CardLayout layout = (CardLayout) userProcessContainerSMR.getLayout();
+            layout.next(userProcessContainerSMR);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-       
+        userProcessContainerSMR.remove(this);
+        Component[] componentArray = userProcessContainerSMR.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SystemAdminWorkAreaJPanel dwjp = (SystemAdminWorkAreaJPanel) component;
+        //dwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainerSMR.getLayout();
+        layout.previous(userProcessContainerSMR);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void tblSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSupplierMouseClicked
@@ -224,7 +275,24 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
  
     private void populateTable() {
-       
-        
+        DefaultTableModel dtm = (DefaultTableModel)tblSupplier.getModel();
+        dtm.setRowCount(0);
+        int count1 = 1;
+        if(ecosystem.getSupplierDirectory().getSupplierList()!= null)
+        {
+            for(Supplier s : ecosystem.getSupplierDirectory().getSupplierList())
+            {
+                Object[] row = new Object[dtm.getColumnCount()];
+                row[0] = s.getId();
+                row[1] = s;
+                row[2] = s.getAddress();
+                dtm.addRow(row);
+                count1++;
+            }
+        }
+        else
+        {
+            tblSupplier.setEnabled(false);
+        }
     }
 }

@@ -4,8 +4,14 @@
  * and open the template in the editor.
  */
 package userinterface.SystemAdminWorkArea;
-
-
+import Business.Customer.Customer;
+import Business.DeliveryMan.DeliveryMan;
+import Business.EcoSystem;
+import Business.Employee.Employee;
+import Business.Role.AdminRole;
+import Business.Role.CustomerRole;
+import Business.Role.DeliveryManRole;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -21,10 +27,17 @@ public class SystemAdminUpdateCustomer extends javax.swing.JPanel {
     /**
      * Creates new form SystemAdminUpdateCustomer
      */
-    
-    public SystemAdminUpdateCustomer() {
+    private JPanel userProcessContainerSAUC;
+    private EcoSystem ecosystemSAUC;
+    private Customer customerSAUC;
+    public SystemAdminUpdateCustomer(JPanel userProcessContainer, Customer customer, EcoSystem ecosystem) {
         initComponents();
-        
+        this.userProcessContainerSAUC = userProcessContainer;
+        this.customerSAUC = customer;
+        this.ecosystemSAUC = ecosystem;;
+        txtNameSAUC.setText(customer.getName());
+        txtPhoneSAUC.setText(customer.getPhone());
+        txtAddressSAUC.setText(customer.getAddress());
         
     }
 
@@ -119,17 +132,22 @@ public class SystemAdminUpdateCustomer extends javax.swing.JPanel {
 
     private void btnBackSAUCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSAUCActionPerformed
         // TODO add your handling code here:
-        
+        userProcessContainerSAUC.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainerSAUC.getLayout();
+        layout.previous(userProcessContainerSAUC);
     }//GEN-LAST:event_btnBackSAUCActionPerformed
 
     private void btnSubmitSAUCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitSAUCActionPerformed
         // TODO add your handling code here:
         if(validateThisSAUC())
         {
-            }
+            customerSAUC.setAddress(txtAddressSAUC.getText());
+            customerSAUC.setPhone(txtPhoneSAUC.getText());
+            JOptionPane.showMessageDialog(null, "Details for " + customerSAUC.getName()+ " updated successfully!");
+        }
         else
         {
-            
+            return;
         }
     }//GEN-LAST:event_btnSubmitSAUCActionPerformed
 
@@ -147,7 +165,7 @@ public class SystemAdminUpdateCustomer extends javax.swing.JPanel {
     private javax.swing.JTextField txtPhoneSAUC;
     // End of variables declaration//GEN-END:variables
 
-    private boolean validateThisSAUC() {
+     private boolean validateThisSAUC() {
         String regex = "\\d{10}";
         if(("".equals(txtPhoneSAUC.getText())) || ("".equals(txtAddressSAUC.getText())))
         {

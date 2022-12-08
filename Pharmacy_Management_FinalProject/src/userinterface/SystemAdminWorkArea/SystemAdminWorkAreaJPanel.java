@@ -4,13 +4,20 @@
  * and open the template in the editor.
  */
 package userinterface.SystemAdminWorkArea;
+import Business.Customer.Customer;
+import Business.EcoSystem;
+import Business.Employee.Employee;
+import Business.MedicineItems.MedicineItem;
 
-
+import Business.Organization;
+import Business.Pharmacy.Pharmacy;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+
 
 /**
  *
@@ -21,10 +28,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form SystemAdminWorkAreaJPanel
      */
-    
-    public SystemAdminWorkAreaJPanel() {
+     JPanel userProcessContainerSAWAP;
+    EcoSystem ecosystemSAWAP;
+    public SystemAdminWorkAreaJPanel(JPanel userProcessContainer,EcoSystem ecosystem) {
         initComponents();
-        
+        this.userProcessContainerSAWAP = userProcessContainer;
+        this.ecosystemSAWAP = ecosystem;
         //populateTree();
     }
     
@@ -180,16 +189,25 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageCustomersSAWAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageCustomersSAWAPActionPerformed
-        
+        SystemAdminManageCustomers uc = new SystemAdminManageCustomers(userProcessContainerSAWAP, ecosystemSAWAP);
+        userProcessContainerSAWAP.add("UserCustomer", uc);
+        CardLayout layout = (CardLayout)this.userProcessContainerSAWAP.getLayout();
+        layout.next(userProcessContainerSAWAP);
     }//GEN-LAST:event_btnManageCustomersSAWAPActionPerformed
 
     private void btnManagePharmacySAWAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePharmacySAWAPActionPerformed
-        
+        SystemAdminManagePharmacy um = new SystemAdminManagePharmacy(userProcessContainerSAWAP, ecosystemSAWAP);
+        userProcessContainerSAWAP.add("UserManager", um);
+        CardLayout layout = (CardLayout)this.userProcessContainerSAWAP.getLayout();
+        layout.next(userProcessContainerSAWAP);
     }//GEN-LAST:event_btnManagePharmacySAWAPActionPerformed
 
     private void BtnManageSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnManageSupplierActionPerformed
         // TODO add your handling code here:
-       
+        SystemAdminManageSupplier ms = new SystemAdminManageSupplier(userProcessContainerSAWAP, ecosystemSAWAP);
+        userProcessContainerSAWAP.add("UserSupplier", ms);
+        CardLayout layout = (CardLayout)this.userProcessContainerSAWAP.getLayout();
+        layout.next(userProcessContainerSAWAP);
     }//GEN-LAST:event_BtnManageSupplierActionPerformed
 
 

@@ -5,11 +5,13 @@
  */
 package userinterface.SystemAdminWorkArea;
 
-//
+
+import Business.EcoSystem;
+import Business.Employee.Employee;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
 /**
  *
  * @author Home
@@ -20,12 +22,30 @@ public class SystemUpdateSupplierEmployee extends javax.swing.JPanel {
      * Creates new form SystemUpdateSupplierEmployee
      */
     private JPanel userProcessContainerSUE;
-//    private Employee employeeSUE;
-//    private EcoSystem ecosystemSUE;
-//    private UserAccount userSUE;
-    public SystemUpdateSupplierEmployee() {
+    private Employee employeeSUE;
+    private EcoSystem ecosystemSUE;
+    private UserAccount userSUE;
+    
+    public SystemUpdateSupplierEmployee(JPanel userProcessContainer, Employee employee, EcoSystem system) {
         initComponents();
-        
+        this.userProcessContainerSUE = userProcessContainer;
+        this.employeeSUE = employee;
+        this.ecosystemSUE = system;
+        this.userSUE = ecosystemSUE.getUserAccountDirectory().findEmployee(employee);
+        txtUsernameSUE.setText(userSUE.getUsername());
+        txtPasswordSUE.setText(userSUE.getPassword());
+        txtRePasswordSUE.setText(userSUE.getPassword());
+        txtNameSUE.setText(employee.getName());
+        txtPhoneSUE.setText(employee.getPhone());
+        txtAddressSUE.setText(employee.getAddress());
+        if(this.userSUE.getRole().toString().equals("Business.Role.DeliverManRole"))
+        {
+            radioBtnDeliverySUE.setSelected(true);
+        }
+        else
+        {
+            radioBtnManagerSUE.setSelected(true);
+        }
     }
 
     /**
@@ -172,7 +192,17 @@ public class SystemUpdateSupplierEmployee extends javax.swing.JPanel {
 
     private void btnSubmitSUEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitSUEActionPerformed
         // TODO add your handling code here:
-        
+        if(validateThisSUE())
+        {
+            userSUE.setPassword(txtPasswordSUE.getText());
+            employeeSUE.setAddress(txtAddressSUE.getText());
+            employeeSUE.setPhone((txtPhoneSUE.getText()));
+            JOptionPane.showMessageDialog(null, "Details for " + employeeSUE.getName()+ " updated successfully!");
+        }
+        else
+        {
+            return;
+        }
     }//GEN-LAST:event_btnSubmitSUEActionPerformed
 
 

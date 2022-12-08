@@ -3,18 +3,48 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package userinterface.SupplierAdminRole;
+import Business.EcoSystem;
+import Business.Employee.Employee;
+import Business.Pharmacy.Pharmacy;
+import Business.Supplier.Supplier;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import userinterface.PharmacyAdminRole.AdminManageMedicine;
+import userinterface.PharmacyAdminRole.AdminManageOrders;
 
 /**
  *
  * @author Raunak Singh Matharu
  */
 public class SupplierAdminWorkAreaJPanel extends javax.swing.JPanel {
-
+JPanel userProcessContainer;
+    UserAccount user;
+    EcoSystem system;
+    Supplier supplier;
     /**
      * Creates new form SupplierAdminWorkAreaJPanel
      */
-    public SupplierAdminWorkAreaJPanel() {
+    public SupplierAdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount user, EcoSystem system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.user = user;
+        this.system = system;
+        for(Supplier r : system.getSupplierDirectory().getSupplierList())
+        {
+            for(Employee e : r.getEmployeeDirectory().getEmployeeList())
+            {
+                if(user.getEmployee() == e)
+                {
+                    this.supplier = r;
+                    valueLabel.setText(r.getName());
+                }
+            } 
+        }
+        txtName.setText(this.supplier.getName());
+        txtAddress.setText(this.supplier.getAddress());
+      
     }
 
     /**
@@ -146,14 +176,42 @@ public class SupplierAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnViewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderActionPerformed
         // TODO add your handling code here:
+         AdminManageSupplierOrders amo = new AdminManageSupplierOrders(userProcessContainer, supplier);
+        userProcessContainer.add("UserCustomer", amo);
+        CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewOrderActionPerformed
 
     private void btnMedicineManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedicineManageActionPerformed
         // TODO add your handling code here:
+         AdminManageSupplierMedicine amm = new AdminManageSupplierMedicine(userProcessContainer, supplier);
+        userProcessContainer.add("UserCustomer", amm);
+        CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnMedicineManageActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
+         if(("".equals(txtName.getText())) || ("".equals(txtAddress.getText())))
+        {
+            JOptionPane.showMessageDialog(null,"Please fill all values!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else if(txtName.getText() == null ? supplier.getName() != null : !txtName.getText().equals(supplier.getName()))
+        {
+            if(system.getSupplierDirectory().checkIfSupplierIsUnique(txtName.getText()))
+            {
+                supplier.setName(txtName.getText());
+                supplier.setAddress(txtAddress.getText());
+                JOptionPane.showMessageDialog(null, "Supplier details updated!");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Supplier name not unique!", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }
+        valueLabel.setText(supplier.getName());
     }//GEN-LAST:event_btnSubmitActionPerformed
 
 

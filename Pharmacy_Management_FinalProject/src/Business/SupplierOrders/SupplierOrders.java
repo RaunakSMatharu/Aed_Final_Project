@@ -4,17 +4,17 @@
  */
 package Business.SupplierOrders;
 
+import Business.Pharmacy.Pharmacy;
 import Business.SupplierDeliveryMan.SupplierDeliveryMan;
 import Business.SupplierMedicineItem.SupplierMedicineItem;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-
 /**
  *
  * @author HOME
  */
 public class SupplierOrders {
-    
+    private Pharmacy pharmacy;
     private int orderId;
     private LocalDateTime orderDate;
     private static int count = 1;
@@ -33,7 +33,13 @@ public class SupplierOrders {
         this.status = false;
     }
 
-    
+    public Pharmacy getPharmacy() {
+        return pharmacy;
+    }
+
+    public void setPharmacy(Pharmacy pharmacy) {
+        this.pharmacy = pharmacy;
+    }
 
     public ArrayList<SupplierMedicineItem> getSupplierMedicineItemList() {
         return suppliermedicineItemList;

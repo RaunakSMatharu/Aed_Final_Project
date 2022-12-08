@@ -5,6 +5,9 @@
 package userinterface.CustomerRole;
 
 
+import Business.Orders.Orders;
+import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
 
@@ -13,17 +16,22 @@ import javax.swing.JOptionPane;
  * @author Raunak Singh Matharu
  */
 public class RequestLabTestJPanel extends javax.swing.JPanel {
+     private JPanel userProcessContainer;
+    private Orders o;    
 
-    private JPanel userProcessContainer;
+    
    
     /**
      * Creates new form RequestLabTestJPanel
      */
-    public RequestLabTestJPanel() {
+    public RequestLabTestJPanel(JPanel userProcessContainer, Orders o) {
         initComponents();
-        
+           
         this.userProcessContainer = userProcessContainer;
         
+        this.o = o;
+        enterpriseLabel.setText("OrderID: " + o);
+        messageJTextField.setText(o.getMessage());
         
         
     }
@@ -42,7 +50,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         messageJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
@@ -81,14 +89,22 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         enterpriseLabel.setText("<>");
         add(enterpriseLabel);
         enterpriseLabel.setBounds(10, 10, 170, 30);
-        add(jLabel2);
-        jLabel2.setBounds(30, 50, 0, 0);
+        add(jLabel3);
+        jLabel3.setBounds(10, 6, 1400, 780);
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
 
-        
-
+        if(messageJTextField.getText() != "")
+        {
+            o.setMessage(messageJTextField.getText());
+            JOptionPane.showMessageDialog(null, "Message updated successfully");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Message cannot be empty!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -100,14 +116,13 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         dwjp.populateRequestTable();
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-
     }//GEN-LAST:event_backJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField messageJTextField;
     private javax.swing.JButton requestTestJButton;
     // End of variables declaration//GEN-END:variables
