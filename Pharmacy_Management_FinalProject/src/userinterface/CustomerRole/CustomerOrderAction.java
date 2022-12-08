@@ -3,7 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package userinterface.CustomerRole;
-
+import Business.Customer.Customer;
+import Business.MedicineItems.MedicineItem;
+import Business.Orders.Orders;
+import Business.Pharmacy.Pharmacy;
+import java.awt.CardLayout;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Raunak Singh Matharu
@@ -13,8 +21,27 @@ public class CustomerOrderAction extends javax.swing.JPanel {
     /**
      * Creates new form CustomerOrderAction
      */
-    public CustomerOrderAction() {
+    
+    JPanel userProcessContainer;
+    Customer customer;
+    Pharmacy pharma;
+    Orders orders;
+    int totalAmount = 0;
+    
+    ArrayList<MedicineItem> cart = new ArrayList<MedicineItem>();
+    
+    public CustomerOrderAction(JPanel userProcessContainer, Customer customer, Pharmacy pharmacy) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.customer = customer;
+        this.pharma = pharmacy;
+        lblPharmacy.setText("Pharmacy: " +this.pharma.getName());
+        populateMedicine(); 
+        populateOrder();
+        if(tblOrder.getRowCount() <= 0)
+        {
+            btnOrder.setEnabled(false);
+        }
     }
 
     /**
@@ -37,7 +64,6 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         btnOrder = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -150,10 +176,6 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         });
         add(btnBack);
         btnBack.setBounds(30, 360, 60, 40);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (2).png"))); // NOI18N
-        add(jLabel2);
-        jLabel2.setBounds(400, 10, 1070, 790);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblMedicineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMedicineMouseClicked
@@ -167,7 +189,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
 
     private void btnAddItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddItemActionPerformed
         // TODO add your handling code here:
-    /*    int selectedRow = tblMedicine.getSelectedRow();
+        int selectedRow = tblMedicine.getSelectedRow();
         if (selectedRow >= 0)
         {
             MedicineItem mi2 = (MedicineItem) tblMedicine.getValueAt(selectedRow, 1);
@@ -182,12 +204,12 @@ public class CustomerOrderAction extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-*/
+
     }//GEN-LAST:event_btnAddItemActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-  /*      int selectedRow1 = tblOrder.getSelectedRow();
+        int selectedRow1 = tblOrder.getSelectedRow();
         if (selectedRow1 >= 0)
         {
             MedicineItem mi1 = (MedicineItem) tblOrder.getValueAt(selectedRow1, 1);
@@ -201,12 +223,12 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         {
             JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
-        }*/
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
         // TODO add your handling code here:
-      /*  orders = pharma.getOrderDirectory().createNewOrder(customer);
+        orders = pharma.getOrderDirectory().createNewOrder(customer);
         for(MedicineItem mo : cart)
         {
             orders.addItem(mo);
@@ -214,17 +236,17 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         orders.calculateTotalAmount();
       
         JOptionPane.showMessageDialog(null, "Thank you for your order! Order of " + orders.getMedicineItemList().size() + " medicine item(s) for amount $" + orders.getTotalAmount() + " is placed successfully!");
-        */
+        
     }//GEN-LAST:event_btnOrderActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        /*
+        
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
 
-        */
+        
     }//GEN-LAST:event_btnBackActionPerformed
 
 
@@ -234,7 +256,6 @@ public class CustomerOrderAction extends javax.swing.JPanel {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnOrder;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblPharmacy;
@@ -242,4 +263,51 @@ public class CustomerOrderAction extends javax.swing.JPanel {
     private javax.swing.JTable tblOrder;
     private javax.swing.JTextField txtAmount;
     // End of variables declaration//GEN-END:variables
+private void populateMedicine() {
+        DefaultTableModel dtm = (DefaultTableModel)tblMedicine.getModel();
+        dtm.setRowCount(0);
+        if(pharma.getMedicineCatalog().getMedicineItemList() != null)
+        {
+            for(MedicineItem mi : pharma.getMedicineCatalog().getMedicineItemList())
+            {
+                Object[] row = new Object[dtm.getColumnCount()];
+                row[0] = mi.getId();
+                row[1] = mi;
+                row[2] = mi.getPrice();
+                dtm.addRow(row);
+            }
+        }
+        if(dtm.getRowCount() == 0)
+            {
+                btnAddItem.setEnabled(false);
+                btnDelete.setEnabled(false);
+            }
+    }
+
+    private void populateOrder() {
+        DefaultTableModel dtm = (DefaultTableModel)tblOrder.getModel();
+        dtm.setRowCount(0);
+        if(cart != null)
+        {
+            btnDelete.setEnabled(true);
+            btnOrder.setEnabled(true);
+            int count = 1;
+            for(MedicineItem mi3 : cart)
+            {
+                Object[] row = new Object[dtm.getColumnCount()];
+                row[0] = count;
+                row[1] = mi3;
+                row[2] =  mi3.getPrice();
+                dtm.addRow(row);
+                count++;
+            }
+            txtAmount.setText(Integer.toString(totalAmount));
+        }
+        if(tblOrder.getRowCount() <= 0)
+        {
+            btnOrder.setEnabled(false);
+            btnDelete.setEnabled(false);
+        }
+    }
+
 }

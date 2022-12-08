@@ -4,12 +4,24 @@
  */
 package userinterface.DeliveryManRole;
 
+import Business.DeliveryMan.DeliveryMan;
+import Business.EcoSystem;
+import Business.Pharmacy.Pharmacy;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Raunak Singh Matharu
  */
 public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
+    private JPanel userProcessContainer;
+    private EcoSystem business;
+    private UserAccount userAccount;
+    private Pharmacy pharmacy;
+    private DeliveryMan deliveryMan;
+    
     /**
      * Creates new form DeliveryManWorkAreaJPanel
      */

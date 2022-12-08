@@ -4,17 +4,54 @@
  */
 package userinterface.CustomerRole;
 
+import Business.EcoSystem;
+import Business.Employee.Employee;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import Business.Customer.Customer;
+import Business.Pharmacy.Pharmacy;
+
 /**
  *
  * @author Raunak Singh Matharu
  */
 public class CustomerAreaJPanel extends javax.swing.JPanel {
-
+ private JPanel userProcessContainer;
+    private UserAccount userAccount;
+    Pharmacy pharmacy;
+    EcoSystem system;
+    Customer customer;
     /**
      * Creates new form CustomerAreaJPanel
      */
-    public CustomerAreaJPanel() {
+    public CustomerAreaJPanel(JPanel userProcessContainer, UserAccount useraccount, EcoSystem system) {
         initComponents();
+         this.userProcessContainer = userProcessContainer;  
+        this.userAccount = useraccount;
+        this.system = system;
+        
+        for(Customer c : system.getCustomerDirectory().getCustomerList() )
+        {
+            
+                if(c.getName() == null ? useraccount.getEmployee().getName() == null : c.getName().equals(useraccount.getEmployee().getName()))
+                {
+                    this.customer = c;
+                }
+           
+        }
+        
+        txtName.setText(this.customer.getName());
+        txtAddress.setText(this.customer.getAddress());
+        txtPhone.setText(this.customer.getPhone());
+        
+        valueLabel.setText(this.customer.getName());
+        jComboPharmacy.addItem("");
+        for(Pharmacy p : system.getPharmacyDirectory().getPharmacyList())
+        {
+            jComboPharmacy.addItem(p.getName());
+        }
     }
 
     /**
@@ -141,7 +178,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboPharmacyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboPharmacyActionPerformed
-       /* // TODO add your handling code here:
+     // TODO add your handling code here:
         if(jComboPharmacy.getSelectedItem() != "")
         {
             String phar = jComboPharmacy.getSelectedItem().toString();
@@ -151,21 +188,19 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         }
-*/
     }//GEN-LAST:event_jComboPharmacyActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-  /*      // TODO add your handling code here:
+  // TODO add your handling code here:
         CustomerSummaryJPanell lcj = new CustomerSummaryJPanell(userProcessContainer, userAccount, system);
         userProcessContainer.add("CustomerOrder", lcj);
         CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        */
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        /*if((txtAddress.getText() == "") || (txtPhone.getText() == "") )
+        if((txtAddress.getText() == "") || (txtPhone.getText() == "") )
         {
             JOptionPane.showMessageDialog(null,"Please fill all values!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
@@ -174,10 +209,10 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         {
             customer.setAddress(txtAddress.getText());
             customer.setPhone(txtPhone.getText());
-
+          
+                    
         }
         valueLabel.setText(pharmacy.getName());
-        */
     }//GEN-LAST:event_btnSubmitActionPerformed
 
 

@@ -51,7 +51,6 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
@@ -92,10 +91,6 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         enterpriseLabel.setBounds(10, 10, 170, 30);
         add(jLabel2);
         jLabel2.setBounds(30, 50, 0, 0);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (6).png"))); // NOI18N
-        add(jLabel3);
-        jLabel3.setBounds(10, 6, 1400, 780);
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
@@ -119,7 +114,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         CustomerSummaryJPanell dwjp = (CustomerSummaryJPanell) component;
-      //  dwjp.populateRequestTable();
+        dwjp.populateRequestTable();
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
 
@@ -130,7 +125,6 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField messageJTextField;
     private javax.swing.JButton requestTestJButton;
     // End of variables declaration//GEN-END:variables
