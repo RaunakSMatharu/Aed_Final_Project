@@ -73,7 +73,6 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        btnDeleteSAMR.setBackground(new java.awt.Color(255, 255, 255));
         btnDeleteSAMR.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnDeleteSAMR.setText("Delete Pharmacy");
         btnDeleteSAMR.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -85,7 +84,6 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
         add(btnDeleteSAMR);
         btnDeleteSAMR.setBounds(10, 135, 120, 44);
 
-        btnNewPharmacy.setBackground(new java.awt.Color(255, 255, 255));
         btnNewPharmacy.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnNewPharmacy.setText("Create Pharmacy ");
         btnNewPharmacy.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -99,7 +97,7 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
 
         txtNameSAMR.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtNameSAMR);
-        txtNameSAMR.setBounds(427, 187, 228, 22);
+        txtNameSAMR.setBounds(427, 187, 228, 19);
 
         txtAddressSAMR.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtAddressSAMR.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +106,7 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
             }
         });
         add(txtAddressSAMR);
-        txtAddressSAMR.setBounds(427, 218, 228, 22);
+        txtAddressSAMR.setBounds(427, 218, 228, 19);
 
         jLabel1.setText("Pharmacy Name:");
         add(jLabel1);
@@ -116,9 +114,8 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
 
         jLabel2.setText("Address:");
         add(jLabel2);
-        jLabel2.setBounds(265, 221, 144, 20);
+        jLabel2.setBounds(265, 221, 144, 17);
 
-        btnSubmitSAMR.setBackground(new java.awt.Color(255, 255, 255));
         btnSubmitSAMR.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnSubmitSAMR.setText("Submit");
         btnSubmitSAMR.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -130,7 +127,6 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
         add(btnSubmitSAMR);
         btnSubmitSAMR.setBounds(551, 270, 104, 34);
 
-        btnManageSAMR.setBackground(new java.awt.Color(255, 255, 255));
         btnManageSAMR.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnManageSAMR.setText("View Pharmacy");
         btnManageSAMR.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));

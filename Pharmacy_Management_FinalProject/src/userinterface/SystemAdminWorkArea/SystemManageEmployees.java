@@ -96,7 +96,7 @@ public class SystemManageEmployees extends javax.swing.JPanel {
 
         txtRePasswordSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtRePasswordSME);
-        txtRePasswordSME.setBounds(318, 261, 200, 18);
+        txtRePasswordSME.setBounds(318, 261, 200, 19);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel6.setText("Address:");
@@ -110,7 +110,7 @@ public class SystemManageEmployees extends javax.swing.JPanel {
 
         txtAddressSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtAddressSME);
-        txtAddressSME.setBounds(318, 375, 200, 18);
+        txtAddressSME.setBounds(318, 375, 200, 19);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setText("Password: ");
@@ -145,7 +145,7 @@ public class SystemManageEmployees extends javax.swing.JPanel {
             }
         });
         add(btnBackSME);
-        btnBackSME.setBounds(10, 249, 42, 22);
+        btnBackSME.setBounds(10, 249, 48, 23);
 
         btnSubmitSME.setText("Submit");
         btnSubmitSME.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -232,11 +232,11 @@ public class SystemManageEmployees extends javax.swing.JPanel {
             }
         });
         add(btnNewEmployeeSME);
-        btnNewEmployeeSME.setBounds(10, 192, 98, 46);
+        btnNewEmployeeSME.setBounds(10, 192, 110, 46);
 
         txtNameSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtNameSME);
-        txtNameSME.setBounds(318, 294, 200, 18);
+        txtNameSME.setBounds(318, 294, 200, 19);
 
         txtUsernameSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtUsernameSME);
@@ -244,11 +244,11 @@ public class SystemManageEmployees extends javax.swing.JPanel {
 
         txtPhoneSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPhoneSME);
-        txtPhoneSME.setBounds(318, 331, 200, 18);
+        txtPhoneSME.setBounds(318, 331, 200, 19);
 
         txtPasswordSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPasswordSME);
-        txtPasswordSME.setBounds(318, 229, 200, 18);
+        txtPasswordSME.setBounds(318, 229, 200, 19);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Manage_Emplyee_Final_IMAGE.png"))); // NOI18N

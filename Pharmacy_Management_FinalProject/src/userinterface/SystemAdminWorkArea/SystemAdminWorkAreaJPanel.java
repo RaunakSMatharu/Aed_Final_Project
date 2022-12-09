@@ -130,7 +130,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 911, Short.MAX_VALUE)
+            .addGap(0, 759, Short.MAX_VALUE)
         );
 
         jSplitPane.setLeftComponent(jPanel1);
@@ -144,7 +144,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.add(jLabel2);
         jLabel2.setBounds(243, 11, 150, 31);
 
-        btnManageCustomersSAWAP.setBackground(new java.awt.Color(255, 255, 255));
         btnManageCustomersSAWAP.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnManageCustomersSAWAP.setText("Manage Customers");
         btnManageCustomersSAWAP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -156,7 +155,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.add(btnManageCustomersSAWAP);
         btnManageCustomersSAWAP.setBounds(10, 95, 130, 35);
 
-        btnManagePharmacySAWAP.setBackground(new java.awt.Color(255, 255, 255));
         btnManagePharmacySAWAP.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnManagePharmacySAWAP.setText("Manage Pharmacy");
         btnManagePharmacySAWAP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -180,8 +178,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         BtnManageSupplier.setBounds(10, 278, 130, 37);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Manage_WORK_AREA_FINAL.jpg"))); // NOI18N
+        jLabel3.setMaximumSize(new java.awt.Dimension(1024, 759));
+        jLabel3.setMinimumSize(new java.awt.Dimension(1024, 759));
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(0, 0, 1500, 910);
+        jLabel3.setBounds(0, -20, 1020, 780);
 
         jSplitPane.setRightComponent(jPanel2);
 

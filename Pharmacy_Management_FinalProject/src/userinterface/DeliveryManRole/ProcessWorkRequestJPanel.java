@@ -80,7 +80,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (3).png"))); // NOI18N
         add(jLabel2);
-        jLabel2.setBounds(0, 0, 1480, 810);
+        jLabel2.setBounds(0, -30, 1480, 810);
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed

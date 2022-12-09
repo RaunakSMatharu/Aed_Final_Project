@@ -65,7 +65,7 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
         add(txtSupplierName);
-        txtSupplierName.setBounds(336, 179, 228, 26);
+        txtSupplierName.setBounds(336, 179, 228, 23);
 
         jLabel1.setText("Supplier Name:");
         add(jLabel1);
@@ -73,7 +73,7 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
 
         jLabel2.setText("Address:");
         add(jLabel2);
-        jLabel2.setBounds(188, 245, 144, 20);
+        jLabel2.setBounds(188, 245, 144, 17);
 
         lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -90,7 +90,7 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
             }
         });
         add(btnDelete);
-        btnDelete.setBounds(21, 179, 41, 21);
+        btnDelete.setBounds(21, 179, 37, 21);
 
         btnView.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnView.setText("View");
@@ -111,7 +111,7 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
             }
         });
         add(btnCreate);
-        btnCreate.setBounds(21, 226, 69, 23);
+        btnCreate.setBounds(21, 226, 72, 21);
 
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnBack.setText("Back");
@@ -160,9 +160,9 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(353, 279, 83, 29);
+        btnSubmit.setBounds(353, 279, 72, 23);
         add(txtAddress);
-        txtAddress.setBounds(336, 242, 236, 26);
+        txtAddress.setBounds(336, 242, 236, 23);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (14).png"))); // NOI18N
         add(jLabel4);

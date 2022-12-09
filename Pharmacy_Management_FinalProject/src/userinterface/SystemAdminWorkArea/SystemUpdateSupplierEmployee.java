@@ -83,14 +83,13 @@ public class SystemUpdateSupplierEmployee extends javax.swing.JPanel {
         txtNameSUE.setEditable(false);
         txtNameSUE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtNameSUE);
-        txtNameSUE.setBounds(312, 202, 160, 22);
+        txtNameSUE.setBounds(312, 202, 160, 19);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setText("Password: ");
         add(jLabel2);
-        jLabel2.setBounds(150, 117, 144, 14);
+        jLabel2.setBounds(150, 117, 144, 15);
 
-        btnBackSUE.setBackground(new java.awt.Color(255, 255, 255));
         btnBackSUE.setText("< Back");
         btnBackSUE.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBackSUE.addActionListener(new java.awt.event.ActionListener() {
@@ -99,38 +98,37 @@ public class SystemUpdateSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(btnBackSUE);
-        btnBackSUE.setBounds(228, 428, 55, 27);
+        btnBackSUE.setBounds(228, 428, 48, 23);
 
         radioBtnManagerSUE.setText("Supploer Manager");
         radioBtnManagerSUE.setEnabled(false);
         add(radioBtnManagerSUE);
-        radioBtnManagerSUE.setBounds(312, 334, 160, 29);
+        radioBtnManagerSUE.setBounds(312, 334, 160, 21);
 
         txtPhoneSUE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPhoneSUE);
-        txtPhoneSUE.setBounds(312, 246, 160, 22);
+        txtPhoneSUE.setBounds(312, 246, 160, 19);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel3.setText("Confirm Password:");
         add(jLabel3);
-        jLabel3.setBounds(150, 164, 144, 14);
+        jLabel3.setBounds(150, 164, 144, 15);
 
         txtUsernameSUE.setEditable(false);
         txtUsernameSUE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtUsernameSUE);
-        txtUsernameSUE.setBounds(312, 70, 160, 22);
+        txtUsernameSUE.setBounds(312, 70, 160, 19);
 
         radioBtnDeliverySUE.setText("Delivery Man");
         radioBtnDeliverySUE.setEnabled(false);
         add(radioBtnDeliverySUE);
-        radioBtnDeliverySUE.setBounds(312, 381, 160, 29);
+        radioBtnDeliverySUE.setBounds(312, 381, 160, 21);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel5.setText("Phone Number:");
         add(jLabel5);
-        jLabel5.setBounds(150, 249, 144, 14);
+        jLabel5.setBounds(150, 249, 144, 15);
 
-        btnSubmitSUE.setBackground(new java.awt.Color(255, 255, 255));
         btnSubmitSUE.setText("Submit");
         btnSubmitSUE.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSubmitSUE.addActionListener(new java.awt.event.ActionListener() {
@@ -139,44 +137,44 @@ public class SystemUpdateSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(btnSubmitSUE);
-        btnSubmitSUE.setBounds(312, 428, 160, 27);
+        btnSubmitSUE.setBounds(312, 428, 160, 23);
 
         txtPasswordSUE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPasswordSUE);
-        txtPasswordSUE.setBounds(312, 114, 160, 22);
+        txtPasswordSUE.setBounds(312, 114, 160, 19);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel6.setText("Address:");
         add(jLabel6);
-        jLabel6.setBounds(150, 293, 144, 14);
+        jLabel6.setBounds(150, 293, 144, 15);
 
         txtRePasswordSUE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtRePasswordSUE);
-        txtRePasswordSUE.setBounds(312, 158, 160, 22);
+        txtRePasswordSUE.setBounds(312, 158, 160, 19);
 
         txtAddressSUE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtAddressSUE);
-        txtAddressSUE.setBounds(312, 290, 160, 22);
+        txtAddressSUE.setBounds(312, 290, 160, 19);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel1.setText("Username: ");
         add(jLabel1);
-        jLabel1.setBounds(150, 73, 144, 14);
+        jLabel1.setBounds(150, 73, 144, 15);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel4.setText("Name:");
         add(jLabel4);
-        jLabel4.setBounds(150, 205, 144, 14);
+        jLabel4.setBounds(150, 205, 144, 15);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel7.setText("Role:");
         add(jLabel7);
-        jLabel7.setBounds(158, 338, 144, 14);
+        jLabel7.setBounds(158, 338, 144, 15);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel8.setText("Update Employee Information");
         add(jLabel8);
-        jLabel8.setBounds(159, 11, 330, 28);
+        jLabel8.setBounds(159, 11, 330, 29);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Manage_Emplyee_Final_IMAGE.png"))); // NOI18N
         add(jLabel9);

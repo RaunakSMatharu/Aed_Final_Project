@@ -64,7 +64,6 @@ public class SystemAdminUpdateCustomer extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        btnBackSAUC.setBackground(new java.awt.Color(255, 255, 255));
         btnBackSAUC.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnBackSAUC.setText("< Back");
         btnBackSAUC.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -74,9 +73,8 @@ public class SystemAdminUpdateCustomer extends javax.swing.JPanel {
             }
         });
         add(btnBackSAUC);
-        btnBackSAUC.setBounds(26, 24, 43, 21);
+        btnBackSAUC.setBounds(26, 24, 42, 21);
 
-        btnSubmitSAUC.setBackground(new java.awt.Color(255, 255, 255));
         btnSubmitSAUC.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnSubmitSAUC.setText("Submit");
         btnSubmitSAUC.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -97,33 +95,33 @@ public class SystemAdminUpdateCustomer extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel4.setText("Name:");
         add(jLabel4);
-        jLabel4.setBounds(65, 90, 144, 14);
+        jLabel4.setBounds(65, 90, 144, 15);
 
         txtNameSAUC.setEditable(false);
         txtNameSAUC.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtNameSAUC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtNameSAUC);
-        txtNameSAUC.setBounds(255, 89, 160, 16);
+        txtNameSAUC.setBounds(255, 89, 160, 17);
 
         txtPhoneSAUC.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtPhoneSAUC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPhoneSAUC);
-        txtPhoneSAUC.setBounds(255, 123, 160, 16);
+        txtPhoneSAUC.setBounds(255, 123, 160, 17);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel5.setText("Phone Number:");
         add(jLabel5);
-        jLabel5.setBounds(65, 124, 144, 14);
+        jLabel5.setBounds(65, 124, 144, 15);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel6.setText("Address:");
         add(jLabel6);
-        jLabel6.setBounds(65, 158, 144, 14);
+        jLabel6.setBounds(65, 158, 144, 15);
 
         txtAddressSAUC.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtAddressSAUC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtAddressSAUC);
-        txtAddressSAUC.setBounds(255, 157, 160, 16);
+        txtAddressSAUC.setBounds(255, 157, 160, 17);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Update_Customer.png"))); // NOI18N
         add(jLabel1);

@@ -128,7 +128,7 @@ public class AdminManageSupplierOrders extends javax.swing.JPanel {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (17) supplie_Order.png"))); // NOI18N
         add(jLabel3);
-        jLabel3.setBounds(-440, -40, 1080, 540);
+        jLabel3.setBounds(-50, 0, 1080, 560);
 
         btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnDelete.setText("Delete");

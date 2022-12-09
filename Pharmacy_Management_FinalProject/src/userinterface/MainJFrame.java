@@ -53,27 +53,27 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        loginJButton = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
         txtUserName = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblUsername = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
         loginJLabel = new javax.swing.JLabel();
-        logoutJButton = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        btnLogout = new javax.swing.JButton();
+        lblTitle = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        loginJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        loginJButton.setText("Login");
-        loginJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        loginJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnLogin.setText("Login");
+        btnLogin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginJButtonActionPerformed(evt);
+                btnLoginActionPerformed(evt);
             }
         });
 
@@ -83,24 +83,27 @@ public class MainJFrame extends javax.swing.JFrame {
         txtPassword.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel1.setText("User Name");
+        lblUsername.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsername.setText("User Name");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel2.setText("Password");
+        lblPassword.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(255, 255, 255));
+        lblPassword.setText("Password");
 
-        logoutJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        logoutJButton.setText("Logout");
-        logoutJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        logoutJButton.setEnabled(false);
-        logoutJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnLogout.setText("Logout");
+        btnLogout.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnLogout.setEnabled(false);
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutJButtonActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel3.setText("Enter Login Credentials:");
+        lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle.setText("Enter your Credentials :");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -109,40 +112,43 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(loginJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(logoutJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtUserName, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(loginJLabel))
-                            .addComponent(jLabel3))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(loginJLabel)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lblUsername, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblPassword, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addGap(61, 61, 61)))
+                            .addComponent(lblTitle))
+                        .addGap(0, 44, Short.MAX_VALUE))
+                    .addComponent(txtUserName)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jLabel3)
+                .addComponent(lblTitle)
                 .addGap(47, 47, 47)
-                .addComponent(jLabel1)
+                .addComponent(lblUsername)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblPassword)
                 .addGap(2, 2, 2)
-                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(loginJLabel)
                 .addGap(22, 22, 22)
-                .addComponent(loginJButton)
+                .addComponent(btnLogin)
                 .addGap(18, 18, 18)
-                .addComponent(logoutJButton)
-                .addContainerGap(477, Short.MAX_VALUE))
+                .addComponent(btnLogout)
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -150,7 +156,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container.setBackground(new java.awt.Color(255, 255, 255));
         container.setLayout(new java.awt.CardLayout());
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/For login.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Medomand-online-Pharmacy-supply-1024x759.png"))); // NOI18N
         container.add(jLabel4, "card2");
 
         jSplitPane1.setRightComponent(container);
@@ -160,7 +166,7 @@ public class MainJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
     // Get user name
        user = system.getUserAccountDirectory().authenticateUser(txtUserName.getText(), String.valueOf(txtPassword.getPassword()));
        if(user==null)
@@ -177,10 +183,10 @@ public class MainJFrame extends javax.swing.JFrame {
            {
                 Employee e = user.getEmployee();
                 JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Admin!");
-                loginJButton.setEnabled(false);
+                btnLogin.setEnabled(false);
                 txtUserName.setEnabled(false);
                 txtPassword.setEnabled(false);
-                logoutJButton.setEnabled(true);
+                btnLogout.setEnabled(true);
                 SystemAdminWorkAreaJPanel sawajp = new SystemAdminWorkAreaJPanel(container, system);
                 container.add("SysAdminPanel",sawajp);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
@@ -190,10 +196,10 @@ public class MainJFrame extends javax.swing.JFrame {
            {
                 Employee e = user.getEmployee();
                 JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Pharmacy Manager!");
-                loginJButton.setEnabled(false);
+                btnLogin.setEnabled(false);
                 txtUserName.setEnabled(false);
                 txtPassword.setEnabled(false);
-                logoutJButton.setEnabled(true);
+                btnLogout.setEnabled(true);
                 AdminWorkAreaJPanel awajp = new AdminWorkAreaJPanel(container, user, system);
                 container.add("AdminPanel",awajp);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
@@ -203,10 +209,10 @@ public class MainJFrame extends javax.swing.JFrame {
            {
                 Employee e = user.getEmployee();
                 JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Supplier Manager!");
-                loginJButton.setEnabled(false);
+                btnLogin.setEnabled(false);
                 txtUserName.setEnabled(false);
                 txtPassword.setEnabled(false);
-                logoutJButton.setEnabled(true);
+                btnLogout.setEnabled(true);
                 SupplierAdminWorkAreaJPanel sawa = new SupplierAdminWorkAreaJPanel(container, user, system);
                 container.add("SupplierAdminPanel",sawa);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
@@ -216,10 +222,10 @@ public class MainJFrame extends javax.swing.JFrame {
            {
                 Employee e = user.getEmployee();
                 JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Customer!");
-                loginJButton.setEnabled(false);
+                btnLogin.setEnabled(false);
                 txtUserName.setEnabled(false);
                 txtPassword.setEnabled(false);
-                logoutJButton.setEnabled(true);
+                btnLogout.setEnabled(true);
                 CustomerAreaJPanel cajp = new CustomerAreaJPanel(container, user, system);
                 container.add("CustomerPanel",cajp);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
@@ -229,10 +235,10 @@ public class MainJFrame extends javax.swing.JFrame {
            {
                 Employee e = user.getEmployee();
                 JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Customer!");
-                loginJButton.setEnabled(false);
+                btnLogin.setEnabled(false);
                 txtUserName.setEnabled(false);
                 txtPassword.setEnabled(false);
-                logoutJButton.setEnabled(true);
+                btnLogout.setEnabled(true);
                 SupplierDeliveryManWorkArea cajp = new SupplierDeliveryManWorkArea(container, user, system);
                 container.add("CustomerPanel",cajp);
                 CardLayout cardlayout = (CardLayout) container.getLayout();
@@ -242,10 +248,10 @@ public class MainJFrame extends javax.swing.JFrame {
            {
                 Employee e = user.getEmployee();
                 JOptionPane.showMessageDialog(null, "Access Granted " + e.getName() + " - Delivery Man!");
-                loginJButton.setEnabled(false);
+                btnLogin.setEnabled(false);
                 txtUserName.setEnabled(false);
                 txtPassword.setEnabled(false);
-                logoutJButton.setEnabled(true);
+                btnLogout.setEnabled(true);
                 System.out.println("Container........." + container);
                 System.out.println("user........." + user);
                 System.out.println("system........." + system);
@@ -257,13 +263,13 @@ public class MainJFrame extends javax.swing.JFrame {
            }
        }
 
-    }//GEN-LAST:event_loginJButtonActionPerformed
+    }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed
-        logoutJButton.setEnabled(false);
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        btnLogout.setEnabled(false);
         txtUserName.setEnabled(true);
         txtPassword.setEnabled(true);
-        loginJButton.setEnabled(true);
+        btnLogin.setEnabled(true);
 
         txtUserName.setText("");
         txtPassword.setText("");
@@ -275,7 +281,7 @@ public class MainJFrame extends javax.swing.JFrame {
         crdLyt.next(container);
         dB4OUtil.storeSystem(system);
         
-    }//GEN-LAST:event_logoutJButtonActionPerformed
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -329,16 +335,16 @@ public class MainJFrame extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JPanel container;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JButton loginJButton;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel loginJLabel;
-    private javax.swing.JButton logoutJButton;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables

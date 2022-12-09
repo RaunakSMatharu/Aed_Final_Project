@@ -85,7 +85,6 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        btnBackSAMC.setBackground(new java.awt.Color(255, 255, 255));
         btnBackSAMC.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnBackSAMC.setText("< Back");
         btnBackSAMC.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -97,7 +96,6 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         add(btnBackSAMC);
         btnBackSAMC.setBounds(10, 24, 61, 23);
 
-        btnSubmitSAMC.setBackground(new java.awt.Color(255, 255, 255));
         btnSubmitSAMC.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnSubmitSAMC.setText("Submit");
         btnSubmitSAMC.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -137,7 +135,6 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(205, 79, 1030, 133);
 
-        btnManageSAMC.setBackground(new java.awt.Color(255, 255, 255));
         btnManageSAMC.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnManageSAMC.setText("View Customer ");
         btnManageSAMC.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -155,7 +152,6 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         add(lblTitle);
         lblTitle.setBounds(185, 18, 445, 29);
 
-        btnDeleteSAMC.setBackground(new java.awt.Color(255, 255, 255));
         btnDeleteSAMC.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnDeleteSAMC.setText("Delete Customer");
         btnDeleteSAMC.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -170,13 +166,11 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel4.setText("Name:");
         add(jLabel4);
-        jLabel4.setBounds(214, 362, 176, 14);
+        jLabel4.setBounds(214, 362, 176, 15);
 
-        btnNewCustomerSAMC.setBackground(new java.awt.Color(255, 255, 255));
         btnNewCustomerSAMC.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnNewCustomerSAMC.setText("Create Customer");
         btnNewCustomerSAMC.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnNewCustomerSAMC.setOpaque(false);
         btnNewCustomerSAMC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewCustomerSAMCActionPerformed(evt);

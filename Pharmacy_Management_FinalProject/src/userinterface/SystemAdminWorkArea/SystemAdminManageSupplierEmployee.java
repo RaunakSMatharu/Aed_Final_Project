@@ -98,7 +98,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(BtnBack);
-        BtnBack.setBounds(20, 65, 84, 29);
+        BtnBack.setBounds(20, 65, 84, 23);
 
         BtnView.setText("View");
         BtnView.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +107,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(BtnView);
-        BtnView.setBounds(20, 112, 84, 29);
+        BtnView.setBounds(20, 112, 84, 23);
 
         BtnDelete.setText("Delete");
         BtnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +116,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(BtnDelete);
-        BtnDelete.setBounds(20, 152, 84, 29);
+        BtnDelete.setBounds(20, 152, 84, 23);
 
         BtnCreate.setText("Create");
         BtnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +125,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(BtnCreate);
-        BtnCreate.setBounds(20, 199, 84, 29);
+        BtnCreate.setBounds(20, 199, 84, 23);
 
         BtnSubmit.setText("Submit");
         BtnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +168,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Manage Employee");
         add(jLabel1);
-        jLabel1.setBounds(450, 10, 190, 28);
+        jLabel1.setBounds(450, 10, 191, 29);
         add(txtUsernameSME);
         txtUsernameSME.setBounds(260, 220, 300, 27);
         add(txtPhoneSME);
@@ -176,7 +176,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
 
         jLabel5.setText("Phone Number:");
         add(jLabel5);
-        jLabel5.setBounds(106, 402, 120, 20);
+        jLabel5.setBounds(106, 402, 120, 17);
 
         radioBtnDeliverySME.setText("Delivery Man");
         radioBtnDeliverySME.addActionListener(new java.awt.event.ActionListener() {
@@ -185,15 +185,15 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(radioBtnDeliverySME);
-        radioBtnDeliverySME.setBounds(260, 540, 119, 29);
+        radioBtnDeliverySME.setBounds(260, 540, 119, 21);
         add(txtPasswordSME);
-        txtPasswordSME.setBounds(260, 270, 300, 26);
+        txtPasswordSME.setBounds(260, 270, 300, 23);
         add(txtRePasswordSME);
         txtRePasswordSME.setBounds(260, 310, 300, 28);
 
         jLabel6.setText("        Address:");
         add(jLabel6);
-        jLabel6.setBounds(108, 447, 110, 20);
+        jLabel6.setBounds(108, 447, 110, 17);
 
         jLabel2.setText("Username: ");
         add(jLabel2);
@@ -207,11 +207,11 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
 
         jLabel7.setText("      Role:");
         add(jLabel7);
-        jLabel7.setBounds(145, 501, 70, 20);
+        jLabel7.setBounds(145, 501, 70, 17);
 
         jLabel4.setText("     Name:");
         add(jLabel4);
-        jLabel4.setBounds(143, 361, 80, 20);
+        jLabel4.setBounds(143, 361, 80, 17);
 
         jLabel8.setText("Confirm Password:");
         add(jLabel8);
@@ -224,7 +224,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(radioBtnManagerSME);
-        radioBtnManagerSME.setBounds(260, 500, 155, 19);
+        radioBtnManagerSME.setBounds(260, 500, 125, 19);
         add(txtNameSME);
         txtNameSME.setBounds(260, 350, 300, 30);
 

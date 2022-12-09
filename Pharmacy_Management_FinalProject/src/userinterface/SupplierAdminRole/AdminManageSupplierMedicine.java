@@ -179,7 +179,7 @@ public class AdminManageSupplierMedicine extends javax.swing.JPanel {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MANAGESupplier_FINAL_IMAGE.jpg"))); // NOI18N
         add(jLabel4);
-        jLabel4.setBounds(10, 0, 1460, 960);
+        jLabel4.setBounds(-80, -120, 1460, 960);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblMedicineCatalogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMedicineCatalogMouseClicked

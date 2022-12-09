@@ -90,19 +90,18 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Update Employees");
         add(lblTitle);
-        lblTitle.setBounds(98, 29, 266, 24);
+        lblTitle.setBounds(98, 29, 266, 22);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel4.setText("Name:");
         add(jLabel4);
-        jLabel4.setBounds(19, 214, 144, 14);
+        jLabel4.setBounds(19, 214, 144, 15);
 
         txtNameSUE.setEditable(false);
         txtNameSUE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtNameSUE);
-        txtNameSUE.setBounds(209, 208, 160, 22);
+        txtNameSUE.setBounds(209, 208, 160, 19);
 
-        btnBackSUE.setBackground(new java.awt.Color(255, 255, 255));
         btnBackSUE.setText("< Back");
         btnBackSUE.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBackSUE.addActionListener(new java.awt.event.ActionListener() {
@@ -111,72 +110,71 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
             }
         });
         add(btnBackSUE);
-        btnBackSUE.setBounds(136, 404, 55, 27);
+        btnBackSUE.setBounds(136, 404, 48, 23);
 
         txtPhoneSUE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPhoneSUE);
-        txtPhoneSUE.setBounds(209, 248, 160, 22);
+        txtPhoneSUE.setBounds(209, 248, 160, 19);
 
         txtUsernameSUE.setEditable(false);
         txtUsernameSUE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtUsernameSUE);
-        txtUsernameSUE.setBounds(209, 79, 160, 22);
+        txtUsernameSUE.setBounds(209, 79, 160, 19);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel5.setText("Phone Number:");
         add(jLabel5);
-        jLabel5.setBounds(19, 254, 144, 14);
+        jLabel5.setBounds(19, 254, 144, 15);
 
         txtPasswordSUE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPasswordSUE);
-        txtPasswordSUE.setBounds(209, 128, 160, 22);
+        txtPasswordSUE.setBounds(209, 128, 160, 19);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel6.setText("Address:");
         add(jLabel6);
-        jLabel6.setBounds(19, 294, 144, 14);
+        jLabel6.setBounds(19, 294, 144, 15);
 
         txtRePasswordSUE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtRePasswordSUE);
-        txtRePasswordSUE.setBounds(209, 168, 160, 22);
+        txtRePasswordSUE.setBounds(209, 168, 160, 19);
 
         txtAddressSUE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtAddressSUE);
-        txtAddressSUE.setBounds(209, 288, 160, 22);
+        txtAddressSUE.setBounds(209, 288, 160, 19);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel1.setText("Username: ");
         add(jLabel1);
-        jLabel1.setBounds(19, 85, 144, 14);
+        jLabel1.setBounds(19, 85, 144, 15);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel7.setText("Role:");
         add(jLabel7);
-        jLabel7.setBounds(19, 337, 144, 14);
+        jLabel7.setBounds(19, 337, 144, 15);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setText("Password: ");
         add(jLabel2);
-        jLabel2.setBounds(19, 134, 144, 14);
+        jLabel2.setBounds(19, 134, 144, 15);
 
         buttonGroup1.add(radioBtnManagerSUE);
         radioBtnManagerSUE.setText("Pharmacy Manager");
         radioBtnManagerSUE.setEnabled(false);
         add(radioBtnManagerSUE);
-        radioBtnManagerSUE.setBounds(209, 328, 160, 29);
+        radioBtnManagerSUE.setBounds(209, 328, 160, 21);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel3.setText("Confirm Password:");
         add(jLabel3);
-        jLabel3.setBounds(19, 174, 144, 14);
+        jLabel3.setBounds(19, 174, 144, 15);
 
         buttonGroup1.add(radioBtnDeliverySUE);
         radioBtnDeliverySUE.setText("Delivery Man");
         radioBtnDeliverySUE.setEnabled(false);
         add(radioBtnDeliverySUE);
-        radioBtnDeliverySUE.setBounds(209, 357, 160, 29);
+        radioBtnDeliverySUE.setBounds(209, 357, 160, 21);
 
-        btnSubmitSUE.setBackground(new java.awt.Color(255, 255, 255));
         btnSubmitSUE.setText("Submit");
         btnSubmitSUE.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSubmitSUE.addActionListener(new java.awt.event.ActionListener() {
@@ -185,7 +183,7 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
             }
         });
         add(btnSubmitSUE);
-        btnSubmitSUE.setBounds(209, 404, 160, 27);
+        btnSubmitSUE.setBounds(209, 404, 160, 23);
         add(jLabel8);
         jLabel8.setBounds(19, 11, 0, 99);
 
