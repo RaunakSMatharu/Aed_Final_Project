@@ -45,8 +45,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
         setLayout(null);
 
-        submitJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        submitJButton.setForeground(new java.awt.Color(0, 102, 102));
+        submitJButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         submitJButton.setText("Submit Result");
         submitJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -57,8 +56,8 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         add(submitJButton);
         submitJButton.setBounds(360, 118, 131, 50);
 
-        backJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        backJButton.setForeground(new java.awt.Color(0, 102, 102));
+        backJButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
         backJButton.setText("Back");
         backJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -67,9 +66,9 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
         add(backJButton);
-        backJButton.setBounds(150, 120, 80, 50);
+        backJButton.setBounds(150, 120, 110, 50);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("Result");
         add(jLabel1);
         jLabel1.setBounds(47, 39, 80, 40);
