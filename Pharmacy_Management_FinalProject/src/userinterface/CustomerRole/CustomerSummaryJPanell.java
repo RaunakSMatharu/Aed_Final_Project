@@ -117,7 +117,7 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
             }
         });
         add(btnRefresh);
-        btnRefresh.setBounds(860, 260, 120, 50);
+        btnRefresh.setBounds(50, 260, 120, 50);
 
         lblEnterprise.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblEnterprise.setText("<>");
