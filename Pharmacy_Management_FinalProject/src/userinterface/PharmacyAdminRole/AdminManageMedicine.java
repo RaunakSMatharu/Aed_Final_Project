@@ -4,7 +4,13 @@
  */
 package userinterface.PharmacyAdminRole;
 
+import Business.MedicineItems.MedicineItem;
+import Business.Orders.Orders;
+import Business.Pharmacy.Pharmacy;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,10 +19,21 @@ import javax.swing.JOptionPane;
 public class AdminManageMedicine extends javax.swing.JPanel {
 
     /**
-     * Creates new form AdminManageMedicine
+     * Creates new form AdminManageMenu
      */
-    public AdminManageMedicine() {
+    JPanel userProcessContainer;
+    Pharmacy pharmacy;
+    
+    public AdminManageMedicine(JPanel userProcessContainer, Pharmacy pharmacy) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.pharmacy = pharmacy;
+        btnDelete.setEnabled(false);
+        btnManage.setEnabled(false);
+        txtName.setEnabled(false);
+        jSpinPrice.setEnabled(false);
+        valueLabel.setText(pharmacy.getName());
+        populateTable();
     }
 
     /**
@@ -39,9 +56,9 @@ public class AdminManageMedicine extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblMedicineCatalog = new javax.swing.JTable();
         btnBack = new javax.swing.JButton();
-        jDelete = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
-        jSubmit = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
 
         setLayout(null);
 
@@ -126,11 +143,16 @@ public class AdminManageMedicine extends javax.swing.JPanel {
         add(btnBack);
         btnBack.setBounds(10, 270, 132, 35);
 
-        jDelete.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jDelete.setText("Delete Item");
-        jDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(jDelete);
-        jDelete.setBounds(10, 210, 130, 40);
+        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnDelete.setText("Delete Item");
+        btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+        add(btnDelete);
+        btnDelete.setBounds(10, 210, 130, 40);
 
         btnCreate.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnCreate.setText("Add New Medicine>");
@@ -143,49 +165,122 @@ public class AdminManageMedicine extends javax.swing.JPanel {
         add(btnCreate);
         btnCreate.setBounds(10, 110, 132, 35);
 
-        jSubmit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jSubmit.setText("Submit");
-        jSubmit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jSubmit.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnSubmit.setText("Submit");
+        btnSubmit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSubmitActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(jSubmit);
-        jSubmit.setBounds(350, 340, 130, 40);
+        add(btnSubmit);
+        btnSubmit.setBounds(350, 340, 130, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageActionPerformed
         // TODO add your handling code here:
+        int selectedRow = tblMedicineCatalog.getSelectedRow();
+        if (selectedRow >= 0)
+        {
+            MedicineItem mi = (MedicineItem) tblMedicineCatalog.getValueAt(selectedRow, 1);
+            AdminUpdateMedicineItem fs = new AdminUpdateMedicineItem(userProcessContainer, mi);
+            userProcessContainer.add("SysAdminManageEmployees", fs);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_btnManageActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
+        btnCreate.setEnabled(false);
+        txtName.setEnabled(true);
+        jSpinPrice.setEnabled(true);
+        btnSubmit.setEnabled(true);
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jSubmitActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblMedicineCatalog.getSelectedRow();
+        if (selectedRow >= 0)
+        {
+            MedicineItem mi = (MedicineItem) tblMedicineCatalog.getValueAt(selectedRow, 1);
+            pharmacy.getMedicineCatalog().deleteMedicineItem(mi);
+            JOptionPane.showMessageDialog(null, "Medicine " + mi.getName()+ " deleted successfully!");
+            populateTable();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnManage;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JButton jDelete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinPrice;
-    private javax.swing.JButton jSubmit;
     private javax.swing.JTable tblMedicineCatalog;
     private javax.swing.JTextField txtName;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
+    
+    public void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel)tblMedicineCatalog.getModel();
+        dtm.setRowCount(0);
+        if(pharmacy.getMedicineCatalog().getMedicineItemList() != null)
+        {
+            for(MedicineItem mi : pharmacy.getMedicineCatalog().getMedicineItemList())
+            {
+                Object[] row = new Object[dtm.getColumnCount()];
+                row[0] = mi.getId();
+                row[1] = mi;
+                row[2] = mi.getPrice();
+                dtm.addRow(row);
+            }
+        }
+        if(dtm.getRowCount() == 0)
+            {
+                btnDelete.setEnabled(false);
+                btnManage.setEnabled(false);
+            }
+    }
+
+    private boolean validateThis() {
+        if("".equals(txtName.getText()))
+        {
+            JOptionPane.showMessageDialog(null,"Name cannot be empty!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        else if((Integer)jSpinPrice.getValue() <= 0)
+        {
+            JOptionPane.showMessageDialog(null,"Price must be above 0!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }
