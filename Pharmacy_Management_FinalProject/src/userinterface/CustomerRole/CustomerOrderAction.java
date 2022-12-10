@@ -71,7 +71,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         lblPharmacy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPharmacy.setText("<value>");
         add(lblPharmacy);
-        lblPharmacy.setBounds(260, 50, 481, 30);
+        lblPharmacy.setBounds(260, 30, 481, 40);
 
         tblOrders.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         tblOrders.setModel(new javax.swing.table.DefaultTableModel(
@@ -122,7 +122,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         add(jScrollPane2);
         jScrollPane2.setBounds(170, 104, 670, 140);
 
-        btnOrder.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnOrder.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnOrder.setText("Order");
         btnOrder.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -131,7 +131,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
             }
         });
         add(btnOrder);
-        btnOrder.setBounds(680, 270, 157, 37);
+        btnOrder.setBounds(680, 270, 157, 40);
 
         txtAmount.setEditable(false);
         txtAmount.setBackground(new java.awt.Color(255, 255, 255));
@@ -140,12 +140,13 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         add(txtAmount);
         txtAmount.setBounds(680, 540, 159, 30);
 
-        lblTotal.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblTotal.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblTotal.setText("Total Amount:");
         add(lblTotal);
-        lblTotal.setBounds(550, 550, 100, 15);
+        lblTotal.setBounds(520, 550, 140, 15);
 
-        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete Button.png"))); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +155,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
             }
         });
         add(btnDelete);
-        btnDelete.setBounds(310, 530, 100, 40);
+        btnDelete.setBounds(170, 520, 130, 50);
 
         btnConfirm.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnConfirm.setText("Confirm");
@@ -165,9 +166,10 @@ public class CustomerOrderAction extends javax.swing.JPanel {
             }
         });
         add(btnConfirm);
-        btnConfirm.setBounds(680, 580, 160, 40);
+        btnConfirm.setBounds(680, 630, 160, 40);
 
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
         btnBack.setText("Back");
         btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +178,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(170, 530, 90, 40);
+        btnBack.setBounds(30, 30, 120, 50);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblMedicinesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMedicinesMouseClicked

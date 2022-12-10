@@ -97,8 +97,9 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(50, 350, 930, 97);
 
-        btnAddMessage.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnAddMessage.setText("Add Message >");
+        btnAddMessage.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnAddMessage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Message Button.png"))); // NOI18N
+        btnAddMessage.setText("Add Message");
         btnAddMessage.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAddMessage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +109,8 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
         add(btnAddMessage);
         btnAddMessage.setBounds(800, 480, 180, 50);
 
-        btnRefresh.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnRefresh.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Refresh Button.png"))); // NOI18N
         btnRefresh.setText("Refresh");
         btnRefresh.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +126,8 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
         add(lblEnterprise);
         lblEnterprise.setBounds(40, 50, 440, 30);
 
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
         btnBack.setText("Back");
         btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBack.addActionListener(new java.awt.event.ActionListener() {

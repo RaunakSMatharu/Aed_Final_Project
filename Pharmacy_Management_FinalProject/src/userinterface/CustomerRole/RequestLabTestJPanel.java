@@ -56,14 +56,14 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         setLayout(null);
 
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnSubmit.setText("Submit Message");
+        btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(580, 450, 180, 40);
+        btnSubmit.setBounds(600, 450, 160, 40);
 
         lblMessage.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblMessage.setText("Message: ");
@@ -75,8 +75,10 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         add(txtMessage);
         txtMessage.setBounds(390, 260, 370, 150);
 
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
         btnBack.setText("Back");
+        btnBack.setToolTipText("");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -88,7 +90,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         enterpriseLabel.setText("<>");
         add(enterpriseLabel);
-        enterpriseLabel.setBounds(60, 60, 390, 40);
+        enterpriseLabel.setBounds(60, 40, 540, 60);
         add(jLabel3);
         jLabel3.setBounds(10, 6, 1400, 780);
     }// </editor-fold>//GEN-END:initComponents
