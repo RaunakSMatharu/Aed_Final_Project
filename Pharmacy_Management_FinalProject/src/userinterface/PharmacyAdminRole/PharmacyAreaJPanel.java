@@ -47,10 +47,10 @@ public class PharmacyAreaJPanel extends javax.swing.JPanel {
        // txtPhone.setText(this.pharmacy.getPhone());
         
         //valueLabel.setText(this.pharmacy.getName());
-        jComboSupplier.addItem("");
+        comboSupplier.addItem("");
         for(Supplier s : system.getSupplierDirectory().getSupplierList())
         {
-            jComboSupplier.addItem(s.getName());
+            comboSupplier.addItem(s.getName());
         }
     }
 
@@ -63,91 +63,91 @@ public class PharmacyAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        valueLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblValue = new javax.swing.JLabel();
+        lblSupplier = new javax.swing.JLabel();
+        lblAddress = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         txtAddress = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jComboSupplier = new javax.swing.JComboBox<>();
-        enterpriseLabel = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        lblName = new javax.swing.JLabel();
+        lblPharmacyWorkArea = new javax.swing.JLabel();
+        comboSupplier = new javax.swing.JComboBox<>();
+        lblWelcome = new javax.swing.JLabel();
+        lblUpdate = new javax.swing.JLabel();
+        btnReviewOrders = new javax.swing.JButton();
         btnSubmit = new javax.swing.JButton();
+        lblBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
-        valueLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        valueLabel.setText("<value>");
-        add(valueLabel);
-        valueLabel.setBounds(678, 60, 150, 40);
+        lblValue.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblValue.setText("<value>");
+        add(lblValue);
+        lblValue.setBounds(550, 120, 310, 40);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Choose a Supplier:");
-        add(jLabel2);
-        jLabel2.setBounds(240, 120, 210, 50);
+        lblSupplier.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblSupplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSupplier.setText("Choose a Supplier:");
+        add(lblSupplier);
+        lblSupplier.setBounds(110, 220, 210, 50);
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel4.setText("                     Address:");
-        add(jLabel4);
-        jLabel4.setBounds(230, 420, 230, 50);
+        lblAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblAddress.setText("Address:");
+        add(lblAddress);
+        lblAddress.setBounds(220, 500, 90, 50);
 
         txtName.setEditable(false);
         txtName.setBackground(new java.awt.Color(255, 255, 255));
+        txtName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtName);
-        txtName.setBounds(520, 300, 420, 50);
+        txtName.setBounds(410, 400, 420, 50);
 
+        txtAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtAddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtAddress);
-        txtAddress.setBounds(520, 420, 420, 50);
+        txtAddress.setBounds(410, 500, 420, 50);
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel5.setText("                  Name:");
-        add(jLabel5);
-        jLabel5.setBounds(250, 300, 210, 40);
+        lblName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblName.setText("Name:");
+        add(lblName);
+        lblName.setBounds(230, 410, 70, 40);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Pharmacy Work Area");
-        add(jLabel1);
-        jLabel1.setBounds(370, 10, 580, 40);
+        lblPharmacyWorkArea.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblPharmacyWorkArea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPharmacyWorkArea.setText("Pharmacy Work Area");
+        add(lblPharmacyWorkArea);
+        lblPharmacyWorkArea.setBounds(220, 50, 580, 40);
 
-        jComboSupplier.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jComboSupplier.addActionListener(new java.awt.event.ActionListener() {
+        comboSupplier.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        comboSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboSupplierActionPerformed(evt);
+                comboSupplierActionPerformed(evt);
             }
         });
-        add(jComboSupplier);
-        jComboSupplier.setBounds(520, 120, 410, 50);
+        add(comboSupplier);
+        comboSupplier.setBounds(400, 220, 430, 50);
 
-        enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        enterpriseLabel.setText("Welcome! ");
-        add(enterpriseLabel);
-        enterpriseLabel.setBounds(390, 60, 150, 40);
+        lblWelcome.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblWelcome.setText("Welcome! ");
+        add(lblWelcome);
+        lblWelcome.setBounds(370, 120, 150, 40);
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel6.setText("                            Update Details");
-        add(jLabel6);
-        jLabel6.setBounds(360, 210, 320, 50);
-        add(jLabel3);
-        jLabel3.setBounds(0, 10, 1480, 790);
+        lblUpdate.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblUpdate.setText("Update Details");
+        add(lblUpdate);
+        lblUpdate.setBounds(490, 330, 120, 50);
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButton1.setText("Review Orders");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnReviewOrders.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnReviewOrders.setText("Review Orders");
+        btnReviewOrders.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnReviewOrders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnReviewOrdersActionPerformed(evt);
             }
         });
-        add(jButton1);
-        jButton1.setBounds(420, 590, 150, 70);
+        add(btnReviewOrders);
+        btnReviewOrders.setBounds(320, 600, 150, 50);
 
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnSubmit.setText("Submit");
@@ -158,29 +158,31 @@ public class PharmacyAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(850, 590, 150, 60);
+        btnSubmit.setBounds(620, 600, 150, 50);
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboSupplierActionPerformed
+    private void comboSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSupplierActionPerformed
         // TODO add your handling code here:
-        if(jComboSupplier.getSelectedItem() != "")
+        if(comboSupplier.getSelectedItem() != "")
         {
-            String supp = jComboSupplier.getSelectedItem().toString();
+            String supp = comboSupplier.getSelectedItem().toString();
             supplier = system.getSupplierDirectory().findSupplier(supp);
             PharmacyOrderAction poa = new PharmacyOrderAction(userProcessContainer, pharmacy, supplier);
             userProcessContainer.add("CustomerOrder", poa);
             CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         }
-    }//GEN-LAST:event_jComboSupplierActionPerformed
+    }//GEN-LAST:event_comboSupplierActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnReviewOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewOrdersActionPerformed
         // TODO add your handling code here:
        PharmacySummaryJPanel lcj = new PharmacySummaryJPanel(userProcessContainer, userAccount, system, pharmacy);
        userProcessContainer.add("PharmacyOrder", lcj);
        CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
        layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnReviewOrdersActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
@@ -195,23 +197,23 @@ public class PharmacyAreaJPanel extends javax.swing.JPanel {
            // pharmacy.setPhone(txtPhone.getText());
 
         }
-        valueLabel.setText(pharmacy.getName());
+        lblValue.setText(pharmacy.getName());
     }//GEN-LAST:event_btnSubmitActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReviewOrders;
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboSupplier;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JComboBox<String> comboSupplier;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPharmacyWorkArea;
+    private javax.swing.JLabel lblSupplier;
+    private javax.swing.JLabel lblUpdate;
+    private javax.swing.JLabel lblValue;
+    private javax.swing.JLabel lblWelcome;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtName;
-    private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }

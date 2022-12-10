@@ -95,7 +95,7 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblWorkRequest);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(50, 350, 930, 97);
+        jScrollPane1.setBounds(50, 280, 930, 190);
 
         btnAddMessage.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnAddMessage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Message Button.png"))); // NOI18N
@@ -107,7 +107,7 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
             }
         });
         add(btnAddMessage);
-        btnAddMessage.setBounds(790, 480, 190, 50);
+        btnAddMessage.setBounds(810, 520, 170, 50);
 
         btnRefresh.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Refresh Button.png"))); // NOI18N
@@ -119,7 +119,7 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
             }
         });
         add(btnRefresh);
-        btnRefresh.setBounds(50, 260, 140, 50);
+        btnRefresh.setBounds(50, 190, 140, 50);
 
         lblEnterprise.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblEnterprise.setText("<>");

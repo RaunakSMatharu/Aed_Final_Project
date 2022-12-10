@@ -30,7 +30,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         
         this.o = o;
-        enterpriseLabel.setText("OrderID: " + o);
+        lblEnterprise.setText("OrderID: " + o);
         txtMessage.setText(o.getMessage());
         
         
@@ -49,8 +49,8 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         lblMessage = new javax.swing.JLabel();
         txtMessage = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
-        enterpriseLabel = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblEnterprise = new javax.swing.JLabel();
+        lblBackground = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
@@ -63,7 +63,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(600, 450, 160, 40);
+        btnSubmit.setBounds(520, 480, 120, 40);
 
         lblMessage.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblMessage.setText("Message: ");
@@ -87,12 +87,12 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         add(btnBack);
         btnBack.setBounds(830, 60, 120, 40);
 
-        enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        enterpriseLabel.setText("<>");
-        add(enterpriseLabel);
-        enterpriseLabel.setBounds(60, 40, 540, 60);
-        add(jLabel3);
-        jLabel3.setBounds(10, 6, 1400, 780);
+        lblEnterprise.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblEnterprise.setText("<>");
+        add(lblEnterprise);
+        lblEnterprise.setBounds(60, 40, 540, 60);
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -123,8 +123,8 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblMessage;
     private javax.swing.JTextField txtMessage;
     // End of variables declaration//GEN-END:variables

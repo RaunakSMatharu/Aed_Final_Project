@@ -73,7 +73,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         add(lblPharmacy);
         lblPharmacy.setBounds(260, 30, 481, 40);
 
-        tblOrders.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tblOrders.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         tblOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -95,7 +95,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(170, 340, 670, 150);
 
-        tblMedicines.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tblMedicines.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         tblMedicines.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -123,6 +123,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         jScrollPane2.setBounds(170, 104, 670, 140);
 
         btnOrder.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnOrder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Add to Cart Button.png"))); // NOI18N
         btnOrder.setText("Order");
         btnOrder.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -131,14 +132,14 @@ public class CustomerOrderAction extends javax.swing.JPanel {
             }
         });
         add(btnOrder);
-        btnOrder.setBounds(680, 270, 157, 40);
+        btnOrder.setBounds(720, 260, 120, 50);
 
         txtAmount.setEditable(false);
         txtAmount.setBackground(new java.awt.Color(255, 255, 255));
-        txtAmount.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtAmount.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtAmount.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtAmount);
-        txtAmount.setBounds(680, 540, 159, 30);
+        txtAmount.setBounds(680, 540, 159, 40);
 
         lblTotal.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblTotal.setText("Total Amount:");
@@ -166,7 +167,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
             }
         });
         add(btnConfirm);
-        btnConfirm.setBounds(680, 630, 160, 40);
+        btnConfirm.setBounds(620, 610, 120, 50);
 
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N

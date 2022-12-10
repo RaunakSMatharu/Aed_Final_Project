@@ -29,7 +29,7 @@ public class AdminUpdateMedicineItem extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.medicineItem = mi;
         txtName.setText(mi.getName());
-        jSpinPrice.setValue(mi.getPrice());
+        spinnerPrice.setValue(mi.getPrice());
     }
 
     /**
@@ -41,9 +41,9 @@ public class AdminUpdateMedicineItem extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jSpinPrice = new javax.swing.JSpinner();
+        lblName = new javax.swing.JLabel();
+        lblPrice = new javax.swing.JLabel();
+        spinnerPrice = new javax.swing.JSpinner();
         btnSubmit = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
@@ -51,22 +51,22 @@ public class AdminUpdateMedicineItem extends javax.swing.JPanel {
 
         setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel2.setText("             Name:");
-        add(jLabel2);
-        jLabel2.setBounds(100, 100, 80, 50);
+        lblName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblName.setText("             Name:");
+        add(lblName);
+        lblName.setBounds(190, 240, 140, 50);
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel3.setText("               Price:");
-        add(jLabel3);
-        jLabel3.setBounds(100, 170, 80, 50);
+        lblPrice.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblPrice.setText("               Price:");
+        add(lblPrice);
+        lblPrice.setBounds(190, 320, 140, 50);
 
-        jSpinPrice.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jSpinPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jSpinPrice);
-        jSpinPrice.setBounds(200, 170, 460, 60);
+        spinnerPrice.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        spinnerPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(spinnerPrice);
+        spinnerPrice.setBounds(350, 320, 460, 50);
 
-        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -75,16 +75,17 @@ public class AdminUpdateMedicineItem extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(480, 300, 170, 60);
+        btnSubmit.setBounds(630, 440, 170, 60);
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         enterpriseLabel.setText("Update Medicine");
         add(enterpriseLabel);
-        enterpriseLabel.setBounds(310, 40, 197, 30);
+        enterpriseLabel.setBounds(460, 140, 197, 30);
 
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnBack.setText("< Back");
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
+        btnBack.setText("Back");
         btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,21 +93,21 @@ public class AdminUpdateMedicineItem extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(200, 300, 110, 60);
+        btnBack.setBounds(70, 60, 170, 60);
 
         txtName.setEditable(false);
         txtName.setBackground(new java.awt.Color(255, 255, 255));
         txtName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtName);
-        txtName.setBounds(200, 100, 460, 60);
+        txtName.setBounds(350, 240, 460, 50);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        if((Integer)jSpinPrice.getValue() > 0)
+        if((Integer)spinnerPrice.getValue() > 0)
         {
-            medicineItem.setPrice((Integer)jSpinPrice.getValue());
+            medicineItem.setPrice((Integer)spinnerPrice.getValue());
             JOptionPane.showMessageDialog(null, "Medicine " + medicineItem.getName()+ " updated successfully!");
         }
         else
@@ -131,9 +132,9 @@ public class AdminUpdateMedicineItem extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JSpinner jSpinPrice;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPrice;
+    private javax.swing.JSpinner spinnerPrice;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }

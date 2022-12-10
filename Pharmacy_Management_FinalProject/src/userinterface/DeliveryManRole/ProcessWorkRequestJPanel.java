@@ -37,52 +37,52 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        submitJButton = new javax.swing.JButton();
-        backJButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btnSubmit = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        lblResult = new javax.swing.JLabel();
         comboStatus = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
 
         setLayout(null);
 
-        submitJButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        submitJButton.setText("Submit Result");
-        submitJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        submitJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnSubmit.setText("Submit Result");
+        btnSubmit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButtonActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(submitJButton);
-        submitJButton.setBounds(360, 118, 131, 50);
+        add(btnSubmit);
+        btnSubmit.setBounds(390, 130, 110, 50);
 
-        backJButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
-        backJButton.setText("Back");
-        backJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
+        btnBack.setText("Back");
+        btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(backJButton);
-        backJButton.setBounds(150, 120, 110, 50);
+        add(btnBack);
+        btnBack.setBounds(250, 130, 110, 50);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setText("Result");
-        add(jLabel1);
-        jLabel1.setBounds(47, 39, 80, 40);
+        lblResult.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblResult.setText("Result");
+        add(lblResult);
+        lblResult.setBounds(40, 50, 80, 40);
 
-        comboStatus.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        comboStatus.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         add(comboStatus);
-        comboStatus.setBounds(144, 35, 380, 50);
+        comboStatus.setBounds(170, 50, 380, 50);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (3).png"))); // NOI18N
         add(jLabel2);
         jLabel2.setBounds(0, -30, 1480, 810);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         switch(comboStatus.getSelectedIndex())
         {
             case 0 : orders.setStatus(true);
@@ -95,9 +95,9 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         System.out.println(orders.getTotalAmount());
         JOptionPane.showMessageDialog(null, "Order status updated successfully!");
 
-    }//GEN-LAST:event_submitJButtonActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
 
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
@@ -106,14 +106,14 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         dwjp.populateTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox<String> comboStatus;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JButton submitJButton;
+    private javax.swing.JLabel lblResult;
     // End of variables declaration//GEN-END:variables
 }

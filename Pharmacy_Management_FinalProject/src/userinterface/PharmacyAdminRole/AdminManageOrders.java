@@ -28,17 +28,17 @@ public class AdminManageOrders extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.pharmacy = pharmacy;
-        btnAssignDeliveryMan.setEnabled(false);
-        comboDeliveryMen.setEnabled(false);
+        btnAssignDeliveryAgent.setEnabled(false);
+        comboDeliveryAgent.setEnabled(false);
        
-        valueLabel.setText(pharmacy.getName());
+        lblValue.setText(pharmacy.getName());
         populateTable();
-        comboDeliveryMen.addItem("");
+        comboDeliveryAgent.addItem("");
         System.out.println(pharmacy.getDeliveryManDirectory().getDeliveryManList().size());
         for(DeliveryMan dm : pharmacy.getDeliveryManDirectory().getDeliveryManList())
         {
             System.out.println(dm.getName());
-            comboDeliveryMen.addItem(dm.getName());
+            comboDeliveryAgent.addItem(dm.getName());
         }
     }
 
@@ -51,33 +51,33 @@ public class AdminManageOrders extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnAssignDeliveryMan = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btnAssignDeliveryAgent = new javax.swing.JButton();
+        lblCurrentOrders = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblOrders = new javax.swing.JTable();
-        valueLabel = new javax.swing.JLabel();
-        enterpriseLabel = new javax.swing.JLabel();
+        lblValue = new javax.swing.JLabel();
+        lblPharmacy = new javax.swing.JLabel();
         btnDelete = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
-        comboDeliveryMen = new javax.swing.JComboBox<>();
+        comboDeliveryAgent = new javax.swing.JComboBox<>();
 
         setLayout(null);
 
-        btnAssignDeliveryMan.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnAssignDeliveryMan.setText("Assign Delivery Man");
-        btnAssignDeliveryMan.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnAssignDeliveryMan.addActionListener(new java.awt.event.ActionListener() {
+        btnAssignDeliveryAgent.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnAssignDeliveryAgent.setText("Assign Delivery Agent");
+        btnAssignDeliveryAgent.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAssignDeliveryAgent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAssignDeliveryManActionPerformed(evt);
+                btnAssignDeliveryAgentActionPerformed(evt);
             }
         });
-        add(btnAssignDeliveryMan);
-        btnAssignDeliveryMan.setBounds(460, 260, 210, 50);
+        add(btnAssignDeliveryAgent);
+        btnAssignDeliveryAgent.setBounds(360, 490, 190, 50);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel1.setText("Current Orders");
-        add(jLabel1);
-        jLabel1.setBounds(290, 80, 95, 17);
+        lblCurrentOrders.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblCurrentOrders.setText("Current Orders");
+        add(lblCurrentOrders);
+        lblCurrentOrders.setBounds(450, 180, 140, 21);
 
         tblOrders.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         tblOrders.setModel(new javax.swing.table.DefaultTableModel(
@@ -104,22 +104,23 @@ public class AdminManageOrders extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblOrders);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(40, 110, 650, 110);
+        jScrollPane1.setBounds(90, 230, 850, 210);
 
-        valueLabel.setBackground(new java.awt.Color(204, 204, 255));
-        valueLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        valueLabel.setText("<value>");
-        add(valueLabel);
-        valueLabel.setBounds(330, 30, 282, 30);
+        lblValue.setBackground(new java.awt.Color(204, 204, 255));
+        lblValue.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblValue.setText("<value>");
+        add(lblValue);
+        lblValue.setBounds(520, 40, 282, 30);
 
-        enterpriseLabel.setBackground(new java.awt.Color(204, 204, 255));
-        enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        enterpriseLabel.setText("Pharmacy");
-        add(enterpriseLabel);
-        enterpriseLabel.setBounds(30, 30, 292, 30);
+        lblPharmacy.setBackground(new java.awt.Color(204, 204, 255));
+        lblPharmacy.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblPharmacy.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblPharmacy.setText("Pharmacy");
+        add(lblPharmacy);
+        lblPharmacy.setBounds(220, 40, 292, 30);
 
-        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete Button.png"))); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -128,10 +129,11 @@ public class AdminManageOrders extends javax.swing.JPanel {
             }
         });
         add(btnDelete);
-        btnDelete.setBounds(460, 340, 210, 50);
+        btnDelete.setBounds(790, 490, 150, 50);
 
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnBack.setText("< Back");
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
+        btnBack.setText("Back");
         btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,22 +141,22 @@ public class AdminManageOrders extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(40, 260, 100, 40);
+        btnBack.setBounds(840, 40, 100, 40);
 
-        comboDeliveryMen.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        add(comboDeliveryMen);
-        comboDeliveryMen.setBounds(190, 260, 220, 50);
+        comboDeliveryAgent.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        add(comboDeliveryAgent);
+        comboDeliveryAgent.setBounds(90, 490, 220, 50);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAssignDeliveryManActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignDeliveryManActionPerformed
+    private void btnAssignDeliveryAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignDeliveryAgentActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblOrders.getSelectedRow();
         if (selectedRow >= 0)
         {
             Orders orders = (Orders) tblOrders.getValueAt(selectedRow, 0);
-            if(comboDeliveryMen.getSelectedItem() != "")
+            if(comboDeliveryAgent.getSelectedItem() != "")
             {
-                String dmName = comboDeliveryMen.getSelectedItem().toString();
+                String dmName = comboDeliveryAgent.getSelectedItem().toString();
                 DeliveryMan dm = pharmacy.findDeliveryMan(dmName);
                 orders.setDeliveryMan(dm);
                 JOptionPane.showMessageDialog(null, "Delivery man assigned successfully!");
@@ -171,16 +173,16 @@ public class AdminManageOrders extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-    }//GEN-LAST:event_btnAssignDeliveryManActionPerformed
+    }//GEN-LAST:event_btnAssignDeliveryAgentActionPerformed
 
     private void tblOrdersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOrdersMouseClicked
         // TODO add your handling code here:
         int selectedRow = tblOrders.getSelectedRow();
         if (selectedRow >= 0)
         {
-            comboDeliveryMen.setEnabled(true);
+            comboDeliveryAgent.setEnabled(true);
             btnDelete.setEnabled(true);
-            btnAssignDeliveryMan.setEnabled(true);
+            btnAssignDeliveryAgent.setEnabled(true);
         }
     }//GEN-LAST:event_tblOrdersMouseClicked
 
@@ -210,15 +212,15 @@ public class AdminManageOrders extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAssignDeliveryMan;
+    private javax.swing.JButton btnAssignDeliveryAgent;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JComboBox<String> comboDeliveryMen;
-    private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> comboDeliveryAgent;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblCurrentOrders;
+    private javax.swing.JLabel lblPharmacy;
+    private javax.swing.JLabel lblValue;
     private javax.swing.JTable tblOrders;
-    private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
     
     private void populateTable() {
@@ -249,8 +251,8 @@ public class AdminManageOrders extends javax.swing.JPanel {
         }
         if(dtm.getRowCount() == 0)
             {
-                comboDeliveryMen.setEnabled(false);
-                btnAssignDeliveryMan.setEnabled(false);
+                comboDeliveryAgent.setEnabled(false);
+                btnAssignDeliveryAgent.setEnabled(false);
             }
     }
 }
