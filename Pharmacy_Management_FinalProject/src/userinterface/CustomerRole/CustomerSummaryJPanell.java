@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CustomerSummaryJPanell extends javax.swing.JPanel {
 
-     private JPanel userProcessContainer;
+    private JPanel userProcessContainer;
 
     private UserAccount user;
     private Customer customer;
@@ -46,7 +46,7 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
                     this.customer = c;
                 }
         }
-        enterpriseLabel.setText(this.customer + "'s orders");
+        lblEnterprise.setText(this.customer + "'s orders");
         populateRequestTable();
     }
 
@@ -60,16 +60,16 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
-        requestTestJButton = new javax.swing.JButton();
-        refreshTestJButton = new javax.swing.JButton();
-        enterpriseLabel = new javax.swing.JLabel();
+        tblWorkRequest = new javax.swing.JTable();
+        btnAddMessage = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
+        lblEnterprise = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
 
         setLayout(null);
 
-        workRequestJTable.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblWorkRequest.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        tblWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -92,40 +92,40 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(workRequestJTable);
+        jScrollPane1.setViewportView(tblWorkRequest);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(10, 80, 560, 97);
+        jScrollPane1.setBounds(50, 350, 930, 97);
 
-        requestTestJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        requestTestJButton.setText("Add Message >");
-        requestTestJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnAddMessage.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnAddMessage.setText("Add Message >");
+        btnAddMessage.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAddMessage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButtonActionPerformed(evt);
+                btnAddMessageActionPerformed(evt);
             }
         });
-        add(requestTestJButton);
-        requestTestJButton.setBounds(480, 210, 90, 39);
+        add(btnAddMessage);
+        btnAddMessage.setBounds(800, 480, 180, 50);
 
-        refreshTestJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        refreshTestJButton.setText("Refresh");
-        refreshTestJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnRefresh.setText("Refresh");
+        btnRefresh.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshTestJButtonActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
-        add(refreshTestJButton);
-        refreshTestJButton.setBounds(480, 20, 80, 21);
+        add(btnRefresh);
+        btnRefresh.setBounds(860, 260, 120, 50);
 
-        enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
-        enterpriseLabel.setText("<>");
-        add(enterpriseLabel);
-        enterpriseLabel.setBounds(15, 36, 260, 30);
+        lblEnterprise.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblEnterprise.setText("<>");
+        add(lblEnterprise);
+        lblEnterprise.setBounds(40, 50, 440, 30);
 
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnBack.setText("< Back");
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnBack.setText("Back");
         btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,22 +133,22 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(10, 199, 80, 30);
+        btnBack.setBounds(860, 50, 120, 50);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
+    private void btnAddMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMessageActionPerformed
 
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = tblWorkRequest.getSelectedRow();
         if (selectedRow >= 0)
         {
-            if((workRequestJTable.getValueAt(selectedRow, 1)) == null)
+            if((tblWorkRequest.getValueAt(selectedRow, 1)) == null)
             {
                 JOptionPane.showMessageDialog(null,"Order is not live anymore!", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
             else
             {
-                Orders o = (Orders) workRequestJTable.getValueAt(selectedRow, 0);
+                Orders o = (Orders) tblWorkRequest.getValueAt(selectedRow, 0);
                 RequestLabTestJPanel fs = new RequestLabTestJPanel(userProcessContainer, o);
                 userProcessContainer.add("SysAdminManageEmployees", fs);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -160,10 +160,10 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-    }//GEN-LAST:event_requestTestJButtonActionPerformed
+    }//GEN-LAST:event_btnAddMessageActionPerformed
 
-    private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
-        if(workRequestJTable.getRowCount() > 0)
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        if(tblWorkRequest.getRowCount() > 0)
         {
             populateRequestTable();
             JOptionPane.showMessageDialog(null, "Table refreshed!");
@@ -172,7 +172,7 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
         {
             JOptionPane.showMessageDialog(null,"Nothing to refresh!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_refreshTestJButtonActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -183,21 +183,21 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddMessage;
     private javax.swing.JButton btnBack;
-    private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton refreshTestJButton;
-    private javax.swing.JButton requestTestJButton;
-    private javax.swing.JTable workRequestJTable;
+    private javax.swing.JLabel lblEnterprise;
+    private javax.swing.JTable tblWorkRequest;
     // End of variables declaration//GEN-END:variables
 public void populateRequestTable() {
         if(customer.getPastOrderList() != null)
         {
-            DefaultTableModel dtm = (DefaultTableModel)workRequestJTable.getModel();
+            DefaultTableModel dtm = (DefaultTableModel)tblWorkRequest.getModel();
             dtm.setRowCount(0);
             
-            refreshTestJButton.setEnabled(true);
-            requestTestJButton.setEnabled(true);
+            btnRefresh.setEnabled(true);
+            btnAddMessage.setEnabled(true);
             int count = 1;
             for(Orders o : customer.getPastOrderList())
             {

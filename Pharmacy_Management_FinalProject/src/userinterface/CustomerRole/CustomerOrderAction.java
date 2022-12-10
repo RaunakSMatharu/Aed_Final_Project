@@ -38,9 +38,9 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         lblPharmacy.setText("Pharmacy: " +this.pharma.getName());
         populateMedicine(); 
         populateOrder();
-        if(tblOrder.getRowCount() <= 0)
+        if(tblOrders.getRowCount() <= 0)
         {
-            btnOrder.setEnabled(false);
+            btnConfirm.setEnabled(false);
         }
     }
 
@@ -55,14 +55,14 @@ public class CustomerOrderAction extends javax.swing.JPanel {
 
         lblPharmacy = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblOrder = new javax.swing.JTable();
+        tblOrders = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblMedicine = new javax.swing.JTable();
-        btnAddItem = new javax.swing.JButton();
-        txtAmount = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        btnDelete = new javax.swing.JButton();
+        tblMedicines = new javax.swing.JTable();
         btnOrder = new javax.swing.JButton();
+        txtAmount = new javax.swing.JTextField();
+        lblTotal = new javax.swing.JLabel();
+        btnDelete = new javax.swing.JButton();
+        btnConfirm = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
 
         setLayout(null);
@@ -71,10 +71,10 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         lblPharmacy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPharmacy.setText("<value>");
         add(lblPharmacy);
-        lblPharmacy.setBounds(120, 20, 481, 30);
+        lblPharmacy.setBounds(260, 50, 481, 30);
 
-        tblOrder.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        tblOrder.setModel(new javax.swing.table.DefaultTableModel(
+        tblOrders.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tblOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -90,13 +90,13 @@ public class CustomerOrderAction extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblOrder);
+        jScrollPane1.setViewportView(tblOrders);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(21, 236, 670, 104);
+        jScrollPane1.setBounds(170, 340, 670, 150);
 
-        tblMedicine.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        tblMedicine.setModel(new javax.swing.table.DefaultTableModel(
+        tblMedicines.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tblMedicines.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -112,51 +112,18 @@ public class CustomerOrderAction extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblMedicine.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblMedicines.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblMedicineMouseClicked(evt);
+                tblMedicinesMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(tblMedicine);
+        jScrollPane2.setViewportView(tblMedicines);
 
         add(jScrollPane2);
-        jScrollPane2.setBounds(20, 79, 670, 104);
+        jScrollPane2.setBounds(170, 104, 670, 140);
 
-        btnAddItem.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnAddItem.setText("Add Item to Order");
-        btnAddItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnAddItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddItemActionPerformed(evt);
-            }
-        });
-        add(btnAddItem);
-        btnAddItem.setBounds(300, 190, 157, 37);
-
-        txtAmount.setEditable(false);
-        txtAmount.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        txtAmount.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(txtAmount);
-        txtAmount.setBounds(530, 360, 159, 30);
-
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel1.setText("Total Amount:");
-        add(jLabel1);
-        jLabel1.setBounds(400, 370, 100, 15);
-
-        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnDelete.setText("Delete Item");
-        btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-        add(btnDelete);
-        btnDelete.setBounds(110, 360, 69, 36);
-
-        btnOrder.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnOrder.setText("Confirm Order");
+        btnOrder.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnOrder.setText("Order");
         btnOrder.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,10 +131,44 @@ public class CustomerOrderAction extends javax.swing.JPanel {
             }
         });
         add(btnOrder);
-        btnOrder.setBounds(530, 400, 159, 21);
+        btnOrder.setBounds(680, 270, 157, 37);
 
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnBack.setText("< Back");
+        txtAmount.setEditable(false);
+        txtAmount.setBackground(new java.awt.Color(255, 255, 255));
+        txtAmount.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtAmount.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(txtAmount);
+        txtAmount.setBounds(680, 540, 159, 30);
+
+        lblTotal.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblTotal.setText("Total Amount:");
+        add(lblTotal);
+        lblTotal.setBounds(550, 550, 100, 15);
+
+        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnDelete.setText("Delete");
+        btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+        add(btnDelete);
+        btnDelete.setBounds(310, 530, 100, 40);
+
+        btnConfirm.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnConfirm.setText("Confirm");
+        btnConfirm.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmActionPerformed(evt);
+            }
+        });
+        add(btnConfirm);
+        btnConfirm.setBounds(680, 580, 160, 40);
+
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnBack.setText("Back");
         btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,24 +176,24 @@ public class CustomerOrderAction extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(30, 360, 60, 40);
+        btnBack.setBounds(170, 530, 90, 40);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tblMedicineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMedicineMouseClicked
+    private void tblMedicinesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMedicinesMouseClicked
         // TODO add your handling code here:
-        int selectedRow = tblMedicine.getSelectedRow();
+        int selectedRow = tblMedicines.getSelectedRow();
         if (selectedRow >= 0)
         {
-            btnAddItem.setEnabled(true);
+            btnOrder.setEnabled(true);
         }
-    }//GEN-LAST:event_tblMedicineMouseClicked
+    }//GEN-LAST:event_tblMedicinesMouseClicked
 
-    private void btnAddItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddItemActionPerformed
+    private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tblMedicine.getSelectedRow();
+        int selectedRow = tblMedicines.getSelectedRow();
         if (selectedRow >= 0)
         {
-            MedicineItem mi2 = (MedicineItem) tblMedicine.getValueAt(selectedRow, 1);
+            MedicineItem mi2 = (MedicineItem) tblMedicines.getValueAt(selectedRow, 1);
 
             cart.add(mi2);
             JOptionPane.showMessageDialog(null, "Medicine Item " + mi2.getName()+ " added to cart successfully!");
@@ -205,14 +206,14 @@ public class CustomerOrderAction extends javax.swing.JPanel {
             return;
         }
 
-    }//GEN-LAST:event_btnAddItemActionPerformed
+    }//GEN-LAST:event_btnOrderActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        int selectedRow1 = tblOrder.getSelectedRow();
+        int selectedRow1 = tblOrders.getSelectedRow();
         if (selectedRow1 >= 0)
         {
-            MedicineItem mi1 = (MedicineItem) tblOrder.getValueAt(selectedRow1, 1);
+            MedicineItem mi1 = (MedicineItem) tblOrders.getValueAt(selectedRow1, 1);
             //order.deleteFoodItem(fi);
             cart.remove(mi1);
             JOptionPane.showMessageDialog(null, "Medicine Item " + mi1.getName()+ " deleted from cart successfully!");
@@ -226,7 +227,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
+    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
         // TODO add your handling code here:
         orders = pharma.getOrderDirectory().createNewOrder(customer);
         for(MedicineItem mo : cart)
@@ -237,7 +238,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
       
         JOptionPane.showMessageDialog(null, "Thank you for your order! Order of " + orders.getMedicineItemList().size() + " medicine item(s) for amount $" + orders.getTotalAmount() + " is placed successfully!");
         
-    }//GEN-LAST:event_btnOrderActionPerformed
+    }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -251,20 +252,20 @@ public class CustomerOrderAction extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddItem;
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnConfirm;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnOrder;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblPharmacy;
-    private javax.swing.JTable tblMedicine;
-    private javax.swing.JTable tblOrder;
+    private javax.swing.JLabel lblTotal;
+    private javax.swing.JTable tblMedicines;
+    private javax.swing.JTable tblOrders;
     private javax.swing.JTextField txtAmount;
     // End of variables declaration//GEN-END:variables
 private void populateMedicine() {
-        DefaultTableModel dtm = (DefaultTableModel)tblMedicine.getModel();
+        DefaultTableModel dtm = (DefaultTableModel)tblMedicines.getModel();
         dtm.setRowCount(0);
         if(pharma.getMedicineCatalog().getMedicineItemList() != null)
         {
@@ -279,18 +280,18 @@ private void populateMedicine() {
         }
         if(dtm.getRowCount() == 0)
             {
-                btnAddItem.setEnabled(false);
+                btnOrder.setEnabled(false);
                 btnDelete.setEnabled(false);
             }
     }
 
     private void populateOrder() {
-        DefaultTableModel dtm = (DefaultTableModel)tblOrder.getModel();
+        DefaultTableModel dtm = (DefaultTableModel)tblOrders.getModel();
         dtm.setRowCount(0);
         if(cart != null)
         {
             btnDelete.setEnabled(true);
-            btnOrder.setEnabled(true);
+            btnConfirm.setEnabled(true);
             int count = 1;
             for(MedicineItem mi3 : cart)
             {
@@ -303,9 +304,9 @@ private void populateMedicine() {
             }
             txtAmount.setText(Integer.toString(totalAmount));
         }
-        if(tblOrder.getRowCount() <= 0)
+        if(tblOrders.getRowCount() <= 0)
         {
-            btnOrder.setEnabled(false);
+            btnConfirm.setEnabled(false);
             btnDelete.setEnabled(false);
         }
     }

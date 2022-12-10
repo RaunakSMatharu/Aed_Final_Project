@@ -53,12 +53,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        btnLogin = new javax.swing.JButton();
         txtUserName = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
         lblUsername = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         loginJLabel = new javax.swing.JLabel();
+        btnLogin = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
@@ -67,15 +67,6 @@ public class MainJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
-
-        btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btnLogin.setText("Login");
-        btnLogin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
-            }
-        });
 
         txtUserName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtUserName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -90,6 +81,15 @@ public class MainJFrame extends javax.swing.JFrame {
         lblPassword.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblPassword.setForeground(new java.awt.Color(255, 255, 255));
         lblPassword.setText("Password");
+
+        btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnLogin.setText("Login");
+        btnLogin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         btnLogout.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnLogout.setText("Logout");

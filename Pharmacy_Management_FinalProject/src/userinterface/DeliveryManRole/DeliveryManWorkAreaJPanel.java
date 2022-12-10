@@ -60,7 +60,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     public void populateTable(){
         if(pharmacy.getOrderDirectory() != null)
         {
-            DefaultTableModel dtm = (DefaultTableModel)workRequestJTable.getModel();
+            DefaultTableModel dtm = (DefaultTableModel)tblWorkRequest.getModel();
             dtm.setRowCount(0);
             for(Orders o : pharmacy.getOrderDirectory().getOrderList())
             {
@@ -96,25 +96,25 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         lblDeliveryMan = new javax.swing.JLabel();
-        refreshJButton = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
-        processJButton = new javax.swing.JButton();
+        tblWorkRequest = new javax.swing.JTable();
+        btnProcess = new javax.swing.JButton();
 
-        lblDeliveryMan.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblDeliveryMan.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblDeliveryMan.setText("<>");
 
-        refreshJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        refreshJButton.setText("Refresh");
-        refreshJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        refreshJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnRefresh.setText("Refresh");
+        btnRefresh.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshJButtonActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
 
-        workRequestJTable.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblWorkRequest.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tblWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -137,14 +137,14 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(workRequestJTable);
+        jScrollPane1.setViewportView(tblWorkRequest);
 
-        processJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        processJButton.setText("Process");
-        processJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        processJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnProcess.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnProcess.setText("Process");
+        btnProcess.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processJButtonActionPerformed(evt);
+                btnProcessActionPerformed(evt);
             }
         });
 
@@ -153,34 +153,34 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lblDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1000, 1000, 1000))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(104, 104, 104))
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnProcess, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1316, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lblDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
-                .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(72, 72, 72)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(btnProcess, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
-        if(workRequestJTable.getRowCount() > 0)
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        if(tblWorkRequest.getRowCount() > 0)
         {
             populateTable();
             JOptionPane.showMessageDialog(null, "Table refreshed!");
@@ -189,21 +189,21 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         {
             JOptionPane.showMessageDialog(null,"Nothing to refresh!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_refreshJButtonActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
-    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
+    private void btnProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessActionPerformed
 
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = tblWorkRequest.getSelectedRow();
         if (selectedRow >= 0)
         {
-            if((workRequestJTable.getValueAt(selectedRow, 1)) == null)
+            if((tblWorkRequest.getValueAt(selectedRow, 1)) == null)
             {
                 JOptionPane.showMessageDialog(null,"Order is not live anymore!", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
             else
             {
-                Orders o = (Orders) workRequestJTable.getValueAt(selectedRow, 0);
+                Orders o = (Orders) tblWorkRequest.getValueAt(selectedRow, 0);
                 ProcessWorkRequestJPanel fs = new ProcessWorkRequestJPanel(userProcessContainer, o);
                 userProcessContainer.add("SysAdminManageEmployees", fs);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -215,14 +215,14 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-    }//GEN-LAST:event_processJButtonActionPerformed
+    }//GEN-LAST:event_btnProcessActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnProcess;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblDeliveryMan;
-    private javax.swing.JButton processJButton;
-    private javax.swing.JButton refreshJButton;
-    private javax.swing.JTable workRequestJTable;
+    private javax.swing.JTable tblWorkRequest;
     // End of variables declaration//GEN-END:variables
 }
