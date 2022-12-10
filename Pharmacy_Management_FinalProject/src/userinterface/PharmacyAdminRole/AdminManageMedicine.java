@@ -4,6 +4,8 @@
  */
 package userinterface.PharmacyAdminRole;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ruchikapadiwala
@@ -39,7 +41,7 @@ public class AdminManageMedicine extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         jDelete = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
-        btnSubmit = new javax.swing.JButton();
+        jSubmit = new javax.swing.JButton();
 
         setLayout(null);
 
@@ -141,16 +143,16 @@ public class AdminManageMedicine extends javax.swing.JPanel {
         add(btnCreate);
         btnCreate.setBounds(10, 110, 132, 35);
 
-        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnSubmit.setText("Submit");
-        btnSubmit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+        jSubmit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jSubmit.setText("Submit");
+        jSubmit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitActionPerformed(evt);
+                jSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit);
-        btnSubmit.setBounds(350, 360, 132, 35);
+        add(jSubmit);
+        jSubmit.setBounds(350, 340, 130, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageActionPerformed
@@ -166,16 +168,15 @@ public class AdminManageMedicine extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+    private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSubmitActionPerformed
+    }//GEN-LAST:event_jSubmitActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnManage;
-    private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JButton jDelete;
     private javax.swing.JLabel jLabel1;
@@ -183,6 +184,7 @@ public class AdminManageMedicine extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinPrice;
+    private javax.swing.JButton jSubmit;
     private javax.swing.JTable tblMedicineCatalog;
     private javax.swing.JTextField txtName;
     private javax.swing.JLabel valueLabel;
