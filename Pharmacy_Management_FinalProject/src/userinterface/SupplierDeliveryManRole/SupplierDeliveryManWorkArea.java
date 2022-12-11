@@ -46,7 +46,7 @@ public class SupplierDeliveryManWorkArea extends javax.swing.JPanel {
                 break;
             }
         }
-        lblDeliveryMan.setText("Orders to be delivered by " + this.supplierDeliveryMan);
+        lblDeliveryAgent.setText("Orders to be delivered by " + this.supplierDeliveryMan);
         
 //        if(workRequestJTable.getRowCount() > 0)
 //        {
@@ -56,7 +56,7 @@ public class SupplierDeliveryManWorkArea extends javax.swing.JPanel {
  public void populateTable(){
         if(supplier.getSupplierOrderDirectory() != null)
         {
-            DefaultTableModel dtm = (DefaultTableModel)workRequestJTable.getModel();
+            DefaultTableModel dtm = (DefaultTableModel)tblWorkRequest.getModel();
             dtm.setRowCount(0);
             for(SupplierOrders so : supplier.getSupplierOrderDirectory().getSupplierOrderList())
             {
@@ -92,16 +92,16 @@ public class SupplierDeliveryManWorkArea extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
-        lblDeliveryMan = new javax.swing.JLabel();
-        processJButton = new javax.swing.JButton();
-        refreshJButton = new javax.swing.JButton();
+        tblWorkRequest = new javax.swing.JTable();
+        lblDeliveryAgent = new javax.swing.JLabel();
+        btnProcess = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
 
-        workRequestJTable.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblWorkRequest.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        tblWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -124,55 +124,56 @@ public class SupplierDeliveryManWorkArea extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(workRequestJTable);
+        jScrollPane1.setViewportView(tblWorkRequest);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(20, 180, 910, 100);
+        jScrollPane1.setBounds(60, 180, 910, 100);
 
-        lblDeliveryMan.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        lblDeliveryMan.setText("<>");
-        add(lblDeliveryMan);
-        lblDeliveryMan.setBounds(88, 68, 400, 20);
+        lblDeliveryAgent.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblDeliveryAgent.setText("<>");
+        add(lblDeliveryAgent);
+        lblDeliveryAgent.setBounds(48, 38, 520, 50);
 
-        processJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        processJButton.setText("Process");
-        processJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        processJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnProcess.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnProcess.setText("Process");
+        btnProcess.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processJButtonActionPerformed(evt);
+                btnProcessActionPerformed(evt);
             }
         });
-        add(processJButton);
-        processJButton.setBounds(690, 340, 110, 50);
+        add(btnProcess);
+        btnProcess.setBounds(450, 340, 110, 50);
 
-        refreshJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        refreshJButton.setText("Refresh");
-        refreshJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        refreshJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Refresh Button.png"))); // NOI18N
+        btnRefresh.setText("Refresh");
+        btnRefresh.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshJButtonActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
-        add(refreshJButton);
-        refreshJButton.setBounds(690, 70, 90, 30);
+        add(btnRefresh);
+        btnRefresh.setBounds(850, 110, 120, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (4).png"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, 80, 1080, 700);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
-  int selectedRow = workRequestJTable.getSelectedRow();
+    private void btnProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessActionPerformed
+  int selectedRow = tblWorkRequest.getSelectedRow();
         if (selectedRow >= 0)
         {
-            if((workRequestJTable.getValueAt(selectedRow, 1)) == null)
+            if((tblWorkRequest.getValueAt(selectedRow, 1)) == null)
             {
                 JOptionPane.showMessageDialog(null,"Order is not live anymore!", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
             else
             {
-                SupplierOrders so = (SupplierOrders) workRequestJTable.getValueAt(selectedRow, 0);
+                SupplierOrders so = (SupplierOrders) tblWorkRequest.getValueAt(selectedRow, 0);
                 SupplierProcessDeliveryWorkArea fs = new SupplierProcessDeliveryWorkArea(userProcessContainer, so);
                 userProcessContainer.add("SysAdminManageEmployees", fs);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -185,10 +186,10 @@ public class SupplierDeliveryManWorkArea extends javax.swing.JPanel {
             return;
         }
         
-    }//GEN-LAST:event_processJButtonActionPerformed
+    }//GEN-LAST:event_btnProcessActionPerformed
 
-    private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
-        if(workRequestJTable.getRowCount() > 0)
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        if(tblWorkRequest.getRowCount() > 0)
         {
             populateTable();
             JOptionPane.showMessageDialog(null, "Table refreshed!");
@@ -197,15 +198,15 @@ public class SupplierDeliveryManWorkArea extends javax.swing.JPanel {
         {
             JOptionPane.showMessageDialog(null,"Nothing to refresh!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_refreshJButtonActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnProcess;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblDeliveryMan;
-    private javax.swing.JButton processJButton;
-    private javax.swing.JButton refreshJButton;
-    private javax.swing.JTable workRequestJTable;
+    private javax.swing.JLabel lblDeliveryAgent;
+    private javax.swing.JTable tblWorkRequest;
     // End of variables declaration//GEN-END:variables
 }

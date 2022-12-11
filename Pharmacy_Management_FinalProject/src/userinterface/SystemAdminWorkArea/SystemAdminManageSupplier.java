@@ -49,8 +49,8 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
     private void initComponents() {
 
         txtSupplierName = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblSupplierName = new javax.swing.JLabel();
+        lblAddress = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
         btnDelete = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
@@ -64,24 +64,29 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
+
+        txtSupplierName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         add(txtSupplierName);
-        txtSupplierName.setBounds(336, 179, 228, 23);
+        txtSupplierName.setBounds(450, 320, 300, 40);
 
-        jLabel1.setText("Supplier Name:");
-        add(jLabel1);
-        jLabel1.setBounds(188, 183, 144, 18);
+        lblSupplierName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblSupplierName.setText("Supplier Name:");
+        add(lblSupplierName);
+        lblSupplierName.setBounds(300, 330, 122, 18);
 
-        jLabel2.setText("Address:");
-        add(jLabel2);
-        jLabel2.setBounds(188, 245, 144, 17);
+        lblAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblAddress.setText("Address:");
+        add(lblAddress);
+        lblAddress.setBounds(350, 390, 80, 21);
 
         lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Manage Supplier");
         add(lblTitle);
-        lblTitle.setBounds(123, 18, 445, 29);
+        lblTitle.setBounds(270, 20, 445, 29);
 
-        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete Button.png"))); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -90,9 +95,10 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
             }
         });
         add(btnDelete);
-        btnDelete.setBounds(21, 179, 37, 21);
+        btnDelete.setBounds(20, 280, 130, 54);
 
-        btnView.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnView.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/View Button.png"))); // NOI18N
         btnView.setText("View");
         btnView.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnView.addActionListener(new java.awt.event.ActionListener() {
@@ -101,9 +107,10 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
             }
         });
         add(btnView);
-        btnView.setBounds(18, 132, 80, 21);
+        btnView.setBounds(20, 200, 130, 50);
 
-        btnCreate.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnCreate.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnCreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Create Button.png"))); // NOI18N
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,9 +118,10 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
             }
         });
         add(btnCreate);
-        btnCreate.setBounds(21, 226, 72, 21);
+        btnCreate.setBounds(20, 370, 130, 54);
 
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
         btnBack.setText("Back");
         btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -122,8 +130,9 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(18, 92, 80, 21);
+        btnBack.setBounds(20, 20, 130, 50);
 
+        tblSupplier.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         tblSupplier.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -151,8 +160,9 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
         jScrollPane2.setViewportView(tblSupplier);
 
         add(jScrollPane2);
-        jScrollPane2.setBounds(188, 65, 500, 96);
+        jScrollPane2.setBounds(240, 86, 690, 200);
 
+        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,13 +170,13 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(353, 279, 72, 23);
-        add(txtAddress);
-        txtAddress.setBounds(336, 242, 236, 23);
+        btnSubmit.setBounds(530, 470, 100, 40);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (14).png"))); // NOI18N
+        txtAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        add(txtAddress);
+        txtAddress.setBounds(450, 380, 300, 40);
         add(jLabel4);
-        jLabel4.setBounds(180, 150, 740, 340);
+        jLabel4.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -264,10 +274,10 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnView;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblSupplierName;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTable tblSupplier;
     private javax.swing.JTextField txtAddress;
