@@ -3,45 +3,58 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/PharmacyAdminRole/PharmacySummaryJPanel.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/Edit%20Button.png</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SupplierAdminRole/AdminManageSupplierOrders.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SupplierAdminRole/AdminManageSupplierMedicine.java</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/PharmacyAdminRole/PharmacyRequestJPanel.java</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/240_F_137489339_mMnhIwVO8WH38QrL4svgmgqPFhmWRwA3.jpg</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/240_F_348675139_sXYM5n9VjOzF4nS4Nd2lCbqM3zwsgMeO.jpg</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/Organization.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/Customer/CustomerDirectory.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/240_F_352482719_ijtuuA2TpqmysN1Wcd7FS6V3siL8zyfX.jpg</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/Create%20Button.png</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/Orders/Orders.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/PharmacyAdminRole/AdminManageOrders.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/Back%20Button.png</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/PharmacyAdminRole/PharmacyAreaJPanel.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/Message%20Button.png</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SystemAdminWorkArea/SystemUpdateSupplierEmployee.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/Role/HospitalAdminRole.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SystemAdminWorkArea/SystemAdminManageCustomers.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/4cdd558652d6adfe5e9d4c5af515fc40.jpg</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/240_F_352799554_VfnH5r1Ke13TBl9E4eckQN5i9tPy2FMO.jpg</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/PharmacyAdminRole/AdminWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SupplierAdminRole/SupplierAdminWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/HospitalRole/HospitalAreaJPanel.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/Hospital/HospitalDirectory.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/DrugMinistry/DrugApprovalJPanel.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/ConfigureASystem.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/PharmacyAdminRole/PharmacySummaryJPanel.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SupplierAdminRole/AdminManageSupplierOrders.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/DeliveryManRole/ProcessWorkRequestJPanel.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/PharmacyAdminRole/PharmacyRequestJPanel.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SystemAdminWorkArea/SystemAdminManageSupplier.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/240_F_137489339_mMnhIwVO8WH38QrL4svgmgqPFhmWRwA3.jpg</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SystemAdminWorkArea/SystemManageEmployees.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/Organization.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SupplierAdminRole/MedicinesApproved.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SystemAdminWorkArea/SystemAdminManagePharmacy.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SystemAdminWorkArea/SystemAdminWorkAreaJPanel.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/HospitalRole/HospitalOrderAction.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SupplierAdminRole/AdminUpdateSupplierMedicineItem.java</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/Create%20Button.png</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/Role/Role.java</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/Orders/Orders.java</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/PharmacyAdminRole/AdminManageOrders.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SystemAdminWorkArea/SystemAdminManageSupplierEmployee.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/PharmacyAdminRole/PharmacyOrderAction.java</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/Back%20Button.png</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/EcoSystem.java</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/PharmacyAdminRole/PharmacyAreaJPanel.java</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/Message%20Button.png</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/MainJFrame.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/Pharmacy%20Delivery.jpeg</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SystemAdminWorkArea/SystemAdminUpdateCustomer.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/HospitalRole/HospitalSummaryJPanel.java</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/Role/HospitalAdminRole.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/240_F_210664967_72koQd23RBihWIbnmukofgWIH2pH1F9y.jpg</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/4cdd558652d6adfe5e9d4c5af515fc40.jpg</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/240_F_352799554_VfnH5r1Ke13TBl9E4eckQN5i9tPy2FMO.jpg</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SystemAdminWorkArea/SystemUpdateEmployee.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/Customer/EmailValidation.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/18-768x768.png</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/PharmacyAdminRole/AdminUpdateMedicineItem.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SystemAdminWorkArea/SystemAdminManageHospitals.java</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SupplierAdminRole/SupplierAdminWorkAreaJPanel.java</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/HospitalRole/HospitalAreaJPanel.java</file>
+            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/SupplierDeliveryManRole/SupplierProcessDeliveryWorkArea.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/icon/Medomand-online-Pharmacy-supply-1024x759.png</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/Hospital/HospitalDirectory.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/userinterface/DeliveryManRole/DeliveryManWorkAreaJPanel.java</file>
-            <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/ConfigureASystem.java</file>
             <file>file:/C:/Users/HOME/Documents/NetBeansProjects/AED/Aed_Final_Project/Pharmacy_Management_FinalProject/src/Business/Orders/OrderDirectory.java</file>
         </group>
     </open-files>
