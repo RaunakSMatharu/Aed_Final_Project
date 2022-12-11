@@ -6,6 +6,7 @@ package Business;
 
 import Business.Customer.CustomerDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
+import Business.Drugs.DrugsDirectory;
 import Business.Pharmacy.PharmacyDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
@@ -31,6 +32,8 @@ public class EcoSystem extends Organization{
     private SupplierDeliveryManDirectory supplierDeliveryManDirectory;
     
     private HospitalDirectory hospitalDirectory;
+    
+    private DrugsDirectory drugsDirectory;
 
     public EcoSystem(PharmacyDirectory pharmacyDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory, SupplierDirectory supplierDirectory, SupplierDeliveryManDirectory supplierDeliveryManDirectory) {
 
@@ -41,6 +44,8 @@ public class EcoSystem extends Organization{
                         this.supplierDeliveryManDirectory = supplierDeliveryManDirectory;
                         
                         this.hospitalDirectory=hospitalDirectory;
+                        
+                        this.drugsDirectory = drugsDirectory;
 
     }
 
@@ -70,6 +75,12 @@ public class EcoSystem extends Organization{
                         this.supplierDeliveryManDirectory = new SupplierDeliveryManDirectory();
                         
                         this.hospitalDirectory = new HospitalDirectory();
+                        
+                        this.drugsDirectory = new DrugsDirectory();
+    }
+    
+    public DrugsDirectory getDrugsDirectory() {
+        return drugsDirectory;
     }
 
     public PharmacyDirectory getPharmacyDirectory() {
