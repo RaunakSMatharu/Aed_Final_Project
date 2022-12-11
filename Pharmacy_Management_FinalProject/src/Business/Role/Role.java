@@ -19,7 +19,9 @@ public abstract class Role {
         DeliveryMan("Delivery"),
         SupplierAdmin("SupplierAdmin"),
         SupplierDeliveryMan("SupplierDeliveryMan"),
-        SysAdmin("Sysadmin");
+        SysAdmin("Sysadmin"),
+        Hospital("Hospital");
+        
         
         
         private String value;

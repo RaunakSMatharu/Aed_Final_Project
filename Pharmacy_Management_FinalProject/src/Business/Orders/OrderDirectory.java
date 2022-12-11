@@ -5,6 +5,7 @@
 package Business.Orders;
 
 import Business.Customer.Customer;
+import Business.Hospital.Hospital;
 import java.util.ArrayList;
 /**
  *
@@ -28,6 +29,15 @@ public class OrderDirectory {
         orderList.add(orders);
         cust.getPastOrderList().add(orders);
         return orders;
-    }    
+    }   
+    
+    public Orders createNewOrderH(Hospital hosp)
+    {
+        Orders orders = new Orders();
+        orders.setHospital(hosp);
+        orderList.add(orders);
+        hosp.getPastOrderList().add(orders);
+        return orders;
+    } 
     
 }

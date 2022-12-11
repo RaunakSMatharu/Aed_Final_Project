@@ -29,7 +29,8 @@ public abstract class Organization {
         DeliveryMan("Delivery"),
         SupplierAdmin("SupplierAdmin"),
         SupplierDeliveryMan("SupplierDeliveryMan"),
-        SysAdmin("Sysadmin");
+        SysAdmin("Sysadmin"),
+        Hospital("Hospital");   //
         
         private String value;
         private Type(String value) {

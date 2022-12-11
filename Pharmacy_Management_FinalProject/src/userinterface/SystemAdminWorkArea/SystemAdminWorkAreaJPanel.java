@@ -113,8 +113,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         btnManageCustomersSAWAP = new javax.swing.JButton();
         btnManagePharmacySAWAP = new javax.swing.JButton();
-        BtnManageSupplier = new javax.swing.JButton();
+        BtnManageHospital = new javax.swing.JButton();
         lblBackground = new javax.swing.JLabel();
+        BtnManageSupplier = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -166,6 +167,22 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.add(btnManagePharmacySAWAP);
         btnManagePharmacySAWAP.setBounds(10, 179, 160, 50);
 
+        BtnManageHospital.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnManageHospital.setText("Manage Hospital");
+        BtnManageHospital.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnManageHospital.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnManageHospitalActionPerformed(evt);
+            }
+        });
+        jPanel2.add(BtnManageHospital);
+        BtnManageHospital.setBounds(10, 350, 160, 50);
+
+        lblBackground.setMaximumSize(new java.awt.Dimension(1024, 759));
+        lblBackground.setMinimumSize(new java.awt.Dimension(1024, 759));
+        jPanel2.add(lblBackground);
+        lblBackground.setBounds(-10, 0, 1030, 760);
+
         BtnManageSupplier.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnManageSupplier.setText("Manage Supplier");
         BtnManageSupplier.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -176,11 +193,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(BtnManageSupplier);
         BtnManageSupplier.setBounds(10, 270, 160, 50);
-
-        lblBackground.setMaximumSize(new java.awt.Dimension(1024, 759));
-        lblBackground.setMinimumSize(new java.awt.Dimension(1024, 759));
-        jPanel2.add(lblBackground);
-        lblBackground.setBounds(-10, 0, 1030, 760);
 
         jSplitPane.setRightComponent(jPanel2);
 
@@ -201,16 +213,28 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainerSAWAP);
     }//GEN-LAST:event_btnManagePharmacySAWAPActionPerformed
 
+    private void BtnManageHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnManageHospitalActionPerformed
+        // TODO add your handling code here:
+        SystemAdminManageHospitals uc = new SystemAdminManageHospitals(userProcessContainerSAWAP, ecosystemSAWAP);
+        userProcessContainerSAWAP.add("UserHospital", uc);
+        CardLayout layout = (CardLayout)this.userProcessContainerSAWAP.getLayout();
+        layout.next(userProcessContainerSAWAP);
+        
+    }//GEN-LAST:event_BtnManageHospitalActionPerformed
+
     private void BtnManageSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnManageSupplierActionPerformed
         // TODO add your handling code here:
         SystemAdminManageSupplier ms = new SystemAdminManageSupplier(userProcessContainerSAWAP, ecosystemSAWAP);
         userProcessContainerSAWAP.add("UserSupplier", ms);
         CardLayout layout = (CardLayout)this.userProcessContainerSAWAP.getLayout();
         layout.next(userProcessContainerSAWAP);
+        
+
     }//GEN-LAST:event_BtnManageSupplierActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnManageHospital;
     private javax.swing.JButton BtnManageSupplier;
     private javax.swing.JButton btnManageCustomersSAWAP;
     private javax.swing.JButton btnManagePharmacySAWAP;

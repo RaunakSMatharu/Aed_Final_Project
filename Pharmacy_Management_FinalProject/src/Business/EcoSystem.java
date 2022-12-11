@@ -12,6 +12,10 @@ import Business.Role.SystemAdminRole;
 import Business.Supplier.SupplierDirectory;
 import Business.SupplierDeliveryMan.SupplierDeliveryManDirectory;
 import java.util.ArrayList;
+
+import Business.Hospital.HospitalDirectory;
+import Business.Role.HospitalAdminRole;
+
 /**
  *
  * @author Raunak Singh Matharu
@@ -25,6 +29,8 @@ public class EcoSystem extends Organization{
     private DeliveryManDirectory deliveryManDirectory;
     private SupplierDirectory supplierDirectory;
     private SupplierDeliveryManDirectory supplierDeliveryManDirectory;
+    
+    private HospitalDirectory hospitalDirectory;
 
     public EcoSystem(PharmacyDirectory pharmacyDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory, SupplierDirectory supplierDirectory, SupplierDeliveryManDirectory supplierDeliveryManDirectory) {
 
@@ -33,6 +39,8 @@ public class EcoSystem extends Organization{
         this.deliveryManDirectory = deliveryManDirectory;
                 this.supplierDirectory = supplierDirectory;
                         this.supplierDeliveryManDirectory = supplierDeliveryManDirectory;
+                        
+                        this.hospitalDirectory=hospitalDirectory;
 
     }
 
@@ -60,6 +68,8 @@ public class EcoSystem extends Organization{
          this.supplierDirectory = new SupplierDirectory();
 
                         this.supplierDeliveryManDirectory = new SupplierDeliveryManDirectory();
+                        
+                        this.hospitalDirectory = new HospitalDirectory();
     }
 
     public PharmacyDirectory getPharmacyDirectory() {
@@ -75,6 +85,12 @@ public class EcoSystem extends Organization{
     } 
     public SupplierDirectory getSupplierDirectory() {
         return supplierDirectory;
+    }
+    
+    
+    //
+    public HospitalDirectory getHospitalDirectory() {
+        return hospitalDirectory;
     }
 
     public SupplierDeliveryManDirectory getSupplierDeliveryManDirectory() {

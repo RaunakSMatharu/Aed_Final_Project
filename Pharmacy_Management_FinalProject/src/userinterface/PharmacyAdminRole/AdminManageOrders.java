@@ -240,7 +240,18 @@ public class AdminManageOrders extends javax.swing.JPanel {
                 {
                     Object[] row = new Object[dtm.getColumnCount()];
                     row[0] = orders;
+                    try {
+                        if(orders.getCustomer().getName() != null)
+                    {
                     row[1] = orders.getCustomer().getName();
+                    }
+                    else{
+                       row[1] = orders.getHospital().getHospitalName();
+                    }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
                     row[2] = orders.getOrderDate().format(formatter);
                     if(orders.getDeliveryMan() == null)

@@ -30,7 +30,7 @@ public class ConfigureASystem {
         Employee employee = system.getEmployeeDirectory().createEmployee("RRH", "SomeAddress", "SomePhone");
                 //SupplierEmp supplierEmp = system.getSupplierEmpDirectory().createSupplierEmp("RRH", "SomeAddress", "SomePhone");
 
-        UserAccount ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
+        UserAccount ua = system.getUserAccountDirectory().createUserAccount("j", "j", employee, new SystemAdminRole());
         
         return system;
     }

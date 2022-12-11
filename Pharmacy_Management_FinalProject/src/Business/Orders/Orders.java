@@ -9,6 +9,8 @@ import Business.DeliveryMan.DeliveryMan;
 import Business.MedicineItems.MedicineItem;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+
+import Business.Hospital.Hospital;
 /**
  *
  * @author Raunak Singh Matharu
@@ -24,6 +26,8 @@ public class Orders {
     private String message;
     private boolean status;
     
+    private Hospital hospital;
+    
     public Orders() {
         orderId = count;
         count++;
@@ -33,6 +37,15 @@ public class Orders {
         this.status = false;
     }
 
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+
+    
     public Customer getCustomer() {
         return customer;
     }

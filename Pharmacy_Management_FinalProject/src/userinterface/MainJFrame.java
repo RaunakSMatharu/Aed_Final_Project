@@ -12,6 +12,8 @@ import Business.Employee.Employee;
 
 import Business.Organization;
 import Business.Role.CustomerRole;
+import Business.Hospital.Hospital;
+
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -22,6 +24,9 @@ import userinterface.PharmacyAdminRole.AdminWorkAreaJPanel;
 import userinterface.SupplierAdminRole.SupplierAdminWorkAreaJPanel;
 import userinterface.SupplierDeliveryManRole.SupplierDeliveryManWorkArea;
 import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
+
+import userinterface.HospitalRole.HospitalAreaJPanel;
+
 
 /**
  *
@@ -249,6 +254,20 @@ public class MainJFrame extends javax.swing.JFrame {
                 CardLayout cardlayout = (CardLayout) container.getLayout();
                 cardlayout.next(container);
            }
+           else if(user.getRole().toString() == "Business.Role.HospitalAdminRole")
+           {
+                Employee e = user.getEmployee();
+                JOptionPane.showMessageDialog(null, "Access Granted " + e.getName()+ " - Hospital Admin!");
+                btnLogin.setEnabled(false);
+                txtUserName.setEnabled(false);
+                txtPassword.setEnabled(false);
+                btnLogout.setEnabled(true);
+                HospitalAreaJPanel hajp = new HospitalAreaJPanel(container, user, system);
+                container.add("CustomerPanel",hajp);
+                CardLayout cardlayout = (CardLayout) container.getLayout();
+                cardlayout.next(container);
+           }
+
            else
            {
                 Employee e = user.getEmployee();
