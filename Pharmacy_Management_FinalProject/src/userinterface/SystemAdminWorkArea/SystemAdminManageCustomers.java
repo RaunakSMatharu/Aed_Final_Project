@@ -106,7 +106,7 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(440, 610, 150, 40);
+        btnSubmit.setBounds(520, 610, 120, 50);
 
         tblCustomers.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tblCustomers.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -250,7 +250,7 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         add(jSeparator1);
-        jSeparator1.setBounds(168, 11, 13, 506);
+        jSeparator1.setBounds(168, 1, 13, 720);
         add(lblBackground);
         lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents

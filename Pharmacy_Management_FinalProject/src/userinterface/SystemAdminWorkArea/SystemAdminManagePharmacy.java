@@ -83,7 +83,7 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
             }
         });
         add(btnDeletePharmacy);
-        btnDeletePharmacy.setBounds(10, 220, 190, 50);
+        btnDeletePharmacy.setBounds(10, 220, 190, 60);
 
         btnCreatePharmacy.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnCreatePharmacy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Add Medicine.png"))); // NOI18N

@@ -45,9 +45,9 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
         txtName.setEnabled(false);
         txtPhoneNumber.setEnabled(false);
         txtAddress.setEnabled(false);
-        BtnSubmit.setEnabled(false);
-        BtnDelete.setEnabled(false);
-        BtnView.setEnabled(false);
+        btnSubmit.setEnabled(false);
+        btnDelete.setEnabled(false);
+        btnView.setEnabled(false);
         radioBtnDelivery.setEnabled(false);
         radioBtnManager.setEnabled(false);
         populateSupplierEmpTable();
@@ -63,11 +63,11 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BtnBack = new javax.swing.JButton();
-        BtnView = new javax.swing.JButton();
-        BtnDelete = new javax.swing.JButton();
-        BtnCreate = new javax.swing.JButton();
-        BtnSubmit = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnCreate = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblManageSupplierEmp = new javax.swing.JTable();
         lblTitle = new javax.swing.JLabel();
@@ -91,59 +91,59 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        BtnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        BtnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
-        BtnBack.setText("Back");
-        BtnBack.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnBackActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(BtnBack);
-        BtnBack.setBounds(30, 30, 120, 50);
+        add(btnBack);
+        btnBack.setBounds(30, 30, 120, 50);
 
-        BtnView.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        BtnView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/View Button.png"))); // NOI18N
-        BtnView.setText("View");
-        BtnView.addActionListener(new java.awt.event.ActionListener() {
+        btnView.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/View Button.png"))); // NOI18N
+        btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnViewActionPerformed(evt);
+                btnViewActionPerformed(evt);
             }
         });
-        add(BtnView);
-        BtnView.setBounds(20, 130, 130, 50);
+        add(btnView);
+        btnView.setBounds(20, 130, 130, 50);
 
-        BtnDelete.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        BtnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete Button.png"))); // NOI18N
-        BtnDelete.setText("Delete");
-        BtnDelete.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete Button.png"))); // NOI18N
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnDeleteActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
-        add(BtnDelete);
-        BtnDelete.setBounds(20, 210, 130, 50);
+        add(btnDelete);
+        btnDelete.setBounds(20, 210, 130, 50);
 
-        BtnCreate.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        BtnCreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Create Button.png"))); // NOI18N
-        BtnCreate.setText("Create");
-        BtnCreate.addActionListener(new java.awt.event.ActionListener() {
+        btnCreate.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnCreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Create Button.png"))); // NOI18N
+        btnCreate.setText("Create");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnCreateActionPerformed(evt);
+                btnCreateActionPerformed(evt);
             }
         });
-        add(BtnCreate);
-        BtnCreate.setBounds(20, 290, 130, 50);
+        add(btnCreate);
+        btnCreate.setBounds(20, 290, 130, 50);
 
-        BtnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        BtnSubmit.setText("Submit");
-        BtnSubmit.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSubmitActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(BtnSubmit);
-        BtnSubmit.setBounds(490, 600, 120, 40);
+        add(btnSubmit);
+        btnSubmit.setBounds(490, 600, 120, 40);
 
         tblManageSupplierEmp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -271,14 +271,14 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
         radioBtnDelivery.setSelected(false);
     }//GEN-LAST:event_radioBtnManagerActionPerformed
 
-    private void BtnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBackActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
          userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_BtnBackActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void BtnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSubmitActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
        if(validateThis())
         {
@@ -321,7 +321,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
                     }
 
                 }
-                BtnCreate.setEnabled(true);
+                btnCreate.setEnabled(true);
                 txtUsername.setText("");
                 txtUsername.setEnabled(false);
                 txtPassword.setText("");
@@ -334,7 +334,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
                 txtPhoneNumber.setEnabled(false);
                 txtAddress.setText("");
                 txtAddress.setEnabled(false);
-                BtnSubmit.setEnabled(false);
+                btnSubmit.setEnabled(false);
                 radioBtnDelivery.setSelected(false);
                 radioBtnDelivery.setEnabled(false);
                 radioBtnManager.setSelected(false);
@@ -348,7 +348,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
         }
                 
         
-    }//GEN-LAST:event_BtnSubmitActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void tblManageSupplierEmpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblManageSupplierEmpMouseClicked
         // TODO add your handling code here:
@@ -356,12 +356,12 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
         int selectedRow = tblManageSupplierEmp.getSelectedRow();
         if (selectedRow >= 0)
         {
-            BtnDelete.setEnabled(true);
-            BtnView.setEnabled(true);
+            btnDelete.setEnabled(true);
+            btnView.setEnabled(true);
         }
     }//GEN-LAST:event_tblManageSupplierEmpMouseClicked
 
-    private void BtnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnViewActionPerformed
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
        int selectedRow = tblManageSupplierEmp.getSelectedRow();
         if (selectedRow >= 0)
@@ -377,9 +377,9 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-    }//GEN-LAST:event_BtnViewActionPerformed
+    }//GEN-LAST:event_btnViewActionPerformed
 
-    private void BtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDeleteActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
          int selectedRow = tblManageSupplierEmp.getSelectedRow();
         if (selectedRow >= 0)
@@ -394,29 +394,29 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-    }//GEN-LAST:event_BtnDeleteActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void BtnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCreateActionPerformed
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-         BtnCreate.setEnabled(false);
+         btnCreate.setEnabled(false);
         txtUsername.setEnabled(true);
         txtPassword.setEnabled(true);
         txtConfirmPassword.setEnabled(true);
         txtName.setEnabled(true);
         txtPhoneNumber.setEnabled(true);
         txtAddress.setEnabled(true);
-        BtnSubmit.setEnabled(true);
+        btnSubmit.setEnabled(true);
         radioBtnDelivery.setEnabled(true);
         radioBtnManager.setEnabled(true);
-    }//GEN-LAST:event_BtnCreateActionPerformed
+    }//GEN-LAST:event_btnCreateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnBack;
-    private javax.swing.JButton BtnCreate;
-    private javax.swing.JButton BtnDelete;
-    private javax.swing.JButton BtnSubmit;
-    private javax.swing.JButton BtnView;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton btnView;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblBackground;
@@ -456,8 +456,8 @@ private void populateSupplierEmpTable() {
         }
         if(dtm.getRowCount() == 0)
             {
-                BtnDelete.setEnabled(false);
-                BtnView.setEnabled(false);
+                btnDelete.setEnabled(false);
+                btnView.setEnabled(false);
             }
     }
 
