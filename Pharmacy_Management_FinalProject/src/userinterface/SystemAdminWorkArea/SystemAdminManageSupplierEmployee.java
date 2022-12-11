@@ -39,17 +39,17 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.supplier = supplier;
         this.ecosystem = ecosystem;
-        txtUsernameSME.setEnabled(false);
-        txtPasswordSME.setEnabled(false);
-        txtRePasswordSME.setEnabled(false);
-        txtNameSME.setEnabled(false);
-        txtPhoneSME.setEnabled(false);
-        txtAddressSME.setEnabled(false);
+        txtUsername.setEnabled(false);
+        txtPassword.setEnabled(false);
+        txtConfirmPassword.setEnabled(false);
+        txtName.setEnabled(false);
+        txtPhoneNumber.setEnabled(false);
+        txtAddress.setEnabled(false);
         BtnSubmit.setEnabled(false);
         BtnDelete.setEnabled(false);
         BtnView.setEnabled(false);
-        radioBtnDeliverySME.setEnabled(false);
-        radioBtnManagerSME.setEnabled(false);
+        radioBtnDelivery.setEnabled(false);
+        radioBtnManager.setEnabled(false);
         populateSupplierEmpTable();
         
     }
@@ -70,27 +70,29 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
         BtnSubmit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblManageSupplierEmp = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        txtUsernameSME = new javax.swing.JTextField();
-        txtPhoneSME = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        radioBtnDeliverySME = new javax.swing.JRadioButton();
-        txtPasswordSME = new javax.swing.JTextField();
-        txtRePasswordSME = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txtAddressSME = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        radioBtnManagerSME = new javax.swing.JRadioButton();
-        txtNameSME = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        txtPhoneNumber = new javax.swing.JTextField();
+        lblPhoneNumber = new javax.swing.JLabel();
+        radioBtnDelivery = new javax.swing.JRadioButton();
+        txtPassword = new javax.swing.JTextField();
+        txtConfirmPassword = new javax.swing.JTextField();
+        lblAddress = new javax.swing.JLabel();
+        lblUsername = new javax.swing.JLabel();
+        txtAddress = new javax.swing.JTextField();
+        lblPassword = new javax.swing.JLabel();
+        lblRole = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblConfirmPassword = new javax.swing.JLabel();
+        radioBtnManager = new javax.swing.JRadioButton();
+        txtName = new javax.swing.JTextField();
+        lblBackground = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
+        BtnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        BtnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
         BtnBack.setText("Back");
         BtnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,8 +100,10 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(BtnBack);
-        BtnBack.setBounds(20, 65, 84, 23);
+        BtnBack.setBounds(30, 30, 120, 50);
 
+        BtnView.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        BtnView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/View Button.png"))); // NOI18N
         BtnView.setText("View");
         BtnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,8 +111,10 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(BtnView);
-        BtnView.setBounds(20, 112, 84, 23);
+        BtnView.setBounds(20, 130, 130, 50);
 
+        BtnDelete.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        BtnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete Button.png"))); // NOI18N
         BtnDelete.setText("Delete");
         BtnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,8 +122,10 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(BtnDelete);
-        BtnDelete.setBounds(20, 152, 84, 23);
+        BtnDelete.setBounds(20, 210, 130, 50);
 
+        BtnCreate.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        BtnCreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Create Button.png"))); // NOI18N
         BtnCreate.setText("Create");
         BtnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,8 +133,9 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(BtnCreate);
-        BtnCreate.setBounds(20, 199, 84, 23);
+        BtnCreate.setBounds(20, 290, 130, 50);
 
+        BtnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnSubmit.setText("Submit");
         BtnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +143,7 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
             }
         });
         add(BtnSubmit);
-        BtnSubmit.setBounds(270, 610, 120, 40);
+        BtnSubmit.setBounds(490, 600, 120, 40);
 
         tblManageSupplierEmp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -163,85 +172,104 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblManageSupplierEmp);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(148, 65, 800, 136);
+        jScrollPane1.setBounds(240, 140, 720, 170);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("Manage Employee");
-        add(jLabel1);
-        jLabel1.setBounds(450, 10, 191, 29);
-        add(txtUsernameSME);
-        txtUsernameSME.setBounds(260, 220, 300, 27);
-        add(txtPhoneSME);
-        txtPhoneSME.setBounds(260, 400, 300, 27);
+        lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblTitle.setText("Manage Employee");
+        add(lblTitle);
+        lblTitle.setBounds(470, 40, 191, 29);
 
-        jLabel5.setText("Phone Number:");
-        add(jLabel5);
-        jLabel5.setBounds(106, 402, 120, 17);
+        txtUsername.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        add(txtUsername);
+        txtUsername.setBounds(340, 340, 200, 27);
 
-        radioBtnDeliverySME.setText("Delivery Man");
-        radioBtnDeliverySME.addActionListener(new java.awt.event.ActionListener() {
+        txtPhoneNumber.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        add(txtPhoneNumber);
+        txtPhoneNumber.setBounds(690, 390, 300, 30);
+
+        lblPhoneNumber.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblPhoneNumber.setText("Phone Number:");
+        add(lblPhoneNumber);
+        lblPhoneNumber.setBounds(550, 390, 130, 30);
+
+        radioBtnDelivery.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        radioBtnDelivery.setText("Delivery Agent");
+        radioBtnDelivery.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioBtnDeliverySMEActionPerformed(evt);
+                radioBtnDeliveryActionPerformed(evt);
             }
         });
-        add(radioBtnDeliverySME);
-        radioBtnDeliverySME.setBounds(260, 540, 119, 21);
-        add(txtPasswordSME);
-        txtPasswordSME.setBounds(260, 270, 300, 23);
-        add(txtRePasswordSME);
-        txtRePasswordSME.setBounds(260, 310, 300, 28);
+        add(radioBtnDelivery);
+        radioBtnDelivery.setBounds(520, 500, 140, 30);
 
-        jLabel6.setText("        Address:");
-        add(jLabel6);
-        jLabel6.setBounds(108, 447, 110, 17);
+        txtPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        add(txtPassword);
+        txtPassword.setBounds(340, 390, 200, 30);
 
-        jLabel2.setText("Username: ");
-        add(jLabel2);
-        jLabel2.setBounds(150, 220, 100, 25);
-        add(txtAddressSME);
-        txtAddressSME.setBounds(260, 440, 300, 28);
+        txtConfirmPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        add(txtConfirmPassword);
+        txtConfirmPassword.setBounds(340, 440, 200, 28);
 
-        jLabel3.setText("Password: ");
-        add(jLabel3);
-        jLabel3.setBounds(151, 266, 80, 25);
+        lblAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblAddress.setText("Address:");
+        add(lblAddress);
+        lblAddress.setBounds(610, 440, 70, 30);
 
-        jLabel7.setText("      Role:");
-        add(jLabel7);
-        jLabel7.setBounds(145, 501, 70, 17);
+        lblUsername.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblUsername.setText("Username: ");
+        add(lblUsername);
+        lblUsername.setBounds(240, 340, 90, 25);
 
-        jLabel4.setText("     Name:");
-        add(jLabel4);
-        jLabel4.setBounds(143, 361, 80, 17);
+        txtAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        add(txtAddress);
+        txtAddress.setBounds(690, 440, 300, 30);
 
-        jLabel8.setText("Confirm Password:");
-        add(jLabel8);
-        jLabel8.setBounds(94, 312, 140, 27);
+        lblPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblPassword.setText("Password: ");
+        add(lblPassword);
+        lblPassword.setBounds(240, 390, 90, 25);
 
-        radioBtnManagerSME.setText("Supplier Manager");
-        radioBtnManagerSME.addActionListener(new java.awt.event.ActionListener() {
+        lblRole.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblRole.setText("Role:");
+        add(lblRole);
+        lblRole.setBounds(260, 500, 50, 30);
+
+        lblName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblName.setText("Name:");
+        add(lblName);
+        lblName.setBounds(620, 340, 60, 30);
+
+        lblConfirmPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblConfirmPassword.setText("Confirm Password:");
+        add(lblConfirmPassword);
+        lblConfirmPassword.setBounds(170, 440, 160, 27);
+
+        radioBtnManager.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        radioBtnManager.setText("Supplier Manager");
+        radioBtnManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioBtnManagerSMEActionPerformed(evt);
+                radioBtnManagerActionPerformed(evt);
             }
         });
-        add(radioBtnManagerSME);
-        radioBtnManagerSME.setBounds(260, 500, 125, 19);
-        add(txtNameSME);
-        txtNameSME.setBounds(260, 350, 300, 30);
+        add(radioBtnManager);
+        radioBtnManager.setBounds(340, 500, 170, 30);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Manage_Emplyee_Final_IMAGE.png"))); // NOI18N
-        add(jLabel10);
-        jLabel10.setBounds(0, 0, 1330, 800);
+        txtName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        add(txtName);
+        txtName.setBounds(690, 340, 300, 30);
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void radioBtnDeliverySMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnDeliverySMEActionPerformed
+    private void radioBtnDeliveryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnDeliveryActionPerformed
         // TODO add your handling code here:
-        radioBtnManagerSME.setSelected(false);
-    }//GEN-LAST:event_radioBtnDeliverySMEActionPerformed
+        radioBtnManager.setSelected(false);
+    }//GEN-LAST:event_radioBtnDeliveryActionPerformed
 
-    private void radioBtnManagerSMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnManagerSMEActionPerformed
+    private void radioBtnManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnManagerActionPerformed
         // TODO add your handling code here:
-        radioBtnDeliverySME.setSelected(false);
-    }//GEN-LAST:event_radioBtnManagerSMEActionPerformed
+        radioBtnDelivery.setSelected(false);
+    }//GEN-LAST:event_radioBtnManagerActionPerformed
 
     private void BtnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBackActionPerformed
         // TODO add your handling code here:
@@ -255,17 +283,17 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
        if(validateThis())
         {
 
-            Employee e = supplier.getEmployeeDirectory().createEmployee(txtNameSME.getText(), txtAddressSME.getText(), txtPhoneSME.getText());
+            Employee e = supplier.getEmployeeDirectory().createEmployee(txtName.getText(), txtAddress.getText(), txtPhoneNumber.getText());
             if(e == null)
             {
-                JOptionPane.showMessageDialog(null,"Employee " + txtNameSME.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Employee " + txtName.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
             else
             {
-                if(radioBtnManagerSME.isSelected())
+                if(radioBtnManager.isSelected())
                 {
-                    UserAccount ua = ecosystem.getUserAccountDirectory().createUserAccount(txtUsernameSME.getText(), txtPasswordSME.getText(), e, new SupplierAdminRole());
+                    UserAccount ua = ecosystem.getUserAccountDirectory().createUserAccount(txtUsername.getText(), txtPassword.getText(), e, new SupplierAdminRole());
                     if(ua != null)
                     {
                         JOptionPane.showMessageDialog(null, "Manager account created successfully for " + e.getName());
@@ -273,44 +301,44 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
                     else
                     {
                         supplier.getEmployeeDirectory().deleteEmployee(e);
-                        JOptionPane.showMessageDialog(null,"Username " + txtUsernameSME.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null,"Username " + txtUsername.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
                         return;
                     }
                 }
                 else
                 {
-                    UserAccount ua = ecosystem.getUserAccountDirectory().createUserAccount(txtUsernameSME.getText(), txtPasswordSME.getText(), e, new SupplierDeliveryManRole());
+                    UserAccount ua = ecosystem.getUserAccountDirectory().createUserAccount(txtUsername.getText(), txtPassword.getText(), e, new SupplierDeliveryManRole());
                     if(ua != null)
                     {
-                        SupplierDeliveryMan sdm = supplier.getSupplierDeliveryManDirectory().createSupplierDeliveryMan(txtNameSME.getText(), txtAddressSME.getText(), txtPhoneSME.getText());
+                        SupplierDeliveryMan sdm = supplier.getSupplierDeliveryManDirectory().createSupplierDeliveryMan(txtName.getText(), txtAddress.getText(), txtPhoneNumber.getText());
                         JOptionPane.showMessageDialog(null, "Delivery Man account created successfully for " + e.getName());
                     }
                     else
                     {
                         supplier.getEmployeeDirectory().deleteEmployee(e);
-                        JOptionPane.showMessageDialog(null,"Username " + txtUsernameSME.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null,"Username " + txtUsername.getText() + " already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
                         return;
                     }
 
                 }
                 BtnCreate.setEnabled(true);
-                txtUsernameSME.setText("");
-                txtUsernameSME.setEnabled(false);
-                txtPasswordSME.setText("");
-                txtPasswordSME.setEnabled(false);
-                txtRePasswordSME.setText("");
-                txtRePasswordSME.setEnabled(false);
-                txtNameSME.setText("");
-                txtNameSME.setEnabled(false);
-                txtPhoneSME.setText("");
-                txtPhoneSME.setEnabled(false);
-                txtAddressSME.setText("");
-                txtAddressSME.setEnabled(false);
+                txtUsername.setText("");
+                txtUsername.setEnabled(false);
+                txtPassword.setText("");
+                txtPassword.setEnabled(false);
+                txtConfirmPassword.setText("");
+                txtConfirmPassword.setEnabled(false);
+                txtName.setText("");
+                txtName.setEnabled(false);
+                txtPhoneNumber.setText("");
+                txtPhoneNumber.setEnabled(false);
+                txtAddress.setText("");
+                txtAddress.setEnabled(false);
                 BtnSubmit.setEnabled(false);
-                radioBtnDeliverySME.setSelected(false);
-                radioBtnDeliverySME.setEnabled(false);
-                radioBtnManagerSME.setSelected(false);
-                radioBtnManagerSME.setEnabled(false);
+                radioBtnDelivery.setSelected(false);
+                radioBtnDelivery.setEnabled(false);
+                radioBtnManager.setSelected(false);
+                radioBtnManager.setEnabled(false);
             }
             populateSupplierEmpTable();
         }
@@ -371,15 +399,15 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
     private void BtnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCreateActionPerformed
         // TODO add your handling code here:
          BtnCreate.setEnabled(false);
-        txtUsernameSME.setEnabled(true);
-        txtPasswordSME.setEnabled(true);
-        txtRePasswordSME.setEnabled(true);
-        txtNameSME.setEnabled(true);
-        txtPhoneSME.setEnabled(true);
-        txtAddressSME.setEnabled(true);
+        txtUsername.setEnabled(true);
+        txtPassword.setEnabled(true);
+        txtConfirmPassword.setEnabled(true);
+        txtName.setEnabled(true);
+        txtPhoneNumber.setEnabled(true);
+        txtAddress.setEnabled(true);
         BtnSubmit.setEnabled(true);
-        radioBtnDeliverySME.setEnabled(true);
-        radioBtnManagerSME.setEnabled(true);
+        radioBtnDelivery.setEnabled(true);
+        radioBtnManager.setEnabled(true);
     }//GEN-LAST:event_BtnCreateActionPerformed
 
 
@@ -389,25 +417,25 @@ public class SystemAdminManageSupplierEmployee extends javax.swing.JPanel {
     private javax.swing.JButton BtnDelete;
     private javax.swing.JButton BtnSubmit;
     private javax.swing.JButton BtnView;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JRadioButton radioBtnDeliverySME;
-    private javax.swing.JRadioButton radioBtnManagerSME;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblConfirmPassword;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblPhoneNumber;
+    private javax.swing.JLabel lblRole;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblUsername;
+    private javax.swing.JRadioButton radioBtnDelivery;
+    private javax.swing.JRadioButton radioBtnManager;
     private javax.swing.JTable tblManageSupplierEmp;
-    private javax.swing.JTextField txtAddressSME;
-    private javax.swing.JTextField txtNameSME;
-    private javax.swing.JTextField txtPasswordSME;
-    private javax.swing.JTextField txtPhoneSME;
-    private javax.swing.JTextField txtRePasswordSME;
-    private javax.swing.JTextField txtUsernameSME;
+    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtConfirmPassword;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtPhoneNumber;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 
 
@@ -435,19 +463,19 @@ private void populateSupplierEmpTable() {
 
     private boolean validateThis() {
         String regex = "\\d{10}";
-        if(("".equals(txtUsernameSME.getText())) || ("".equals(txtPasswordSME.getText())) || ("".equals(txtRePasswordSME.getText())) 
-                || ("".equals(txtNameSME.getText())) || ("".equals(txtPhoneSME.getText())) || ("".equals(txtAddressSME.getText()))
-                || ((radioBtnDeliverySME.isEnabled() == false) && (radioBtnManagerSME.isEnabled() == false)))
+        if(("".equals(txtUsername.getText())) || ("".equals(txtPassword.getText())) || ("".equals(txtConfirmPassword.getText())) 
+                || ("".equals(txtName.getText())) || ("".equals(txtPhoneNumber.getText())) || ("".equals(txtAddress.getText()))
+                || ((radioBtnDelivery.isEnabled() == false) && (radioBtnManager.isEnabled() == false)))
         {
             JOptionPane.showMessageDialog(null,"Please fill all details!", "Warning", JOptionPane.WARNING_MESSAGE);
             return false;
         }
-        else if(!(txtPasswordSME.getText().equals(txtRePasswordSME.getText())))
+        else if(!(txtPassword.getText().equals(txtConfirmPassword.getText())))
         {
             JOptionPane.showMessageDialog(null,"Passwords do not match!", "Warning", JOptionPane.WARNING_MESSAGE);
             return false;
         }
-        else if(!(txtPhoneSME.getText().matches(regex)))
+        else if(!(txtPhoneNumber.getText().matches(regex)))
         {
             JOptionPane.showMessageDialog(null,"Phone number must have only 10 digits!", "Warning", JOptionPane.WARNING_MESSAGE);
             return false;

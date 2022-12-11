@@ -110,11 +110,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jSplitPane = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
         btnManageCustomersSAWAP = new javax.swing.JButton();
         btnManagePharmacySAWAP = new javax.swing.JButton();
         BtnManageSupplier = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        lblBackground = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -138,13 +138,13 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel2.setText("Admin Panel");
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(243, 11, 150, 31);
+        lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTitle.setText("Admin Panel");
+        jPanel2.add(lblTitle);
+        lblTitle.setBounds(450, 50, 150, 31);
 
-        btnManageCustomersSAWAP.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnManageCustomersSAWAP.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnManageCustomersSAWAP.setText("Manage Customers");
         btnManageCustomersSAWAP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnManageCustomersSAWAP.addActionListener(new java.awt.event.ActionListener() {
@@ -153,9 +153,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(btnManageCustomersSAWAP);
-        btnManageCustomersSAWAP.setBounds(10, 95, 130, 35);
+        btnManageCustomersSAWAP.setBounds(10, 95, 160, 50);
 
-        btnManagePharmacySAWAP.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnManagePharmacySAWAP.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnManagePharmacySAWAP.setText("Manage Pharmacy");
         btnManagePharmacySAWAP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnManagePharmacySAWAP.addActionListener(new java.awt.event.ActionListener() {
@@ -164,9 +164,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(btnManagePharmacySAWAP);
-        btnManagePharmacySAWAP.setBounds(10, 179, 130, 35);
+        btnManagePharmacySAWAP.setBounds(10, 179, 160, 50);
 
-        BtnManageSupplier.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        BtnManageSupplier.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnManageSupplier.setText("Manage Supplier");
         BtnManageSupplier.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         BtnManageSupplier.addActionListener(new java.awt.event.ActionListener() {
@@ -175,13 +175,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(BtnManageSupplier);
-        BtnManageSupplier.setBounds(10, 278, 130, 37);
+        BtnManageSupplier.setBounds(10, 270, 160, 50);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Manage_WORK_AREA_FINAL.jpg"))); // NOI18N
-        jLabel3.setMaximumSize(new java.awt.Dimension(1024, 759));
-        jLabel3.setMinimumSize(new java.awt.Dimension(1024, 759));
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(0, -20, 1020, 780);
+        lblBackground.setMaximumSize(new java.awt.Dimension(1024, 759));
+        lblBackground.setMinimumSize(new java.awt.Dimension(1024, 759));
+        jPanel2.add(lblBackground);
+        lblBackground.setBounds(-10, 0, 1030, 760);
 
         jSplitPane.setRightComponent(jPanel2);
 
@@ -215,10 +214,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton BtnManageSupplier;
     private javax.swing.JButton btnManageCustomersSAWAP;
     private javax.swing.JButton btnManagePharmacySAWAP;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane;
+    private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }

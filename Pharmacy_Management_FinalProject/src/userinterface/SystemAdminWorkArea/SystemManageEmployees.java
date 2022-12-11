@@ -70,7 +70,7 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         radioBtnManagerSME = new javax.swing.JRadioButton();
-        btnBackSME = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         btnSubmitSME = new javax.swing.JButton();
         radioBtnDeliverySME = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -137,15 +137,15 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         add(radioBtnManagerSME);
         radioBtnManagerSME.setBounds(318, 419, 200, 19);
 
-        btnBackSME.setText("< Back");
-        btnBackSME.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnBackSME.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setText("Back");
+        btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackSMEActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(btnBackSME);
-        btnBackSME.setBounds(10, 249, 48, 23);
+        add(btnBack);
+        btnBack.setBounds(30, 30, 36, 23);
 
         btnSubmitSME.setText("Submit");
         btnSubmitSME.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -232,7 +232,7 @@ public class SystemManageEmployees extends javax.swing.JPanel {
             }
         });
         add(btnNewEmployeeSME);
-        btnNewEmployeeSME.setBounds(10, 192, 110, 46);
+        btnNewEmployeeSME.setBounds(10, 192, 130, 46);
 
         txtNameSME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtNameSME);
@@ -261,12 +261,12 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         radioBtnDeliverySME.setSelected(false);
     }//GEN-LAST:event_radioBtnManagerSMEActionPerformed
 
-    private void btnBackSMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSMEActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackSMEActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnSubmitSMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitSMEActionPerformed
         // TODO add your handling code here:
@@ -405,7 +405,7 @@ public class SystemManageEmployees extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBackSME;
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDeleteSME;
     private javax.swing.JButton btnManageSME;
     private javax.swing.JButton btnNewEmployeeSME;

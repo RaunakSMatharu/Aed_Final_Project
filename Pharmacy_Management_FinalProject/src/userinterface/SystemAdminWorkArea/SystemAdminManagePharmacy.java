@@ -73,7 +73,8 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        btnDeletePharmacy.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnDeletePharmacy.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnDeletePharmacy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete Button.png"))); // NOI18N
         btnDeletePharmacy.setText("Delete Pharmacy");
         btnDeletePharmacy.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnDeletePharmacy.addActionListener(new java.awt.event.ActionListener() {
@@ -82,9 +83,10 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
             }
         });
         add(btnDeletePharmacy);
-        btnDeletePharmacy.setBounds(10, 135, 120, 44);
+        btnDeletePharmacy.setBounds(10, 220, 190, 50);
 
-        btnCreatePharmacy.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnCreatePharmacy.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnCreatePharmacy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Add Medicine.png"))); // NOI18N
         btnCreatePharmacy.setText("Create Pharmacy ");
         btnCreatePharmacy.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCreatePharmacy.addActionListener(new java.awt.event.ActionListener() {
@@ -93,13 +95,14 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
             }
         });
         add(btnCreatePharmacy);
-        btnCreatePharmacy.setBounds(10, 189, 120, 43);
+        btnCreatePharmacy.setBounds(10, 310, 190, 60);
 
-        txtPharmacyName.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        txtPharmacyName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtPharmacyName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPharmacyName);
-        txtPharmacyName.setBounds(427, 187, 228, 19);
+        txtPharmacyName.setBounds(560, 340, 270, 30);
 
+        txtAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtAddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,17 +110,19 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
             }
         });
         add(txtAddress);
-        txtAddress.setBounds(427, 218, 228, 19);
+        txtAddress.setBounds(560, 390, 270, 30);
 
+        lblPharmacy.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblPharmacy.setText("Pharmacy Name:");
         add(lblPharmacy);
-        lblPharmacy.setBounds(265, 191, 144, 18);
+        lblPharmacy.setBounds(370, 340, 144, 30);
 
+        lblAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblAddress.setText("Address:");
         add(lblAddress);
-        lblAddress.setBounds(265, 221, 144, 17);
+        lblAddress.setBounds(440, 390, 70, 30);
 
-        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -126,9 +131,10 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(551, 270, 104, 34);
+        btnSubmit.setBounds(560, 474, 104, 40);
 
-        btnManagePharmacy.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnManagePharmacy.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnManagePharmacy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/View Button.png"))); // NOI18N
         btnManagePharmacy.setText("View Pharmacy");
         btnManagePharmacy.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnManagePharmacy.addActionListener(new java.awt.event.ActionListener() {
@@ -137,10 +143,11 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
             }
         });
         add(btnManagePharmacy);
-        btnManagePharmacy.setBounds(10, 84, 120, 45);
+        btnManagePharmacy.setBounds(10, 131, 190, 54);
 
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnBack.setText("< Back");
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
+        btnBack.setText("Back");
         btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,13 +155,13 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(10, 20, 79, 21);
+        btnBack.setBounds(50, 30, 100, 50);
 
         lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Manage Pharmacy");
         add(lblTitle);
-        lblTitle.setBounds(123, 18, 445, 29);
+        lblTitle.setBounds(350, 40, 445, 50);
 
         tblPharmacy.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         tblPharmacy.setModel(new javax.swing.table.DefaultTableModel(
@@ -181,13 +188,13 @@ public class SystemAdminManagePharmacy extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblPharmacy);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(178, 81, 477, 95);
+        jScrollPane1.setBounds(320, 140, 550, 170);
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         add(jSeparator1);
-        jSeparator1.setBounds(161, 11, 11, 293);
+        jSeparator1.setBounds(220, 10, 11, 520);
         add(lblBackground);
-        lblBackground.setBounds(160, 0, 870, 760);
+        lblBackground.setBounds(220, 0, 810, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeletePharmacyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletePharmacyActionPerformed

@@ -67,23 +67,23 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
 
         txtSupplierName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         add(txtSupplierName);
-        txtSupplierName.setBounds(450, 320, 300, 40);
+        txtSupplierName.setBounds(460, 430, 300, 40);
 
         lblSupplierName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblSupplierName.setText("Supplier Name:");
         add(lblSupplierName);
-        lblSupplierName.setBounds(300, 330, 122, 18);
+        lblSupplierName.setBounds(310, 440, 122, 18);
 
         lblAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblAddress.setText("Address:");
         add(lblAddress);
-        lblAddress.setBounds(350, 390, 80, 21);
+        lblAddress.setBounds(360, 500, 80, 21);
 
         lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Manage Supplier");
         add(lblTitle);
-        lblTitle.setBounds(270, 20, 445, 29);
+        lblTitle.setBounds(350, 30, 445, 50);
 
         btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete Button.png"))); // NOI18N
@@ -95,7 +95,7 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
             }
         });
         add(btnDelete);
-        btnDelete.setBounds(20, 280, 130, 54);
+        btnDelete.setBounds(20, 270, 130, 54);
 
         btnView.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/View Button.png"))); // NOI18N
@@ -107,7 +107,7 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
             }
         });
         add(btnView);
-        btnView.setBounds(20, 200, 130, 50);
+        btnView.setBounds(20, 170, 130, 50);
 
         btnCreate.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnCreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Create Button.png"))); // NOI18N
@@ -160,7 +160,7 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
         jScrollPane2.setViewportView(tblSupplier);
 
         add(jScrollPane2);
-        jScrollPane2.setBounds(240, 86, 690, 200);
+        jScrollPane2.setBounds(250, 170, 690, 200);
 
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnSubmit.setText("Submit");
@@ -170,11 +170,11 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(530, 470, 100, 40);
+        btnSubmit.setBounds(540, 580, 100, 40);
 
         txtAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         add(txtAddress);
-        txtAddress.setBounds(450, 380, 300, 40);
+        txtAddress.setBounds(460, 490, 300, 40);
         add(jLabel4);
         jLabel4.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents

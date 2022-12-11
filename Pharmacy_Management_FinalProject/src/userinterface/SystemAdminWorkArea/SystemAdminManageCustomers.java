@@ -80,7 +80,7 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         lblPassword = new javax.swing.JLabel();
         lblConfirmPassword = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel7 = new javax.swing.JLabel();
+        lblBackground = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
@@ -97,7 +97,7 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         add(btnBack);
         btnBack.setBounds(10, 24, 110, 50);
 
-        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +106,7 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(520, 570, 259, 40);
+        btnSubmit.setBounds(440, 610, 150, 40);
 
         tblCustomers.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tblCustomers.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -136,8 +136,9 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(270, 130, 580, 140);
 
-        btnManageCustomer.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnManageCustomer.setText("View Customer ");
+        btnManageCustomer.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnManageCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/View Button.png"))); // NOI18N
+        btnManageCustomer.setText("View");
         btnManageCustomer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnManageCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,8 +154,9 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         add(lblTitle);
         lblTitle.setBounds(320, 29, 445, 50);
 
-        btnDeleteCustomer.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnDeleteCustomer.setText("Delete Customer");
+        btnDeleteCustomer.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnDeleteCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete Button.png"))); // NOI18N
+        btnDeleteCustomer.setText("Delete");
         btnDeleteCustomer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnDeleteCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,13 +166,14 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         add(btnDeleteCustomer);
         btnDeleteCustomer.setBounds(10, 210, 140, 58);
 
-        lblName.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblName.setText("Name:");
         add(lblName);
-        lblName.setBounds(390, 450, 40, 30);
+        lblName.setBounds(370, 450, 60, 30);
 
-        btnCreateCustomer.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnCreateCustomer.setText("Create Customer");
+        btnCreateCustomer.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnCreateCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Create Button.png"))); // NOI18N
+        btnCreateCustomer.setText("Create");
         btnCreateCustomer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCreateCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,7 +183,7 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         add(btnCreateCustomer);
         btnCreateCustomer.setBounds(10, 290, 140, 54);
 
-        txtName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,44 +191,44 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
             }
         });
         add(txtName);
-        txtName.setBounds(520, 450, 259, 31);
+        txtName.setBounds(520, 450, 310, 31);
 
-        txtUsername.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtUsername.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtUsername.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtUsername);
-        txtUsername.setBounds(520, 320, 259, 32);
+        txtUsername.setBounds(520, 320, 310, 32);
 
-        txtPhoneNumber.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtPhoneNumber.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtPhoneNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPhoneNumber);
-        txtPhoneNumber.setBounds(520, 480, 259, 30);
+        txtPhoneNumber.setBounds(520, 490, 310, 30);
 
-        txtPassword.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPassword);
-        txtPassword.setBounds(520, 370, 259, 38);
+        txtPassword.setBounds(520, 370, 310, 30);
 
-        lblPhoneNumber.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblPhoneNumber.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblPhoneNumber.setText("Phone Number:");
         add(lblPhoneNumber);
-        lblPhoneNumber.setBounds(330, 490, 100, 30);
+        lblPhoneNumber.setBounds(300, 490, 130, 30);
 
-        txtConfirmPassword.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtConfirmPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtConfirmPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtConfirmPassword);
-        txtConfirmPassword.setBounds(520, 410, 259, 31);
+        txtConfirmPassword.setBounds(520, 410, 310, 31);
 
-        lblAddress.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblAddress.setText("Address:");
         add(lblAddress);
-        lblAddress.setBounds(370, 530, 60, 31);
+        lblAddress.setBounds(350, 530, 70, 31);
 
-        lblUsername.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblUsername.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblUsername.setText("Username: ");
         add(lblUsername);
-        lblUsername.setBounds(370, 320, 70, 32);
+        lblUsername.setBounds(340, 320, 90, 32);
 
-        txtAddress.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtAddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,25 +236,23 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
             }
         });
         add(txtAddress);
-        txtAddress.setBounds(520, 520, 259, 30);
+        txtAddress.setBounds(520, 530, 310, 30);
 
-        lblPassword.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblPassword.setText("Password: ");
         add(lblPassword);
-        lblPassword.setBounds(370, 370, 66, 38);
+        lblPassword.setBounds(340, 370, 85, 38);
 
-        lblConfirmPassword.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblConfirmPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblConfirmPassword.setText("Confirm Password:");
         add(lblConfirmPassword);
-        lblConfirmPassword.setBounds(310, 410, 120, 31);
+        lblConfirmPassword.setBounds(270, 410, 160, 31);
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         add(jSeparator1);
         jSeparator1.setBounds(168, 11, 13, 506);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Manage_Customer.png"))); // NOI18N
-        add(jLabel7);
-        jLabel7.setBounds(0, 0, 1030, 760);
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -381,10 +382,10 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
     private javax.swing.JButton btnDeleteCustomer;
     private javax.swing.JButton btnManageCustomer;
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblConfirmPassword;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPassword;

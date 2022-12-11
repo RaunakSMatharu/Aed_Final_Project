@@ -35,9 +35,9 @@ public class SystemAdminUpdateCustomer extends javax.swing.JPanel {
         this.userProcessContainerSAUC = userProcessContainer;
         this.customerSAUC = customer;
         this.ecosystemSAUC = ecosystem;;
-        txtNameSAUC.setText(customer.getName());
-        txtPhoneSAUC.setText(customer.getPhone());
-        txtAddressSAUC.setText(customer.getAddress());
+        txtName.setText(customer.getName());
+        txtPhoneNumber.setText(customer.getPhone());
+        txtAddress.setText(customer.getAddress());
         
     }
 
@@ -53,19 +53,20 @@ public class SystemAdminUpdateCustomer extends javax.swing.JPanel {
         btnBackSAUC = new javax.swing.JButton();
         btnSubmitSAUC = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txtNameSAUC = new javax.swing.JTextField();
-        txtPhoneSAUC = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtAddressSAUC = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        txtPhoneNumber = new javax.swing.JTextField();
+        lblPhoneNumber = new javax.swing.JLabel();
+        lblAddress = new javax.swing.JLabel();
+        txtAddress = new javax.swing.JTextField();
+        lblBackground = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        btnBackSAUC.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnBackSAUC.setText("< Back");
+        btnBackSAUC.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBackSAUC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
+        btnBackSAUC.setText("Back");
         btnBackSAUC.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBackSAUC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,9 +74,9 @@ public class SystemAdminUpdateCustomer extends javax.swing.JPanel {
             }
         });
         add(btnBackSAUC);
-        btnBackSAUC.setBounds(26, 24, 42, 21);
+        btnBackSAUC.setBounds(30, 30, 110, 50);
 
-        btnSubmitSAUC.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnSubmitSAUC.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnSubmitSAUC.setText("Submit");
         btnSubmitSAUC.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSubmitSAUC.addActionListener(new java.awt.event.ActionListener() {
@@ -84,48 +85,47 @@ public class SystemAdminUpdateCustomer extends javax.swing.JPanel {
             }
         });
         add(btnSubmitSAUC);
-        btnSubmitSAUC.setBounds(255, 191, 160, 39);
+        btnSubmitSAUC.setBounds(440, 370, 160, 39);
 
         lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Update Customer");
         add(lblTitle);
-        lblTitle.setBounds(90, 10, 350, 29);
+        lblTitle.setBounds(380, 50, 350, 29);
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel4.setText("Name:");
-        add(jLabel4);
-        jLabel4.setBounds(65, 90, 144, 15);
+        lblName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblName.setText("Name:");
+        add(lblName);
+        lblName.setBounds(340, 160, 51, 30);
 
-        txtNameSAUC.setEditable(false);
-        txtNameSAUC.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        txtNameSAUC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(txtNameSAUC);
-        txtNameSAUC.setBounds(255, 89, 160, 17);
+        txtName.setEditable(false);
+        txtName.setBackground(new java.awt.Color(255, 255, 255));
+        txtName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(txtName);
+        txtName.setBounds(460, 163, 260, 30);
 
-        txtPhoneSAUC.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        txtPhoneSAUC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(txtPhoneSAUC);
-        txtPhoneSAUC.setBounds(255, 123, 160, 17);
+        txtPhoneNumber.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        txtPhoneNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(txtPhoneNumber);
+        txtPhoneNumber.setBounds(460, 220, 260, 30);
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel5.setText("Phone Number:");
-        add(jLabel5);
-        jLabel5.setBounds(65, 124, 144, 15);
+        lblPhoneNumber.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblPhoneNumber.setText("Phone Number:");
+        add(lblPhoneNumber);
+        lblPhoneNumber.setBounds(270, 220, 130, 30);
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel6.setText("Address:");
-        add(jLabel6);
-        jLabel6.setBounds(65, 158, 144, 15);
+        lblAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblAddress.setText("Address:");
+        add(lblAddress);
+        lblAddress.setBounds(320, 280, 70, 30);
 
-        txtAddressSAUC.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        txtAddressSAUC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(txtAddressSAUC);
-        txtAddressSAUC.setBounds(255, 157, 160, 17);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Update_Customer.png"))); // NOI18N
-        add(jLabel1);
-        jLabel1.setBounds(0, 80, 570, 350);
+        txtAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        txtAddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(txtAddress);
+        txtAddress.setBounds(460, 280, 260, 30);
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackSAUCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSAUCActionPerformed
@@ -139,8 +139,8 @@ public class SystemAdminUpdateCustomer extends javax.swing.JPanel {
         // TODO add your handling code here:
         if(validateThisSAUC())
         {
-            customerSAUC.setAddress(txtAddressSAUC.getText());
-            customerSAUC.setPhone(txtPhoneSAUC.getText());
+            customerSAUC.setAddress(txtAddress.getText());
+            customerSAUC.setPhone(txtPhoneNumber.getText());
             JOptionPane.showMessageDialog(null, "Details for " + customerSAUC.getName()+ " updated successfully!");
         }
         else
@@ -153,24 +153,24 @@ public class SystemAdminUpdateCustomer extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackSAUC;
     private javax.swing.JButton btnSubmitSAUC;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPhoneNumber;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JTextField txtAddressSAUC;
-    private javax.swing.JTextField txtNameSAUC;
-    private javax.swing.JTextField txtPhoneSAUC;
+    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPhoneNumber;
     // End of variables declaration//GEN-END:variables
 
      private boolean validateThisSAUC() {
         String regex = "\\d{10}";
-        if(("".equals(txtPhoneSAUC.getText())) || ("".equals(txtAddressSAUC.getText())))
+        if(("".equals(txtPhoneNumber.getText())) || ("".equals(txtAddress.getText())))
         {
             JOptionPane.showMessageDialog(null,"Please fill all details!", "Warning", JOptionPane.WARNING_MESSAGE);
             return false;
         }
-        else if(!(txtPhoneSAUC.getText().matches(regex)))
+        else if(!(txtPhoneNumber.getText().matches(regex)))
         {
             JOptionPane.showMessageDialog(null,"Phone number must have only 10 digits!", "Warning", JOptionPane.WARNING_MESSAGE);
             return false;
