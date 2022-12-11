@@ -84,7 +84,6 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         txtUsername = new javax.swing.JTextField();
         txtPhoneNumber = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
-        lblBackground = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
@@ -172,7 +171,7 @@ public class SystemManageEmployees extends javax.swing.JPanel {
             }
         });
         add(radioBtnDelivery);
-        radioBtnDelivery.setBounds(450, 600, 200, 25);
+        radioBtnDelivery.setBounds(450, 600, 200, 26);
 
         tblProfileSME.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         tblProfileSME.setModel(new javax.swing.table.DefaultTableModel(
@@ -267,10 +266,6 @@ public class SystemManageEmployees extends javax.swing.JPanel {
         txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPassword);
         txtPassword.setBounds(450, 310, 390, 30);
-
-        lblBackground.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        add(lblBackground);
-        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void radioBtnManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnManagerActionPerformed
@@ -430,7 +425,6 @@ public class SystemManageEmployees extends javax.swing.JPanel {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAddress;
-    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblConfirmPassword;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPassword;

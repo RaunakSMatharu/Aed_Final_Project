@@ -41,7 +41,6 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         lblResult = new javax.swing.JLabel();
         comboStatus = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -76,10 +75,6 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         comboStatus.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         add(comboStatus);
         comboStatus.setBounds(560, 100, 380, 50);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (3).png"))); // NOI18N
-        add(jLabel2);
-        jLabel2.setBounds(0, -30, 1480, 810);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -113,7 +108,6 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox<String> comboStatus;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblResult;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
-import userinterface.DrugMinistry.DrugAdminJPanel;
+import userinterface.DrugMinistry.DrugApprovalJPanel;
 
 
 /**
@@ -247,7 +247,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private void btn_DrugApprovalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DrugApprovalActionPerformed
         // TODO add your handling code here:
 
-        DrugAdminJPanel da = new DrugAdminJPanel(userProcessContainerSAWAP, ecosystemSAWAP);
+        DrugApprovalJPanel da = new DrugApprovalJPanel(userProcessContainerSAWAP, ecosystemSAWAP);
         userProcessContainerSAWAP.add("UserSupplier", da);
         CardLayout layout = (CardLayout)this.userProcessContainerSAWAP.getLayout();
         layout.next(userProcessContainerSAWAP);
