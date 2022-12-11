@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import userinterface.DrugMinistry.DrugAdminJPanel;
 
 
 /**
@@ -116,6 +117,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         BtnManageHospital = new javax.swing.JButton();
         lblBackground = new javax.swing.JLabel();
         BtnManageSupplier = new javax.swing.JButton();
+        btn_DrugApproval = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -176,7 +178,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(BtnManageHospital);
-        BtnManageHospital.setBounds(10, 350, 160, 50);
+        BtnManageHospital.setBounds(10, 430, 160, 50);
 
         lblBackground.setMaximumSize(new java.awt.Dimension(1024, 759));
         lblBackground.setMinimumSize(new java.awt.Dimension(1024, 759));
@@ -193,6 +195,16 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(BtnManageSupplier);
         BtnManageSupplier.setBounds(10, 270, 160, 50);
+
+        btn_DrugApproval.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_DrugApproval.setText("DRUG APPROVAL ");
+        btn_DrugApproval.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_DrugApprovalActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn_DrugApproval);
+        btn_DrugApproval.setBounds(10, 360, 160, 50);
 
         jSplitPane.setRightComponent(jPanel2);
 
@@ -232,12 +244,23 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_BtnManageSupplierActionPerformed
 
+    private void btn_DrugApprovalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DrugApprovalActionPerformed
+        // TODO add your handling code here:
+
+        DrugAdminJPanel da = new DrugAdminJPanel(userProcessContainerSAWAP, ecosystemSAWAP);
+        userProcessContainerSAWAP.add("UserSupplier", da);
+        CardLayout layout = (CardLayout)this.userProcessContainerSAWAP.getLayout();
+        layout.next(userProcessContainerSAWAP);
+
+    }//GEN-LAST:event_btn_DrugApprovalActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnManageHospital;
     private javax.swing.JButton BtnManageSupplier;
     private javax.swing.JButton btnManageCustomersSAWAP;
     private javax.swing.JButton btnManagePharmacySAWAP;
+    private javax.swing.JButton btn_DrugApproval;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane;
