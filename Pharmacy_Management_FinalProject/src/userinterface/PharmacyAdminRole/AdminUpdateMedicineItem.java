@@ -66,7 +66,7 @@ public class AdminUpdateMedicineItem extends javax.swing.JPanel {
         add(spinnerPrice);
         spinnerPrice.setBounds(350, 320, 460, 50);
 
-        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +75,7 @@ public class AdminUpdateMedicineItem extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(630, 440, 170, 60);
+        btnSubmit.setBounds(640, 440, 160, 50);
 
         enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

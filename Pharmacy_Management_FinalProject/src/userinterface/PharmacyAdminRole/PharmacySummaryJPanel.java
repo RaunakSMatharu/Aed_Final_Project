@@ -51,8 +51,8 @@ private JPanel userProcessContainer;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
-        requestTestJButton = new javax.swing.JButton();
-        refreshTestJButton = new javax.swing.JButton();
+        btnMessage = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
 
@@ -85,37 +85,40 @@ private JPanel userProcessContainer;
         jScrollPane1.setViewportView(workRequestJTable);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(170, 90, 730, 110);
+        jScrollPane1.setBounds(70, 210, 880, 270);
 
-        requestTestJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        requestTestJButton.setText("Add Message >");
-        requestTestJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnMessage.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnMessage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Message Button.png"))); // NOI18N
+        btnMessage.setText("Add Message");
+        btnMessage.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnMessage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButtonActionPerformed(evt);
+                btnMessageActionPerformed(evt);
             }
         });
-        add(requestTestJButton);
-        requestTestJButton.setBounds(750, 250, 150, 50);
+        add(btnMessage);
+        btnMessage.setBounds(780, 530, 150, 50);
 
-        refreshTestJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        refreshTestJButton.setText("Refresh");
-        refreshTestJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Refresh Button.png"))); // NOI18N
+        btnRefresh.setText("Refresh");
+        btnRefresh.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshTestJButtonActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
-        add(refreshTestJButton);
-        refreshTestJButton.setBounds(750, 20, 150, 40);
+        add(btnRefresh);
+        btnRefresh.setBounds(70, 150, 120, 40);
 
-        enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         enterpriseLabel.setText("<>");
         add(enterpriseLabel);
-        enterpriseLabel.setBounds(20, 30, 251, 30);
+        enterpriseLabel.setBounds(70, 30, 450, 50);
 
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnBack.setText("< Back");
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
+        btnBack.setText("Back");
         btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,10 +126,10 @@ private JPanel userProcessContainer;
             }
         });
         add(btnBack);
-        btnBack.setBounds(30, 320, 110, 40);
+        btnBack.setBounds(860, 50, 110, 40);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
+    private void btnMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMessageActionPerformed
         int selectedRow = workRequestJTable.getSelectedRow();
         if (selectedRow >= 0)
         {
@@ -149,9 +152,9 @@ private JPanel userProcessContainer;
             JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-    }//GEN-LAST:event_requestTestJButtonActionPerformed
+    }//GEN-LAST:event_btnMessageActionPerformed
 
-    private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         if(workRequestJTable.getRowCount() > 0)
         {
             populateRequestTable();
@@ -161,7 +164,7 @@ private JPanel userProcessContainer;
         {
             JOptionPane.showMessageDialog(null,"Nothing to refresh!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_refreshTestJButtonActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -173,10 +176,10 @@ private JPanel userProcessContainer;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnMessage;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton refreshTestJButton;
-    private javax.swing.JButton requestTestJButton;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
     public void populateRequestTable() {
@@ -185,8 +188,8 @@ private JPanel userProcessContainer;
             DefaultTableModel dtm = (DefaultTableModel)workRequestJTable.getModel();
             dtm.setRowCount(0);
             
-            refreshTestJButton.setEnabled(true);
-            requestTestJButton.setEnabled(true);
+            btnRefresh.setEnabled(true);
+            btnMessage.setEnabled(true);
             int count = 1;
             for(SupplierOrders so : pharmacy.getPastSupplierOrderList())
             {

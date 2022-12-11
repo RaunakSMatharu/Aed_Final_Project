@@ -38,11 +38,11 @@ JPanel userProcessContainer;
                 if(user.getEmployee() == e)
                 {
                     this.supplier = r;
-                    valueLabel.setText(r.getName());
+                    lblValue.setText(r.getName());
                 }
             } 
         }
-        txtName.setText(this.supplier.getName());
+        txtSupplierName.setText(this.supplier.getName());
         txtAddress.setText(this.supplier.getAddress());
       
     }
@@ -56,38 +56,41 @@ JPanel userProcessContainer;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        enterpriseLabel = new javax.swing.JLabel();
-        valueLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        lblAdminWorkArea = new javax.swing.JLabel();
+        lblSupplier = new javax.swing.JLabel();
+        lblValue = new javax.swing.JLabel();
+        lblSupplierName = new javax.swing.JLabel();
+        txtSupplierName = new javax.swing.JTextField();
+        lblAddress = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
         btnViewOrder = new javax.swing.JButton();
         btnMedicineManage = new javax.swing.JButton();
         btnSubmit = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("My Work Area - Administrative Role");
+        setMaximumSize(new java.awt.Dimension(1024, 759));
+        setMinimumSize(new java.awt.Dimension(1024, 759));
 
-        enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        enterpriseLabel.setText("Supplier");
+        lblAdminWorkArea.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblAdminWorkArea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAdminWorkArea.setText("Admin Work Area");
 
-        valueLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        valueLabel.setText("<value>");
+        lblSupplier.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblSupplier.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblSupplier.setText("Supplier");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel2.setText("             Supplier Name:");
+        lblValue.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblValue.setText("<value>");
 
-        txtName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblSupplierName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblSupplierName.setText("Supplier Name:");
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel3.setText("                                 Address:");
+        txtSupplierName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        txtSupplierName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtAddress.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblAddress.setText("Address:");
+
+        txtAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtAddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnViewOrder.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -118,59 +121,65 @@ JPanel userProcessContainer;
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnViewOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnMedicineManage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130)
-                        .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60)
-                        .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnViewOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(btnMedicineManage, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnSubmit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(260, 260, 260)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(131, 131, 131)
+                                .addComponent(lblSupplier)
+                                .addGap(35, 35, 35)
+                                .addComponent(lblValue, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblSupplierName, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblAddress))
+                                .addGap(53, 53, 53)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtSupplierName, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnSubmit))))
+                        .addGap(128, 128, 128))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(368, 368, 368)
+                .addComponent(lblAdminWorkArea, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(44, 44, 44)
+                .addComponent(lblAdminWorkArea, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(160, 160, 160)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
+                        .addGap(104, 104, 104)
+                        .addComponent(btnViewOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(btnMedicineManage, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 18, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnMedicineManage, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnViewOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(600, 600, 600)
-                        .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 89, Short.MAX_VALUE))
+                            .addComponent(lblSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblValue, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblSupplierName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtSupplierName, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))
+                        .addGap(58, 58, 58)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(62, 62, 62)
+                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(290, 290, 290))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -192,16 +201,16 @@ JPanel userProcessContainer;
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-         if(("".equals(txtName.getText())) || ("".equals(txtAddress.getText())))
+         if(("".equals(txtSupplierName.getText())) || ("".equals(txtAddress.getText())))
         {
             JOptionPane.showMessageDialog(null,"Please fill all values!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        else if(txtName.getText() == null ? supplier.getName() != null : !txtName.getText().equals(supplier.getName()))
+        else if(txtSupplierName.getText() == null ? supplier.getName() != null : !txtSupplierName.getText().equals(supplier.getName()))
         {
-            if(system.getSupplierDirectory().checkIfSupplierIsUnique(txtName.getText()))
+            if(system.getSupplierDirectory().checkIfSupplierIsUnique(txtSupplierName.getText()))
             {
-                supplier.setName(txtName.getText());
+                supplier.setName(txtSupplierName.getText());
                 supplier.setAddress(txtAddress.getText());
                 JOptionPane.showMessageDialog(null, "Supplier details updated!");
             }
@@ -211,7 +220,7 @@ JPanel userProcessContainer;
                 return;
             }
         }
-        valueLabel.setText(supplier.getName());
+        lblValue.setText(supplier.getName());
     }//GEN-LAST:event_btnSubmitActionPerformed
 
 
@@ -219,12 +228,12 @@ JPanel userProcessContainer;
     private javax.swing.JButton btnMedicineManage;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnViewOrder;
-    private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblAdminWorkArea;
+    private javax.swing.JLabel lblSupplier;
+    private javax.swing.JLabel lblSupplierName;
+    private javax.swing.JLabel lblValue;
     private javax.swing.JTextField txtAddress;
-    private javax.swing.JTextField txtName;
-    private javax.swing.JLabel valueLabel;
+    private javax.swing.JTextField txtSupplierName;
     // End of variables declaration//GEN-END:variables
 }
