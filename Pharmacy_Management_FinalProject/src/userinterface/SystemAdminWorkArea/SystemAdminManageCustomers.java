@@ -15,6 +15,9 @@ import Business.Role.CustomerRole;
 import Business.Role.DeliveryManRole;
 import Business.SupplierEmp.SupplierEmp;
 import Business.UserAccount.UserAccount;
+
+//import Business.SendSms.SendSms;
+
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -293,6 +296,8 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
                 txtAddress.setText("");
                 txtAddress.setEnabled(false);
                 btnSubmit.setEnabled(false);
+                
+             // SendSms.sendSms("daskjhh", "9820990965");
             }
             else
             {

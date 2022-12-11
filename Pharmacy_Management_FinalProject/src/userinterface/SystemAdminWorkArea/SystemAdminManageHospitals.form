@@ -74,7 +74,7 @@
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="27" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="1030" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
@@ -132,7 +132,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="SendEmailButton" min="-2" pref="30" max="-2" attributes="0"/>
-              <EmptySpace pref="18" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="SystemAMCUsernameLabel" min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="SystemAMHUsernameText" min="-2" pref="32" max="-2" attributes="0"/>
@@ -147,8 +147,9 @@
                   <Component id="SystemAMCConfirmPasswordLabel" min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="SystemAMHConfirmPasswordText" min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="SystemAMHSubmitButton" min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace pref="50" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

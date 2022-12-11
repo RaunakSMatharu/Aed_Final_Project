@@ -57,6 +57,7 @@ JPanel userProcessContainer;
     private void initComponents() {
 
         lblTitle = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         lblSupplier = new javax.swing.JLabel();
         lblValue = new javax.swing.JLabel();
         lblSupplierName = new javax.swing.JLabel();
@@ -67,13 +68,20 @@ JPanel userProcessContainer;
         btnMedicineManage = new javax.swing.JButton();
         btnSubmit = new javax.swing.JButton();
         lblBackground = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(1024, 759));
         setMinimumSize(new java.awt.Dimension(1024, 759));
 
         lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblTitle.setText("Admin Work Area");
+
+        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton2.setText("MEDICINES APPROVED");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         lblSupplier.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblSupplier.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -124,13 +132,6 @@ JPanel userProcessContainer;
         lblBackground.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 lblBackgroundFocusGained(evt);
-            }
-        });
-
-        jButton2.setText("MEDICINES APPROVED");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 

@@ -32,7 +32,7 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
     public SystemUpdateEmployee(JPanel userProcessContainer, Employee employee, EcoSystem system) {
         initComponents();
         
-         this.userProcessContainerSUE = userProcessContainer;
+        this.userProcessContainerSUE = userProcessContainer;
         this.employeeSUE = employee;
         this.ecosystemSUE = system;
         this.userSUE = ecosystemSUE.getUserAccountDirectory().findEmployee(employee);
@@ -80,7 +80,6 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
         lblConfirmPassword = new javax.swing.JLabel();
         radioBtnDelivery = new javax.swing.JRadioButton();
         btnSubmit = new javax.swing.JButton();
-        lblBackground = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
@@ -97,7 +96,6 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
         lblName.setBounds(310, 300, 60, 30);
 
         txtName.setEditable(false);
-        txtName.setBackground(null);
         txtName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtName);
@@ -115,14 +113,12 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
         add(btnBack);
         btnBack.setBounds(50, 40, 100, 50);
 
-        txtPhoneNumber.setBackground(null);
         txtPhoneNumber.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtPhoneNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPhoneNumber);
         txtPhoneNumber.setBounds(410, 340, 390, 30);
 
         txtUsername.setEditable(false);
-        txtUsername.setBackground(null);
         txtUsername.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtUsername.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtUsername);
@@ -133,7 +129,6 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
         add(lblPhoneNumber);
         lblPhoneNumber.setBounds(240, 340, 130, 30);
 
-        txtPassword.setBackground(null);
         txtPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPassword);
@@ -144,13 +139,11 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
         add(lblAddress);
         lblAddress.setBounds(290, 380, 70, 30);
 
-        txtConfirmPassword.setBackground(null);
         txtConfirmPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtConfirmPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtConfirmPassword);
         txtConfirmPassword.setBounds(410, 260, 390, 30);
 
-        txtAddress.setBackground(null);
         txtAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtAddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtAddress);
@@ -159,7 +152,7 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
         lblUsername.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblUsername.setText("Username: ");
         add(lblUsername);
-        lblUsername.setBounds(280, 170, 89, 30);
+        lblUsername.setBounds(280, 170, 87, 30);
 
         lblRole.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblRole.setText("Role:");
@@ -169,7 +162,7 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
         lblPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblPassword.setText("Password: ");
         add(lblPassword);
-        lblPassword.setBounds(280, 220, 85, 30);
+        lblPassword.setBounds(280, 220, 83, 30);
 
         radioBtnManager.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(radioBtnManager);
@@ -177,7 +170,7 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
         radioBtnManager.setText("Pharmacy Manager");
         radioBtnManager.setEnabled(false);
         add(radioBtnManager);
-        radioBtnManager.setBounds(410, 430, 180, 25);
+        radioBtnManager.setBounds(410, 430, 180, 26);
 
         lblConfirmPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblConfirmPassword.setText("Confirm Password:");
@@ -190,7 +183,7 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
         radioBtnDelivery.setText("Delivery Agent");
         radioBtnDelivery.setEnabled(false);
         add(radioBtnDelivery);
-        radioBtnDelivery.setBounds(410, 480, 180, 25);
+        radioBtnDelivery.setBounds(410, 480, 180, 26);
 
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnSubmit.setText("Submit");
@@ -202,10 +195,6 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
         });
         add(btnSubmit);
         btnSubmit.setBounds(410, 540, 120, 50);
-
-        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Manage_Emplyee_Final_IMAGE.png"))); // NOI18N
-        add(lblBackground);
-        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -236,7 +225,6 @@ public class SystemUpdateEmployee extends javax.swing.JPanel {
     private javax.swing.JButton btnSubmit;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel lblAddress;
-    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblConfirmPassword;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPassword;
