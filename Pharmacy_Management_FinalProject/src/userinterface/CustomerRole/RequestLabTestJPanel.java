@@ -63,17 +63,17 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(520, 480, 120, 40);
+        btnSubmit.setBounds(730, 460, 120, 40);
 
         lblMessage.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblMessage.setText("Message: ");
         add(lblMessage);
-        lblMessage.setBounds(260, 250, 90, 50);
+        lblMessage.setBounds(470, 230, 90, 50);
 
         txtMessage.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtMessage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtMessage);
-        txtMessage.setBounds(390, 260, 370, 150);
+        txtMessage.setBounds(600, 240, 370, 150);
 
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
@@ -91,6 +91,8 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         lblEnterprise.setText("<>");
         add(lblEnterprise);
         lblEnterprise.setBounds(60, 40, 540, 60);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/7e8e8c57497d2627fa7923f20188fa5d.jpg"))); // NOI18N
         add(lblBackground);
         lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents

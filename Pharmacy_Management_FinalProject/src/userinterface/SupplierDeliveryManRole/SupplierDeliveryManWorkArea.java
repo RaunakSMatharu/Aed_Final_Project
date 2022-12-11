@@ -96,7 +96,7 @@ public class SupplierDeliveryManWorkArea extends javax.swing.JPanel {
         lblDeliveryAgent = new javax.swing.JLabel();
         btnProcess = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -157,9 +157,9 @@ public class SupplierDeliveryManWorkArea extends javax.swing.JPanel {
         add(btnRefresh);
         btnRefresh.setBounds(850, 110, 120, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (4).png"))); // NOI18N
-        add(jLabel1);
-        jLabel1.setBounds(0, 80, 1080, 700);
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Pharmacy Delivery.jpeg"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(-180, 0, 1210, 880);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessActionPerformed
@@ -204,8 +204,8 @@ public class SupplierDeliveryManWorkArea extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnProcess;
     private javax.swing.JButton btnRefresh;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblDeliveryAgent;
     private javax.swing.JTable tblWorkRequest;
     // End of variables declaration//GEN-END:variables

@@ -59,6 +59,7 @@ public class AdminManageMedicine extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnSubmit = new javax.swing.JButton();
+        lblBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -72,42 +73,44 @@ public class AdminManageMedicine extends javax.swing.JPanel {
             }
         });
         add(btnView);
-        btnView.setBounds(700, 490, 132, 50);
+        btnView.setBounds(220, 430, 132, 50);
 
         txtName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtName);
-        txtName.setBounds(150, 230, 320, 40);
+        txtName.setBounds(680, 180, 320, 40);
 
         lblName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblName.setText("Name:");
         add(lblName);
-        lblName.setBounds(60, 230, 60, 27);
+        lblName.setBounds(590, 177, 60, 40);
 
         lblPharmacy.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblPharmacy.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblPharmacy.setText("Pharmacy");
         add(lblPharmacy);
-        lblPharmacy.setBounds(230, 50, 292, 30);
+        lblPharmacy.setBounds(230, 40, 292, 50);
 
         lblPrice.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblPrice.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPrice.setText("Price:");
         add(lblPrice);
-        lblPrice.setBounds(70, 320, 50, 20);
+        lblPrice.setBounds(590, 260, 60, 40);
 
         lblValue.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblValue.setText("<value>");
         add(lblValue);
-        lblValue.setBounds(530, 50, 282, 30);
+        lblValue.setBounds(530, 40, 410, 50);
 
         spinnerPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(spinnerPrice);
-        spinnerPrice.setBounds(150, 310, 320, 40);
+        spinnerPrice.setBounds(680, 260, 320, 40);
 
         lblMedicine.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblMedicine.setText("Medicine");
         add(lblMedicine);
-        lblMedicine.setBounds(460, 180, 90, 30);
+        lblMedicine.setBounds(480, 110, 100, 50);
 
         tblMedicineCatalog.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         tblMedicineCatalog.setModel(new javax.swing.table.DefaultTableModel(
@@ -132,7 +135,7 @@ public class AdminManageMedicine extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblMedicineCatalog);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(510, 230, 480, 220);
+        jScrollPane1.setBounds(40, 170, 480, 220);
 
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
@@ -144,7 +147,7 @@ public class AdminManageMedicine extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(820, 50, 150, 50);
+        btnBack.setBounds(50, 50, 150, 50);
 
         btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete Button.png"))); // NOI18N
@@ -156,7 +159,7 @@ public class AdminManageMedicine extends javax.swing.JPanel {
             }
         });
         add(btnDelete);
-        btnDelete.setBounds(860, 490, 130, 50);
+        btnDelete.setBounds(380, 430, 130, 50);
 
         btnAdd.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Add Medicine.png"))); // NOI18N
@@ -168,7 +171,7 @@ public class AdminManageMedicine extends javax.swing.JPanel {
             }
         });
         add(btnAdd);
-        btnAdd.setBounds(540, 490, 132, 50);
+        btnAdd.setBounds(60, 430, 132, 50);
 
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnSubmit.setText("Submit");
@@ -179,7 +182,11 @@ public class AdminManageMedicine extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(250, 390, 130, 40);
+        btnSubmit.setBounds(780, 340, 130, 40);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/46c6cc94a14f2da88997d4df1d5efde7.jpg"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
@@ -268,6 +275,7 @@ public class AdminManageMedicine extends javax.swing.JPanel {
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnView;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblMedicine;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPharmacy;

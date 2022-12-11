@@ -60,7 +60,7 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
         tblSupplier = new javax.swing.JTable();
         btnSubmit = new javax.swing.JButton();
         txtAddress = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        lblBackground = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
@@ -175,8 +175,10 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
         txtAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         add(txtAddress);
         txtAddress.setBounds(460, 490, 300, 40);
-        add(jLabel4);
-        jLabel4.setBounds(0, 0, 1030, 760);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hero-header.png"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -274,9 +276,9 @@ public class SystemAdminManageSupplier extends javax.swing.JPanel {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnView;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblSupplierName;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTable tblSupplier;

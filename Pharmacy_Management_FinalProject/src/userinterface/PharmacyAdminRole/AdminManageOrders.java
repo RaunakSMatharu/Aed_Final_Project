@@ -60,10 +60,11 @@ public class AdminManageOrders extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         comboDeliveryAgent = new javax.swing.JComboBox<>();
+        lblBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
-        btnAssignDeliveryAgent.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnAssignDeliveryAgent.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnAssignDeliveryAgent.setText("Assign Delivery Agent");
         btnAssignDeliveryAgent.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAssignDeliveryAgent.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +105,7 @@ public class AdminManageOrders extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblOrders);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(90, 230, 850, 210);
+        jScrollPane1.setBounds(90, 250, 850, 210);
 
         lblValue.setBackground(new java.awt.Color(204, 204, 255));
         lblValue.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -141,11 +142,15 @@ public class AdminManageOrders extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(840, 40, 100, 40);
+        btnBack.setBounds(830, 40, 110, 50);
 
         comboDeliveryAgent.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         add(comboDeliveryAgent);
         comboDeliveryAgent.setBounds(90, 490, 220, 50);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/46c6cc94a14f2da88997d4df1d5efde7.jpg"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAssignDeliveryAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignDeliveryAgentActionPerformed
@@ -217,6 +222,7 @@ public class AdminManageOrders extends javax.swing.JPanel {
     private javax.swing.JButton btnDelete;
     private javax.swing.JComboBox<String> comboDeliveryAgent;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblCurrentOrders;
     private javax.swing.JLabel lblPharmacy;
     private javax.swing.JLabel lblValue;

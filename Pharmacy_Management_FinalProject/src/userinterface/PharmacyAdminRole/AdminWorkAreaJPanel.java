@@ -68,6 +68,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         txtAddress = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
         btnOrderMedicines = new javax.swing.JButton();
+        lblBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -114,7 +115,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         lblPharmacyName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblPharmacyName.setText("Pharmacy Name :");
         add(lblPharmacyName);
-        lblPharmacyName.setBounds(390, 230, 140, 50);
+        lblPharmacyName.setBounds(400, 230, 140, 50);
 
         txtPharmcyName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtPharmcyName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -152,6 +153,10 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnOrderMedicines);
         btnOrderMedicines.setBounds(70, 470, 190, 60);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/46c6cc94a14f2da88997d4df1d5efde7.jpg"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageMedicinesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageMedicinesActionPerformed
@@ -208,6 +213,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblAdminWorkArea;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblPharmacy;
     private javax.swing.JLabel lblPharmacyName;
     private javax.swing.JLabel lblValue;

@@ -44,6 +44,7 @@ JPanel userProcessContainer;
         btnSubmit = new javax.swing.JButton();
         lblUpdateMedicine = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        lblBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -97,6 +98,10 @@ JPanel userProcessContainer;
         });
         add(btnBack);
         btnBack.setBounds(840, 60, 130, 60);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/4cdd558652d6adfe5e9d4c5af515fc40.jpg"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -127,6 +132,7 @@ JPanel userProcessContainer;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblUpdateMedicine;

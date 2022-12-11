@@ -93,7 +93,7 @@ public class PharmacyAreaJPanel extends javax.swing.JPanel {
         lblAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblAddress.setText("Address:");
         add(lblAddress);
-        lblAddress.setBounds(220, 500, 90, 50);
+        lblAddress.setBounds(220, 480, 90, 50);
 
         txtName.setEditable(false);
         txtName.setBackground(new java.awt.Color(255, 255, 255));
@@ -105,7 +105,7 @@ public class PharmacyAreaJPanel extends javax.swing.JPanel {
         txtAddress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtAddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtAddress);
-        txtAddress.setBounds(410, 500, 420, 50);
+        txtAddress.setBounds(410, 480, 420, 50);
 
         lblName.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblName.setText("Name:");
@@ -147,7 +147,7 @@ public class PharmacyAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnReviewOrders);
-        btnReviewOrders.setBounds(320, 600, 150, 50);
+        btnReviewOrders.setBounds(320, 570, 150, 50);
 
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnSubmit.setText("Submit");
@@ -158,7 +158,9 @@ public class PharmacyAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(620, 600, 150, 50);
+        btnSubmit.setBounds(620, 570, 150, 50);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/46c6cc94a14f2da88997d4df1d5efde7.jpg"))); // NOI18N
         add(lblBackground);
         lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents

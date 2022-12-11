@@ -81,7 +81,6 @@ public class SystemUpdateSupplierEmployee extends javax.swing.JPanel {
         setLayout(null);
 
         txtName.setEditable(false);
-        txtName.setBackground(null);
         txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtName);
         txtName.setBounds(430, 290, 310, 30);
@@ -112,7 +111,6 @@ public class SystemUpdateSupplierEmployee extends javax.swing.JPanel {
         add(radioBtnManager);
         radioBtnManager.setBounds(430, 420, 180, 25);
 
-        txtPhoneNumber.setBackground(null);
         txtPhoneNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPhoneNumber);
         txtPhoneNumber.setBounds(430, 330, 310, 30);
@@ -125,7 +123,6 @@ public class SystemUpdateSupplierEmployee extends javax.swing.JPanel {
         lblConfirmPassword.setBounds(250, 241, 170, 30);
 
         txtUsername.setEditable(false);
-        txtUsername.setBackground(null);
         txtUsername.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtUsername);
         txtUsername.setBounds(430, 150, 310, 30);
@@ -135,7 +132,7 @@ public class SystemUpdateSupplierEmployee extends javax.swing.JPanel {
         radioBtnDelivery.setText("Delivery Man");
         radioBtnDelivery.setEnabled(false);
         add(radioBtnDelivery);
-        radioBtnDelivery.setBounds(430, 470, 160, 25);
+        radioBtnDelivery.setBounds(430, 470, 180, 25);
 
         lblPhoneNumber.setBackground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -155,7 +152,6 @@ public class SystemUpdateSupplierEmployee extends javax.swing.JPanel {
         add(btnSubmit);
         btnSubmit.setBounds(440, 520, 130, 40);
 
-        txtPassword.setBackground(null);
         txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtPassword);
         txtPassword.setBounds(430, 200, 310, 30);
@@ -167,12 +163,10 @@ public class SystemUpdateSupplierEmployee extends javax.swing.JPanel {
         add(lblAddress);
         lblAddress.setBounds(250, 371, 170, 30);
 
-        txtConfirmPassword.setBackground(null);
         txtConfirmPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtConfirmPassword);
         txtConfirmPassword.setBounds(430, 240, 310, 30);
 
-        txtAddress.setBackground(null);
         txtAddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtAddress);
         txtAddress.setBounds(430, 370, 310, 30);
@@ -203,7 +197,7 @@ public class SystemUpdateSupplierEmployee extends javax.swing.JPanel {
         add(lblTitle);
         lblTitle.setBounds(370, 50, 350, 50);
 
-        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Manage_Emplyee_Final_IMAGE.png"))); // NOI18N
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hero-header.png"))); // NOI18N
         add(lblBackground);
         lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents

@@ -54,7 +54,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(390, 130, 110, 50);
+        btnSubmit.setBounds(680, 180, 110, 50);
 
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
@@ -66,16 +66,16 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(250, 130, 110, 50);
+        btnBack.setBounds(60, 50, 110, 50);
 
         lblResult.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblResult.setText("Result");
         add(lblResult);
-        lblResult.setBounds(40, 50, 80, 40);
+        lblResult.setBounds(430, 100, 80, 40);
 
         comboStatus.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         add(comboStatus);
-        comboStatus.setBounds(170, 50, 380, 50);
+        comboStatus.setBounds(560, 100, 380, 50);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (3).png"))); // NOI18N
         add(jLabel2);

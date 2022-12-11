@@ -181,6 +181,8 @@ public class AdminManageSupplierMedicine extends javax.swing.JPanel {
         });
         add(btnSubmit);
         btnSubmit.setBounds(490, 330, 110, 50);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/4cdd558652d6adfe5e9d4c5af515fc40.jpg"))); // NOI18N
         add(lblBackground);
         lblBackground.setBounds(-80, -120, 1460, 960);
     }// </editor-fold>//GEN-END:initComponents

@@ -70,6 +70,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         txtUserName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtUserName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtUserName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUserNameActionPerformed(evt);
+            }
+        });
 
         txtPassword.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -282,6 +287,10 @@ public class MainJFrame extends javax.swing.JFrame {
         dB4OUtil.storeSystem(system);
         
     }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserNameActionPerformed
 
     /**
      * @param args the command line arguments

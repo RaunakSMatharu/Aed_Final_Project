@@ -65,7 +65,9 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
         btnRefresh = new javax.swing.JButton();
         lblEnterprise = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        lblBackground = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
         tblWorkRequest.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -137,6 +139,11 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
         });
         add(btnBack);
         btnBack.setBounds(860, 50, 120, 50);
+
+        lblBackground.setBackground(new java.awt.Color(255, 255, 255));
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/7e8e8c57497d2627fa7923f20188fa5d.jpg"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMessageActionPerformed
@@ -190,6 +197,7 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JTable tblWorkRequest;
     // End of variables declaration//GEN-END:variables

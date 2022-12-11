@@ -78,14 +78,14 @@ public class AdminManageSupplierOrders extends javax.swing.JPanel {
         add(lblCurrentOrders);
         lblCurrentOrders.setBounds(430, 50, 170, 50);
 
-        lblSupplier.setBackground(new java.awt.Color(204, 204, 255));
+        lblSupplier.setBackground(new java.awt.Color(255, 255, 255));
         lblSupplier.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblSupplier.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblSupplier.setText("Supplier");
         add(lblSupplier);
         lblSupplier.setBounds(390, 170, 90, 40);
 
-        lblValue.setBackground(new java.awt.Color(204, 204, 255));
+        lblValue.setBackground(new java.awt.Color(255, 255, 255));
         lblValue.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblValue.setText("<value>");
         add(lblValue);
@@ -136,7 +136,7 @@ public class AdminManageSupplierOrders extends javax.swing.JPanel {
             }
         });
         add(btnAssignDeliveryAgent);
-        btnAssignDeliveryAgent.setBounds(330, 460, 180, 40);
+        btnAssignDeliveryAgent.setBounds(330, 460, 190, 40);
 
         btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete Button.png"))); // NOI18N
@@ -149,6 +149,9 @@ public class AdminManageSupplierOrders extends javax.swing.JPanel {
         });
         add(btnDelete);
         btnDelete.setBounds(780, 460, 120, 50);
+
+        lblBackground.setBackground(new java.awt.Color(255, 255, 255));
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/4cdd558652d6adfe5e9d4c5af515fc40.jpg"))); // NOI18N
         add(lblBackground);
         lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents

@@ -65,6 +65,7 @@ public class PharmacyOrderAction extends javax.swing.JPanel {
         btnAddItem = new javax.swing.JButton();
         lblTotal = new javax.swing.JLabel();
         lblValue = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -75,7 +76,7 @@ public class PharmacyOrderAction extends javax.swing.JPanel {
         add(txtTotal);
         txtTotal.setBounds(660, 670, 220, 50);
 
-        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete Button.png"))); // NOI18N
         btnDelete.setText("Delete Item");
         btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -87,7 +88,7 @@ public class PharmacyOrderAction extends javax.swing.JPanel {
         add(btnDelete);
         btnDelete.setBounds(370, 570, 160, 50);
 
-        btnOrder.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnOrder.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnOrder.setText("Confirm Order");
         btnOrder.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +160,7 @@ public class PharmacyOrderAction extends javax.swing.JPanel {
         add(jScrollPane2);
         jScrollPane2.setBounds(220, 120, 670, 150);
 
-        btnAddItem.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnAddItem.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnAddItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Add to Cart Button.png"))); // NOI18N
         btnAddItem.setText("Add Item");
         btnAddItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -181,6 +182,10 @@ public class PharmacyOrderAction extends javax.swing.JPanel {
         lblValue.setText("<value>");
         add(lblValue);
         lblValue.setBounds(300, 30, 510, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/46c6cc94a14f2da88997d4df1d5efde7.jpg"))); // NOI18N
+        add(jLabel1);
+        jLabel1.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -254,6 +259,7 @@ public class PharmacyOrderAction extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnOrder;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblTotal;

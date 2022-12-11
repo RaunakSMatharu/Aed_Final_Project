@@ -55,6 +55,7 @@ private JPanel userProcessContainer;
         btnRefresh = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        lblBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -85,7 +86,7 @@ private JPanel userProcessContainer;
         jScrollPane1.setViewportView(workRequestJTable);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(70, 210, 880, 270);
+        jScrollPane1.setBounds(70, 310, 880, 230);
 
         btnMessage.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnMessage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Message Button.png"))); // NOI18N
@@ -97,7 +98,7 @@ private JPanel userProcessContainer;
             }
         });
         add(btnMessage);
-        btnMessage.setBounds(780, 530, 150, 50);
+        btnMessage.setBounds(780, 560, 160, 50);
 
         btnRefresh.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Refresh Button.png"))); // NOI18N
@@ -109,7 +110,7 @@ private JPanel userProcessContainer;
             }
         });
         add(btnRefresh);
-        btnRefresh.setBounds(70, 150, 120, 40);
+        btnRefresh.setBounds(70, 140, 120, 50);
 
         enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         enterpriseLabel.setText("<>");
@@ -126,7 +127,11 @@ private JPanel userProcessContainer;
             }
         });
         add(btnBack);
-        btnBack.setBounds(860, 50, 110, 40);
+        btnBack.setBounds(840, 40, 110, 50);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/46c6cc94a14f2da88997d4df1d5efde7.jpg"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMessageActionPerformed
@@ -180,6 +185,7 @@ private JPanel userProcessContainer;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
     public void populateRequestTable() {

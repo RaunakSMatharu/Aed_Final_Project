@@ -64,6 +64,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         btnConfirm = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        lblBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -180,6 +181,10 @@ public class CustomerOrderAction extends javax.swing.JPanel {
         });
         add(btnBack);
         btnBack.setBounds(30, 30, 120, 50);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/7e8e8c57497d2627fa7923f20188fa5d.jpg"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblMedicinesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMedicinesMouseClicked
@@ -261,6 +266,7 @@ public class CustomerOrderAction extends javax.swing.JPanel {
     private javax.swing.JButton btnOrder;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblPharmacy;
     private javax.swing.JLabel lblTotal;
     private javax.swing.JTable tblMedicines;

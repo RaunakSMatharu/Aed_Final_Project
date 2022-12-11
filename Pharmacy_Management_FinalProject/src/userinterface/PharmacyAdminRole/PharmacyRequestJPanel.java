@@ -43,6 +43,7 @@ public class PharmacyRequestJPanel extends javax.swing.JPanel {
         txtMessage = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
         lblEnterprise = new javax.swing.JLabel();
+        lblBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -54,17 +55,17 @@ public class PharmacyRequestJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(410, 480, 120, 60);
+        btnSubmit.setBounds(310, 420, 120, 50);
 
         lblMessage.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblMessage.setText("Message: ");
         add(lblMessage);
-        lblMessage.setBounds(260, 190, 80, 60);
+        lblMessage.setBounds(110, 150, 80, 40);
 
         txtMessage.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtMessage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtMessage);
-        txtMessage.setBounds(390, 210, 290, 210);
+        txtMessage.setBounds(240, 150, 290, 210);
 
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
@@ -81,6 +82,10 @@ public class PharmacyRequestJPanel extends javax.swing.JPanel {
         lblEnterprise.setText("<>");
         add(lblEnterprise);
         lblEnterprise.setBounds(60, 50, 480, 50);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/46c6cc94a14f2da88997d4df1d5efde7.jpg"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -111,6 +116,7 @@ public class PharmacyRequestJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblMessage;
     private javax.swing.JTextField txtMessage;

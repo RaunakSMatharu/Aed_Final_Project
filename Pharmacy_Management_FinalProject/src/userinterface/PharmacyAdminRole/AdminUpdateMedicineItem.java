@@ -48,6 +48,7 @@ public class AdminUpdateMedicineItem extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         txtName = new javax.swing.JTextField();
+        lblBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -101,6 +102,10 @@ public class AdminUpdateMedicineItem extends javax.swing.JPanel {
         txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtName);
         txtName.setBounds(350, 240, 460, 50);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/46c6cc94a14f2da88997d4df1d5efde7.jpg"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -132,6 +137,7 @@ public class AdminUpdateMedicineItem extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JSpinner spinnerPrice;

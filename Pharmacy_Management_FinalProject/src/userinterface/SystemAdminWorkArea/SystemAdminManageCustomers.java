@@ -241,7 +241,7 @@ public class SystemAdminManageCustomers extends javax.swing.JPanel {
         lblPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblPassword.setText("Password: ");
         add(lblPassword);
-        lblPassword.setBounds(340, 370, 85, 38);
+        lblPassword.setBounds(340, 370, 85, 30);
 
         lblConfirmPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblConfirmPassword.setText("Confirm Password:");
