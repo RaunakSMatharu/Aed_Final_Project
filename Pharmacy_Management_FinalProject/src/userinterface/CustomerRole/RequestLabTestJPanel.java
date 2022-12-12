@@ -4,14 +4,10 @@
  */
 package userinterface.CustomerRole;
 
-import Business.EcoSystem;
+
 import Business.Orders.Orders;
-import Business.Organization;
-import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
 
@@ -20,20 +16,24 @@ import javax.swing.JOptionPane;
  * @author Raunak Singh Matharu
  */
 public class RequestLabTestJPanel extends javax.swing.JPanel {
-
-    private JPanel userProcessContainer;
+     private JPanel userProcessContainer;
     private Orders o;    
+
+    
+   
     /**
      * Creates new form RequestLabTestJPanel
      */
     public RequestLabTestJPanel(JPanel userProcessContainer, Orders o) {
         initComponents();
-        
+           
         this.userProcessContainer = userProcessContainer;
         
         this.o = o;
-        enterpriseLabel.setText("OrderID: " + o);
-        messageJTextField.setText(o.getMessage());
+        lblEnterprise.setText("OrderID: " + o);
+        txtMessage.setText(o.getMessage());
+        
+        
     }
 
     /**
@@ -45,64 +45,63 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        requestTestJButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        messageJTextField = new javax.swing.JTextField();
-        backJButton = new javax.swing.JButton();
-        enterpriseLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        btnSubmit = new javax.swing.JButton();
+        lblMessage = new javax.swing.JLabel();
+        txtMessage = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
+        lblEnterprise = new javax.swing.JLabel();
+        lblBackground = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        requestTestJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        requestTestJButton.setText("Submit Message");
-        requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButtonActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(requestTestJButton);
-        requestTestJButton.setBounds(370, 100, 130, 30);
+        add(btnSubmit);
+        btnSubmit.setBounds(730, 460, 120, 40);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel1.setText("Message: ");
-        add(jLabel1);
-        jLabel1.setBounds(70, 26, 80, 50);
+        lblMessage.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblMessage.setText("Message: ");
+        add(lblMessage);
+        lblMessage.setBounds(470, 230, 90, 50);
 
-        messageJTextField.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        messageJTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(messageJTextField);
-        messageJTextField.setBounds(180, 26, 320, 40);
+        txtMessage.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtMessage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(txtMessage);
+        txtMessage.setBounds(600, 240, 370, 150);
 
-        backJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        backJButton.setText("<<Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
+        btnBack.setText("Back");
+        btnBack.setToolTipText("");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(backJButton);
-        backJButton.setBounds(180, 100, 120, 30);
+        add(btnBack);
+        btnBack.setBounds(830, 60, 120, 40);
 
-        enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        enterpriseLabel.setText("<>");
-        add(enterpriseLabel);
-        enterpriseLabel.setBounds(10, 10, 170, 30);
-        add(jLabel2);
-        jLabel2.setBounds(30, 50, 0, 0);
+        lblEnterprise.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblEnterprise.setText("<>");
+        add(lblEnterprise);
+        lblEnterprise.setBounds(60, 40, 540, 60);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MicrosoftTeams-image (6).png"))); // NOI18N
-        add(jLabel3);
-        jLabel3.setBounds(10, 6, 1400, 780);
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/7e8e8c57497d2627fa7923f20188fa5d.jpg"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
 
-        if(messageJTextField.getText() != "")
+        if(txtMessage.getText() != "")
         {
-            o.setMessage(messageJTextField.getText());
+            o.setMessage(txtMessage.getText());
             JOptionPane.showMessageDialog(null, "Message updated successfully");
         }
         else
@@ -110,28 +109,25 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Message cannot be empty!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
-    }//GEN-LAST:event_requestTestJButtonActionPerformed
-
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
 
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         CustomerSummaryJPanell dwjp = (CustomerSummaryJPanell) component;
-      //  dwjp.populateRequestTable();
+        dwjp.populateRequestTable();
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
-    private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField messageJTextField;
-    private javax.swing.JButton requestTestJButton;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblEnterprise;
+    private javax.swing.JLabel lblMessage;
+    private javax.swing.JTextField txtMessage;
     // End of variables declaration//GEN-END:variables
 }

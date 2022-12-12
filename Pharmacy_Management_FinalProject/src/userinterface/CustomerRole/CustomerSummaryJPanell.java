@@ -3,6 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package userinterface.CustomerRole;
+import Business.Customer.Customer;
+import Business.EcoSystem;
+import Business.Orders.Orders;
+import Business.Pharmacy.Pharmacy;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -10,11 +22,32 @@ package userinterface.CustomerRole;
  */
 public class CustomerSummaryJPanell extends javax.swing.JPanel {
 
+    private JPanel userProcessContainer;
+
+    private UserAccount user;
+    private Customer customer;
+    private EcoSystem system;
+    
+    
+    
     /**
      * Creates new form CustomerSummaryJPanell
      */
-    public CustomerSummaryJPanell() {
+    public CustomerSummaryJPanell(JPanel userProcessContainer, UserAccount account, EcoSystem system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;     
+        this.user = account;
+        this.system = system;
+        for(Customer c : system.getCustomerDirectory().getCustomerList() )
+        {
+            
+                if(c.getName() == null ? user.getEmployee().getName() == null : c.getName().equals(user.getEmployee().getName()))
+                {
+                    this.customer = c;
+                }
+        }
+        lblEnterprise.setText(this.customer + "'s orders");
+        populateRequestTable();
     }
 
     /**
@@ -26,60 +59,19 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        refreshTestJButton = new javax.swing.JButton();
-        enterpriseLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        btnBack = new javax.swing.JButton();
-        requestTestJButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
+        tblWorkRequest = new javax.swing.JTable();
+        btnAddMessage = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
+        lblEnterprise = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+        lblBackground = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        refreshTestJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        refreshTestJButton.setText("Refresh");
-        refreshTestJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshTestJButtonActionPerformed(evt);
-            }
-        });
-        add(refreshTestJButton);
-        refreshTestJButton.setBounds(892, 4, 76, 21);
-
-        enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
-        enterpriseLabel.setText("<>");
-        add(enterpriseLabel);
-        enterpriseLabel.setBounds(24, 36, 251, 30);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Pharmacy_Summary_Image.jpg"))); // NOI18N
-        add(jLabel1);
-        jLabel1.setBounds(0, 160, 1480, 620);
-
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnBack.setText("< Back");
-        btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-        add(btnBack);
-        btnBack.setBounds(10, 199, 80, 30);
-
-        requestTestJButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        requestTestJButton.setText("Add Message >");
-        requestTestJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButtonActionPerformed(evt);
-            }
-        });
-        add(requestTestJButton);
-        requestTestJButton.setBounds(1330, 210, 84, 39);
-
-        workRequestJTable.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblWorkRequest.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        tblWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -102,44 +94,71 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(workRequestJTable);
+        jScrollPane1.setViewportView(tblWorkRequest);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(10, 84, 1470, 97);
+        jScrollPane1.setBounds(50, 280, 930, 190);
+
+        btnAddMessage.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnAddMessage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Message Button.png"))); // NOI18N
+        btnAddMessage.setText("Add Message");
+        btnAddMessage.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAddMessage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddMessageActionPerformed(evt);
+            }
+        });
+        add(btnAddMessage);
+        btnAddMessage.setBounds(810, 520, 170, 50);
+
+        btnRefresh.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Refresh Button.png"))); // NOI18N
+        btnRefresh.setText("Refresh");
+        btnRefresh.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshActionPerformed(evt);
+            }
+        });
+        add(btnRefresh);
+        btnRefresh.setBounds(50, 190, 140, 50);
+
+        lblEnterprise.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblEnterprise.setText("<>");
+        add(lblEnterprise);
+        lblEnterprise.setBounds(40, 30, 550, 50);
+
+        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Back Button.png"))); // NOI18N
+        btnBack.setText("Back");
+        btnBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack);
+        btnBack.setBounds(860, 50, 120, 50);
+
+        lblBackground.setBackground(new java.awt.Color(255, 255, 255));
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/7e8e8c57497d2627fa7923f20188fa5d.jpg"))); // NOI18N
+        add(lblBackground);
+        lblBackground.setBounds(0, 0, 1030, 760);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
-       /* if(workRequestJTable.getRowCount() > 0)
-        {
-            populateRequestTable();
-            JOptionPane.showMessageDialog(null, "Table refreshed!");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,"Nothing to refresh!", "Warning", JOptionPane.WARNING_MESSAGE);
-        }*/
-    }//GEN-LAST:event_refreshTestJButtonActionPerformed
+    private void btnAddMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMessageActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-       /* userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);*/
-    }//GEN-LAST:event_btnBackActionPerformed
-
-    private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
-/*
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = tblWorkRequest.getSelectedRow();
         if (selectedRow >= 0)
         {
-            if((workRequestJTable.getValueAt(selectedRow, 1)) == null)
+            if((tblWorkRequest.getValueAt(selectedRow, 1)) == null)
             {
                 JOptionPane.showMessageDialog(null,"Order is not live anymore!", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
             else
             {
-                Orders o = (Orders) workRequestJTable.getValueAt(selectedRow, 0);
+                Orders o = (Orders) tblWorkRequest.getValueAt(selectedRow, 0);
                 RequestLabTestJPanel fs = new RequestLabTestJPanel(userProcessContainer, o);
                 userProcessContainer.add("SysAdminManageEmployees", fs);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -150,17 +169,82 @@ public class CustomerSummaryJPanell extends javax.swing.JPanel {
         {
             JOptionPane.showMessageDialog(null,"Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
-        }*/
-    }//GEN-LAST:event_requestTestJButtonActionPerformed
+        }
+    }//GEN-LAST:event_btnAddMessageActionPerformed
+
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        if(tblWorkRequest.getRowCount() > 0)
+        {
+            populateRequestTable();
+            JOptionPane.showMessageDialog(null, "Table refreshed!");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Nothing to refresh!", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnRefreshActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddMessage;
     private javax.swing.JButton btnBack;
-    private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton refreshTestJButton;
-    private javax.swing.JButton requestTestJButton;
-    private javax.swing.JTable workRequestJTable;
+    private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblEnterprise;
+    private javax.swing.JTable tblWorkRequest;
     // End of variables declaration//GEN-END:variables
+public void populateRequestTable() {
+        if(customer.getPastOrderList() != null)
+        {
+            DefaultTableModel dtm = (DefaultTableModel)tblWorkRequest.getModel();
+            dtm.setRowCount(0);
+            
+            btnRefresh.setEnabled(true);
+            btnAddMessage.setEnabled(true);
+            int count = 1;
+            for(Orders o : customer.getPastOrderList())
+            {
+                if(system.getPharmacyDirectory().getPharmacyList() != null)
+                {
+                    Object[] row = new Object[dtm.getColumnCount()];
+                    row[0] = o;
+                    for(Pharmacy p : system.getPharmacyDirectory().getPharmacyList())
+                    {
+                        for(Orders or : p.getOrderDirectory().getOrderList())
+                        {
+                          if(o.equals(or))
+                          {
+                              row[1] = p;
+                          }
+                        }
+                    }
+                    row[2] = o.getTotalAmount();
+                    row[3] = o.getMessage();
+                    row[4] = o.getDeliveryMan();
+                    if(o.isStatus())
+                    {
+                        row[5] = "Yes";
+                    }
+                    else
+                    {
+                        row[5] = "No";
+                    }
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                    row[6] = o.getOrderDate().format(formatter);
+                    dtm.addRow(row);
+                    count++;
+                }
+            }
+        }
+    }
+
+
 }
